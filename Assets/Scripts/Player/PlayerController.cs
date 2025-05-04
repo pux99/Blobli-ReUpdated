@@ -1,44 +1,85 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utilities.UpdateManager;
 
-public class PlayerController : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private GridManager gridManager;
-    private InputAction _moveAction;
-    private bool _isMoving = false;
-    
-    private void Awake()
+    public class PlayerController : MonoBehaviour, IUpdatable
     {
-        _moveAction = InputSystem.actions.FindAction("Move");
-    }
-    
-    public void Move()
-    {
-        if (_isMoving) return;
+        [SerializeField] private GridManager gridManager;
+        [SerializeField] private float speed;
+        private InputAction _moveAction;
+        private bool _isMoving;
+        private bool _isRotating;
+        private Vector3 _dir;
+        private Vector3 _lastDir;
+        private Vector3 _startingPos;
+        private Quaternion _angle;
+        private void Awake()
+        {
+            _moveAction = InputSystem.actions.FindAction("Move");
+            _startingPos = transform.position;
+        }
+        private void Start()=> ServiceLocator.Instance.GetService<CustomUpdateManager>().Register(this);
 
-        Vector2 input = _moveAction.ReadValue<Vector2>();
+        public void Move()
+        {
+            if (_isMoving) return;
+            
+            _dir = _moveAction.ReadValue<Vector2>();
+            if (_dir == Vector3.zero)
+                return;
+            if (_dir != _lastDir)
+            {
+                LookDir();
+                return;
+            }
+            if (!gridManager.CanMove(_dir)||_isRotating)
+                return;
+            _startingPos = transform.position;
+            _isMoving = true;
+        }
 
-        Vector2 moveTo = Vector2.zero;
-        if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
-            moveTo = input.x > 0 ? Vector2.right : Vector2.left;
-        else if (Mathf.Abs(input.y) > 0)
-            moveTo = input.y > 0 ? Vector2.up : Vector2.down;
+        public void Tick(float deltaTime)
+        {
+            if(_isMoving)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, _startingPos + _dir, speed * deltaTime);
+                if (Vector3.Distance(transform.position, _startingPos + _dir) < 0.1)
+                    ResetMove();
+            }
+            if (_isRotating)
+            {
+                transform.rotation=Quaternion.RotateTowards(transform.rotation, _angle, speed*200 * deltaTime);
+                if (Quaternion.Angle(transform.rotation,  _angle) < 0.1f)
+                    ResetRotation();
+            }
+        }
 
-        if (moveTo == Vector2.zero)
-            return;
+        private void LookDir()
+        {
+            var angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
+            var offset=90;
+            if (((Vector2)_lastDir == Vector2.right && (Vector2)_dir == Vector2.left)
+                || ((Vector2)_lastDir == Vector2.up && (Vector2)_dir == Vector2.down))//ver como hacer para cambiar el sentido de giro(no la pregunta esta bien pero no la conseciencia
+            {
+                offset = 90+360;
+            }
+            _angle = Quaternion.Euler(0f, 0f, angle - offset);
+            _lastDir = _dir;
+            _isRotating = true;
+        }
 
-        if (!gridManager.CanMove(moveTo)) return;
+        private void ResetRotation()
+        {
+            _isRotating = false;
+            transform.rotation = _angle;
+        }
 
-        _isMoving = true;
-
-        transform.position += new Vector3(moveTo.x, moveTo.y, 0);
-        
-        Invoke(nameof(ResetMove), 0.1f);
-    }
-
-    private void ResetMove()
-    {
-        _isMoving = false;
+        private void ResetMove()
+        {
+            _isMoving = false;
+            transform.position = _startingPos + _dir;
+        }
     }
 }
