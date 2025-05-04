@@ -15,7 +15,7 @@ namespace Utilities.UpdateManager
 
         void Update()
         {
-            foreach (var u in updatables)//Preguntar que pasa si un elemento es removido durante el for each y si eso lo rompe ver como evitarlo
+            foreach (var u in updatables)//Preguntar que pasa si un elemento es removido durante el for each y si eso lo rompe ,ver como evitarlo
             {
                 u.Tick(Time.deltaTime);
             }

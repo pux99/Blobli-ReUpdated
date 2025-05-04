@@ -20,6 +20,8 @@ namespace Player
             _moveAction = InputSystem.actions.FindAction("Move");
             _startingPos = transform.position;
         }
+        //Preguntarle al profe si se puede cambiar el orden de ejecucion
+        //para que se ejecute primero el customupdate manager y para poder usar el awake y no el start
         private void Start()=> ServiceLocator.Instance.GetService<CustomUpdateManager>().Register(this);
 
         public void Move()
