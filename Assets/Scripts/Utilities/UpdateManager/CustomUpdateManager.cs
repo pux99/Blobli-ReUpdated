@@ -7,7 +7,7 @@ namespace Utilities.UpdateManager
     public class CustomUpdateManager : MonoBehaviour
     {
         private List<IUpdatable> updatables = new List<IUpdatable>();
-
+        
         private void Awake()
         {
             ServiceLocator.Instance.RegisterService(this);

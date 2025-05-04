@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5b2207d2c4b345340b9f5d3ff853574e
+guid: b5b270497be7a0e4c887bcc8da5b8ac1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2314464552801382091
-    second: Blobli_0
+      213: -4024656035691158220
+    second: Fungi_0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +52,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
-  spriteBorder: {x: 14, y: 16, z: 15, w: 16}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blobli_0
+      name: Fungi_0_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 16
-        width: 35
-        height: 32
+        x: 2
+        y: 3
+        width: 27
+        height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcea5fa8f31ae1020800000000000000
-      internalID: 2314464552801382091
+      spriteID: 4352f79b8ac8528c0800000000000000
+      internalID: -4024656035691158220
       vertices: []
       indices: 
       edges: []
@@ -126,7 +126,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Blobli_0: 2314464552801382091
+      Fungi_0_0: -4024656035691158220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

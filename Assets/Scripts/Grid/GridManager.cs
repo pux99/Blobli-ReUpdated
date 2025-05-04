@@ -6,8 +6,7 @@ public class GridManager : MonoBehaviour
 {
     [SerializeField] private Transform player;
     [SerializeField] public Grid grid;
-
-    private Vector3Int nextCell;
+    
     
     [Header("TileMaps")]
     [SerializeField] private Tilemap floorTileMap;
@@ -17,11 +16,17 @@ public class GridManager : MonoBehaviour
     
     public bool CanMove(Vector3 direction)
     {
-        nextCell = grid.WorldToCell(player.position + direction);
+        var nextCell = grid.WorldToCell(player.position + direction);
         
         if (borderTileMap.HasTile(nextCell) || rockTileMap.HasTile(nextCell) || lightTileMap.HasTile(nextCell))
             return false;
         
         return floorTileMap.HasTile(nextCell);
+    }
+
+    public bool IsInLight()
+    {
+        var currentCell = grid.WorldToCell(player.position);
+        return lightTileMap.HasTile(currentCell);
     }
 }

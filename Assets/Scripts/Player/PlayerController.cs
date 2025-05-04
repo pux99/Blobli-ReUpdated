@@ -15,6 +15,7 @@ namespace Player
         private Vector3 _lastDir;
         private Vector3 _startingPos;
         private Quaternion _angle;
+        private GameManager _gameManager;
         private void Awake()
         {
             _moveAction = InputSystem.actions.FindAction("Move");
@@ -22,28 +23,31 @@ namespace Player
         }
         //Preguntarle al profe si se puede cambiar el orden de ejecucion
         //para que se ejecute primero el customupdate manager y para poder usar el awake y no el start
-        private void Start()=> ServiceLocator.Instance.GetService<CustomUpdateManager>().Register(this);
+        private void Start()
+        { 
+            ServiceLocator.Instance.GetService<CustomUpdateManager>().Register(this);
+            _gameManager = ServiceLocator.Instance.GetService<GameManager>();
+        } 
 
         public void Move()
         {
             if (_isMoving) return;
             
             _dir = _moveAction.ReadValue<Vector2>();
-            if (_dir == Vector3.zero)
-                return;
+            if (_dir == Vector3.zero) return;
             if (_dir != _lastDir)
             {
                 LookDir();
                 return;
             }
-            if (!gridManager.CanMove(_dir)||_isRotating)
-                return;
+            if (!gridManager.CanMove(_dir)||_isRotating) return;
             _startingPos = transform.position;
             _isMoving = true;
         }
 
         public void Tick(float deltaTime)
         {
+            IsDead();
             if(_isMoving)
             {
                 transform.position = Vector3.MoveTowards(transform.position, _startingPos + _dir, speed * deltaTime);
@@ -82,6 +86,17 @@ namespace Player
         {
             _isMoving = false;
             transform.position = _startingPos + _dir;
+            AddStep();
+        }
+
+        private void IsDead()
+        {
+            if (gridManager.IsInLight()) gameObject.SetActive(false);
+        }
+
+        void AddStep()
+        {
+            _gameManager.Step();
         }
     }
 }
