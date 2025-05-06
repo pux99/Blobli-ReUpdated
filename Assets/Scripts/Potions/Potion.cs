@@ -9,7 +9,7 @@ public class Potion : MonoBehaviour
 {
     [Header("Drawing Shape")]
     [Tooltip("Temporary")]
-    [SerializeField] private ShadowShape shape; //This should not be here, it should be set by the Inventory
+    [SerializeField] private SO_ShadowShape shape; //This should not be here, it should be set by the Inventory
     
 
     #region Private var
@@ -59,7 +59,7 @@ public class Potion : MonoBehaviour
 
         _markedPositions.Clear();
     }
-    public void SetShape(ShadowShape newShape) //The inventory should set the shape of the potion
+    public void SetShape(SO_ShadowShape newShape) //The inventory should set the shape of the potion
     {
         shape = newShape;
     }

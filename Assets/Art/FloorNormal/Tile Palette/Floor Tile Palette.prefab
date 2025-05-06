@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 4935527572277055694}
   - component: {fileID: 139200308464937656}
   m_Layer: 0
-  m_Name: Flor Tile Palette
+  m_Name: Floor Tile Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
