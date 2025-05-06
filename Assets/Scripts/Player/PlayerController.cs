@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utilities.UpdateManager;
@@ -6,8 +7,8 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour, IUpdatable
     {
-        [SerializeField] private GridManager gridManager;
         [SerializeField] private float speed;
+        
         private InputAction _moveAction;
         private bool _isMoving;
         private bool _isRotating;
@@ -15,7 +16,24 @@ namespace Player
         private Vector3 _lastDir;
         private Vector3 _startingPos;
         private Quaternion _angle;
+        
         private GameManager _gameManager;
+        private GridManager _gridManager;
+
+        public Potion currentPotion;
+
+        private void Update() //To test the potion.
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                currentPotion.ShowMarker(_lastDir);
+            }            
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                currentPotion.UsePotion();
+            }
+        }
+
         private void Awake()
         {
             _moveAction = InputSystem.actions.FindAction("Move");
@@ -27,6 +45,7 @@ namespace Player
         { 
             ServiceLocator.Instance.GetService<CustomUpdateManager>().Register(this);
             _gameManager = ServiceLocator.Instance.GetService<GameManager>();
+            _gridManager = ServiceLocator.Instance.GetService<GridManager>();
         } 
 
         public void Move()
@@ -40,7 +59,7 @@ namespace Player
                 LookDir();
                 return;
             }
-            if (!gridManager.CanMove(_dir)||_isRotating) return;
+            if (!_gridManager.CanMove(_dir)||_isRotating) return;
             _startingPos = transform.position;
             _isMoving = true;
         }
@@ -66,8 +85,7 @@ namespace Player
         {
             var angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
             var offset=90;
-            if (((Vector2)_lastDir == Vector2.right && (Vector2)_dir == Vector2.left)
-                || ((Vector2)_lastDir == Vector2.up && (Vector2)_dir == Vector2.down))//ver como hacer para cambiar el sentido de giro(no la pregunta esta bien pero no la conseciencia
+            if (((Vector2)_lastDir == Vector2.right && (Vector2)_dir == Vector2.left) || ((Vector2)_lastDir == Vector2.up && (Vector2)_dir == Vector2.down))//ver como hacer para cambiar el sentido de giro(no la pregunta esta bien pero no la conseciencia
             {
                 offset = 90+360;
             }
@@ -80,18 +98,20 @@ namespace Player
         {
             _isRotating = false;
             transform.rotation = _angle;
+            currentPotion.ResetMarker();
         }
 
         private void ResetMove()
         {
             _isMoving = false;
             transform.position = _startingPos + _dir;
+            currentPotion.ResetMarker();
             AddStep();
         }
 
         private void IsDead()
         {
-            if (gridManager.IsInLight()) gameObject.SetActive(false);
+            if (_gridManager.IsInLight()) gameObject.SetActive(false);
         }
 
         void AddStep()

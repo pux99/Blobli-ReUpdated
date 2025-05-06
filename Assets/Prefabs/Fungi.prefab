@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6956850344807685466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6863580574312635226}
+  - component: {fileID: 6813825505983639220}
+  - component: {fileID: 1191853201770839724}
+  m_Layer: 0
+  m_Name: Fungi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6863580574312635226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956850344807685466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6813825505983639220
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956850344807685466}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: b5b270497be7a0e4c887bcc8da5b8ac1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1191853201770839724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956850344807685466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40093656dcc4c8941ba4f0c1b18f9177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileVariants:
+  - {fileID: 11400000, guid: 2e1edf98a0ca98d49b2b3d77ff8d253e, type: 2}
+  - {fileID: 11400000, guid: 4d608c70134af4a409270c8bd7c1e6bd, type: 2}
+  - {fileID: 11400000, guid: 74b20eb7047896d45a9acb03b6bda992, type: 2}
+  - {fileID: 11400000, guid: af40e06f0e3b31e468039cce8662d65b, type: 2}
+  - {fileID: 11400000, guid: 2f33d672edc9ae940b794d58665f1e2d, type: 2}
+  - {fileID: 11400000, guid: 96109917b73ff984089b2052a9229e68, type: 2}
+  - {fileID: 11400000, guid: f1d8de466fd6e274883f74c9409a010f, type: 2}
+  - {fileID: 11400000, guid: 3e8d8a17cde5f704da2425d3643df1cd, type: 2}
+  - {fileID: 11400000, guid: fb159e40fdfba744095503a24e48bdca, type: 2}
+  - {fileID: 11400000, guid: 26905830ab51ea54fa8c7a86ea9e79ce, type: 2}
+  - {fileID: 11400000, guid: 2ed6f4cc1582bf344bfaf8d18c2d12e9, type: 2}
+  - {fileID: 11400000, guid: 20f35ba9e91a8954e93d6a72668f2fc5, type: 2}
+  - {fileID: 11400000, guid: 6d6e01281e98dda4ab64bfe7574c1894, type: 2}
+  - {fileID: 11400000, guid: 14834353da60a5c49b0daf22ce4c0898, type: 2}
+  - {fileID: 11400000, guid: 799092caa9aa6584fad1ee099fc30bda, type: 2}
+  - {fileID: 11400000, guid: 18f2cfab1cf428741a3bdb82076ce00b, type: 2}
+  spriteRenderer: {fileID: 6813825505983639220}
+  offSprite: {fileID: 21300000, guid: b5b270497be7a0e4c887bcc8da5b8ac1, type: 3}
+  onSprite: {fileID: 21300000, guid: 7cb6944b9cea3324c9d66451ef0db74f, type: 3}
+  OnToOff: 2
+  OffToOn: 4
