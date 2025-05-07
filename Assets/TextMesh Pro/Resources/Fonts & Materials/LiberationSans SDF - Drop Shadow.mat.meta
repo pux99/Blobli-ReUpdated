@@ -1,7 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat.meta
+guid: e73a58f6e2794ae7b1b7e50b7fb811b0
+timeCreated: 1484172806
+========
+guid: 2e498d1c8094910479dc3e1b768306a4
+timeCreated: 1484171803
+>>>>>>>> Stashed changes:Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset.meta
+licenseType: Pro
+=======
+<<<<<<<< HEAD:Assets/Art/Tiles/FloorLight/Tile Palette/ShadowIndicator.asset.meta
+guid: 77de894faa8a934478009ed2000253ee
+========
 guid: e73a58f6e2794ae7b1b7e50b7fb811b0
 timeCreated: 1484172806
 licenseType: Pro
+>>>>>>>> 3722c47c7999356b8e0f43f80ed7125b42d6f5d3:Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat.meta
+>>>>>>> Stashed changes
 NativeFormatImporter:
   userData: 
   assetBundleName: 

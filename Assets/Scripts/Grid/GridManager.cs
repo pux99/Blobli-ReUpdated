@@ -21,8 +21,8 @@ namespace Grid
             public Tilemap shadow;
             public Tilemap rock;
         }
-
-        [FormerlySerializedAs("tilemaps")] [SerializeField] private TileMapGroup tileMaps;
+        
+        [SerializeField] private TileMapGroup tileMaps;
         public TileMapGroup TileMaps => tileMaps;
     
         private void Awake() => ServiceLocator.Instance.RegisterService(this);
@@ -45,9 +45,14 @@ namespace Grid
             var currentCell = grid.WorldToCell(player.position);
             return (tileMaps.light.HasTile(currentCell) && tileMaps.light.GetTile(currentCell) != shadowTile);
         }
+        public bool CanPlaceShadow(Vector2Int pos)
+        {
+            var pos3 = new Vector3Int(pos.x, pos.y, 0);
+            return tileMaps.floor.HasTile(pos3);
+        }
         public bool CanPlaceShadow(Vector3Int pos)
         {
-            return tileMaps.floor.HasTile(pos);
+            return tileMaps.floor.HasTile(pos) && !tileMaps.rock.HasTile(pos);
         }
         public Vector3Int PlayerTile()
         {

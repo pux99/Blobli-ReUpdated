@@ -19,29 +19,38 @@ namespace Potions
         private Tilemap _shadowMap; //Map in which it will paint
 
         #endregion
-        public bool Marking { get; private set; } = false;
+        public bool ShadowIndicator { get; private set; } = false;
     
         private void Start()
         {
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
             _shadowMap = _gridManager.TileMaps.shadow; //Has its color set to black and opacity to 200.
         }
-        public void ShowMarker(Vector3 dir) //Shows where the shadow would be placed
+        public void ShowIndicator(Vector3 dir) //Shows where the shadow would be placed
         {
-            ResetMarker();
-            Marking = true;
-        
+            ClearIndicator();
+            ShadowIndicator = true;
+            
             Vector3Int playerPos = _gridManager.PlayerTile();
             Vector3Int direction = Vector3Int.RoundToInt(dir);
             Vector3Int forward = playerPos + direction;
+            
+            _markedPositions = shape.relativePositions.Select(rel => RotateDirection(rel, direction)).Select(rotated => forward + new Vector3Int(rotated.x, rotated.y, 0)).ToList();
 
-            foreach (var rel in shape.relativePositions)
+            var canPlaceAll = _markedPositions.All(pos => _gridManager.CanPlaceShadow(pos));
+            var indicatorColor = canPlaceAll ? new Color(0, 0, 0, 200f / 255f) : new Color(1, 0, 0, 200f / 255f);
+            _shadowMap.color = indicatorColor;
+
+            foreach (var pos in _markedPositions)
             {
-                Vector2Int rotated = RotateDirection(rel, direction);
-                Vector3Int pos = forward + new Vector3Int(rotated.x, rotated.y, 0);
                 _shadowMap.SetTile(pos, _gridManager.ShadowTile);
-                _markedPositions.Add(pos);
             }
+        }
+
+        public void HideIndicator()
+        {
+            ShadowIndicator = false;
+            ClearIndicator();
         }
         public void UsePotion() //Sets shadow on the marker positions
         {
@@ -50,20 +59,19 @@ namespace Potions
                 _gridManager.TileMaps.light.SetTile(pos, _gridManager.ShadowTile);
             }
 
-            ResetMarker();
+            ClearIndicator();
         }
         public void SetShape(SO_ShadowShape newShape) //The inventory should set the shape of the potion
         {
             shape = newShape;
         }
-        private void ResetMarker() //Resets the marked positions
+        private void ClearIndicator() //Resets the marked positions
         {
             foreach (var pos in _markedPositions)
             {
                 _shadowMap.SetTile(pos, null);
             }
-
-            Marking = false;
+            
             _markedPositions.Clear();
         }
         private Vector2Int RotateDirection(Vector2Int pos, Vector3Int dir)

@@ -28,7 +28,7 @@ namespace Player
         {
             if (Input.GetKeyDown(KeyCode.L))
             {
-                currentPotion.ShowMarker(_lastDir);
+                currentPotion.ShowIndicator(_lastDir);
             }            
             if (Input.GetKeyDown(KeyCode.K))
             {
@@ -98,13 +98,14 @@ namespace Player
 
         private void ResetRotation()
         {
+            if (currentPotion.ShadowIndicator) currentPotion.ShowIndicator(_lastDir);
             _isRotating = false;
             transform.rotation = _angle;
         }
 
         private void ResetMove()
         {
-            if (currentPotion.Marking) currentPotion.ShowMarker(_lastDir);
+            currentPotion.HideIndicator();
             _isMoving = false;
             transform.position = _startingPos + _dir;
             AddStep();
