@@ -4,9 +4,11 @@ using UnityEngine.Pool;
 public class GemPool
 {
     private readonly ObjectPool<Gem> _pool;
+    private GemSpritePair _pair;
 
-    public GemPool(GameObject prefab, Transform parent = null, int defaultCapacity = 10, int maxSize = 100)
+    public GemPool(GemSpritePair pair, GameObject prefab, Transform parent = null, int defaultCapacity = 10, int maxSize = 100)
     {
+        _pair = pair;
         _pool = new ObjectPool<Gem>(
             createFunc: () =>
             {
@@ -27,6 +29,14 @@ public class GemPool
     {
         Gem gem = _pool.Get();
         gem.Type = type;
+        gem.setSprite(_pair);
+        return gem;
+    }
+    public Gem CreateGremWithGameobject(GemType type,GameObject gameObject)
+    {
+        Gem gem = new Gem(gameObject);
+        gem.Type = type;
+        gem.setSprite(_pair);
         return gem;
     }
 

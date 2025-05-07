@@ -22,7 +22,6 @@ public class InventoryButton :MonoBehaviour,IUpdatable
 
     public void Tick(float deltaTime)
     {
-        Debug.Log(inventorySprite.transform.localPosition);
         if (_move)
         {
             _timer += deltaTime;

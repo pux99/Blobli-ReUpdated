@@ -119,5 +119,10 @@ namespace Player
         {
             _gameManager.Step();
         }
+        public void TryPickUp()
+        {
+            var a = ServiceLocator.Instance.GetService<GemManager>().PickupGem(transform.position)?.Type;
+            Debug.Log(a);
+        }
     }
 }
