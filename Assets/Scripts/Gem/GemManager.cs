@@ -10,7 +10,7 @@ public class GemManager : MonoBehaviour
     private GemPool _gemPool;
     [SerializeField] GemSpritePair _gemSpritePair;
     public Dictionary<GameObject, Gem> Gems = new Dictionary<GameObject, Gem>();
-    public List<SpriteRenderer> Renderers = new List<SpriteRenderer>();
+    
     private void Awake()
     {
         _gemPool = new GemPool(_gemSpritePair,gemPrefab, transform, 10);
@@ -21,10 +21,6 @@ public class GemManager : MonoBehaviour
     private void SetUpGems()
     {
         foreach (var item in GetComponentsInChildren<SpriteRenderer>())
-        {
-            Renderers.Add(item);
-        }
-        foreach (var item in Renderers)
         {
             Gem gem = _gemPool.CreateGremWithGameobject(_gemSpritePair.keyValuePairs[item.sprite], item.gameObject);
             Gems.Add(gem.GameObject, gem);
@@ -39,10 +35,16 @@ public class GemManager : MonoBehaviour
             float dist = Vector2.Distance(pos, obj.transform.position);
             if (dist < .4f)
             {
-                return Gems[obj];
+                var g = Gems[obj];
+                RemoveGem(obj);
+                return g;
             }
         }
         return default;
+    }
+    public void RemoveGem(GameObject go)
+    {
+        Gems.Remove(go);
     }
     void GetNewGem()
     {

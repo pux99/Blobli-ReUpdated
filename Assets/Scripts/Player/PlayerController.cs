@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Utilities;
 using Utilities.UpdateManager;
+using System.Collections.Generic;
 
 namespace Player
 {
@@ -23,6 +24,7 @@ namespace Player
         private GridManager _gridManager;
 
         public Potion currentPotion;
+        public List<Gem> GemsInInventory= new List<Gem>();
 
         private void Update() //To test the potion.
         {
@@ -122,8 +124,12 @@ namespace Player
         }
         public void TryPickUp()
         {
-            var a = ServiceLocator.Instance.GetService<GemManager>().PickupGem(transform.position)?.Type;
-            Debug.Log(a);
+            Gem gem = ServiceLocator.Instance.GetService<GemManager>().PickupGem(transform.position);
+            if (gem == null) return;
+            GemsInInventory.Add(gem);
+            gem.GameObject.transform.parent = transform;
+            gem.GameObject.SetActive(false);
+            Debug.Log(gem.Type);
         }
     }
 }
