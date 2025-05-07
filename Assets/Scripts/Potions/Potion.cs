@@ -20,14 +20,17 @@ public class Potion : MonoBehaviour
 
     #endregion
     
+    public bool marking = false;
+    
     private void Start()
     {
         _gridManager = ServiceLocator.Instance.GetService<GridManager>();
         _shadowMap = _gridManager.Tilemaps.shadow; //Has its color set to black and opacity to 200.
     }
     public void ShowMarker(Vector3 dir) //Shows where the shadow would be placed
-    { 
+    {
         ResetMarker();
+        marking = true;
         
         Vector3Int playerPos = _gridManager.PlayerTile();
         Vector3Int direction = Vector3Int.RoundToInt(dir);
@@ -50,18 +53,19 @@ public class Potion : MonoBehaviour
 
         ResetMarker();
     }
-    public void ResetMarker() //Resets the marked positions
+    public void SetShape(SO_ShadowShape newShape) //The inventory should set the shape of the potion
+    {
+        shape = newShape;
+    }
+    private void ResetMarker() //Resets the marked positions
     {
         foreach (var pos in _markedPositions)
         {
             _shadowMap.SetTile(pos, null);
         }
 
+        marking = false;
         _markedPositions.Clear();
-    }
-    public void SetShape(SO_ShadowShape newShape) //The inventory should set the shape of the potion
-    {
-        shape = newShape;
     }
     private Vector2Int RotateDirection(Vector2Int pos, Vector3Int dir)
     {

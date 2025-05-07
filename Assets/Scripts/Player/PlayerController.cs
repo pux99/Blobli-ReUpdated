@@ -98,14 +98,13 @@ namespace Player
         {
             _isRotating = false;
             transform.rotation = _angle;
-            currentPotion.ResetMarker();
         }
 
         private void ResetMove()
         {
+            if (currentPotion.marking) currentPotion.ShowMarker(_lastDir);
             _isMoving = false;
             transform.position = _startingPos + _dir;
-            currentPotion.ResetMarker();
             AddStep();
         }
 
