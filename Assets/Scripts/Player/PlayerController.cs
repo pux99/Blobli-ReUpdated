@@ -23,8 +23,19 @@ namespace Player
         private GridManager _gridManager;
 
         public Potion currentPotion;
-        private bool _usingPotion;
-        
+
+        private void Update() //To test the potion.
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                currentPotion.ShowIndicator(_lastDir);
+            }            
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                currentPotion.UsePotion();
+            }
+        }
+
         private void Awake()
         {
             _moveAction = InputSystem.actions.FindAction("Move");
@@ -54,6 +65,7 @@ namespace Player
             _startingPos = transform.position;
             _isMoving = true;
         }
+
         public void Tick(float deltaTime)
         {
             IsDead();
@@ -70,11 +82,7 @@ namespace Player
                     ResetRotation();
             }
         }
-        public void UsePotion() //Broken, it gets call to many times When I press the E key
-        {
-            Debug.Log(this.name);
-            currentPotion.UsePotion(_lastDir);
-        }
+
         private void LookDir()
         {
             var angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
@@ -87,12 +95,14 @@ namespace Player
             _lastDir = _dir;
             _isRotating = true;
         }
+
         private void ResetRotation()
         {
             if (currentPotion.ShadowIndicator) currentPotion.ShowIndicator(_lastDir);
             _isRotating = false;
             transform.rotation = _angle;
         }
+
         private void ResetMove()
         {
             currentPotion.HideIndicator();
@@ -100,10 +110,12 @@ namespace Player
             transform.position = _startingPos + _dir;
             AddStep();
         }
+
         private void IsDead()
         {
             if (_gridManager.IsInLight()) gameObject.SetActive(false);
         }
+
         void AddStep()
         {
             _gameManager.Step();
