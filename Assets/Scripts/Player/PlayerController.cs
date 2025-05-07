@@ -102,7 +102,7 @@ namespace Player
 
         private void ResetMove()
         {
-            if (currentPotion.marking) currentPotion.ShowMarker(_lastDir);
+            if (currentPotion.Marking) currentPotion.ShowMarker(_lastDir);
             _isMoving = false;
             transform.position = _startingPos + _dir;
             AddStep();

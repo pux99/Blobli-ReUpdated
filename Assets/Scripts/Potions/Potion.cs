@@ -11,7 +11,6 @@ public class Potion : MonoBehaviour
     [Tooltip("Temporary")]
     [SerializeField] private SO_ShadowShape shape; //This should not be here, it should be set by the Inventory
     
-
     #region Private var
     
     private List<Vector3Int> _markedPositions = new(); //List that shows where the shadow would be placed
@@ -19,8 +18,7 @@ public class Potion : MonoBehaviour
     private Tilemap _shadowMap; //Map in which it will paint
 
     #endregion
-    
-    public bool marking = false;
+    public bool Marking { get; private set; } = false;
     
     private void Start()
     {
@@ -30,7 +28,7 @@ public class Potion : MonoBehaviour
     public void ShowMarker(Vector3 dir) //Shows where the shadow would be placed
     {
         ResetMarker();
-        marking = true;
+        Marking = true;
         
         Vector3Int playerPos = _gridManager.PlayerTile();
         Vector3Int direction = Vector3Int.RoundToInt(dir);
@@ -64,7 +62,7 @@ public class Potion : MonoBehaviour
             _shadowMap.SetTile(pos, null);
         }
 
-        marking = false;
+        Marking = false;
         _markedPositions.Clear();
     }
     private Vector2Int RotateDirection(Vector2Int pos, Vector3Int dir)
@@ -75,5 +73,4 @@ public class Potion : MonoBehaviour
         if (dir == Vector3Int.left) return new Vector2Int(-pos.y, pos.x); // Left (-1, 0) → -90°
         return pos; // No rotation
     }
-    
 }
