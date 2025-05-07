@@ -24133,7 +24133,7 @@ MonoBehaviour:
   player: {fileID: 1233656815}
   grid: {fileID: 1628374221}
   shadowTile: {fileID: 11400000, guid: a36858110633d314fb4696c63b567525, type: 2}
-  tilemaps:
+  tileMaps:
     border: {fileID: 1300129902}
     floor: {fileID: 1422791766}
     light: {fileID: 382803121}
@@ -24180,6 +24180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191853201770839724, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: offToOn
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1

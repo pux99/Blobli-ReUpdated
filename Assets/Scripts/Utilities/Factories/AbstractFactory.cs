@@ -1,6 +1,4 @@
-using UnityEngine;
-
-namespace Factory.Essentials
+namespace Utilities.Factories
 {
   public abstract class AbstractFactory<TObject, TConfig> 
         where TObject : IConfigurable<TConfig>, new()

@@ -1,4 +1,4 @@
-namespace Factory.Essentials
+namespace Utilities.Factories
 {
         public interface IConfigurable<in TConfig>
         {

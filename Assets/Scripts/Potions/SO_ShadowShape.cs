@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ShadowShape")]
-public class SO_ShadowShape : ScriptableObject
+namespace Potions
 {
-    public List<Vector2Int> relativePositions;
+    [CreateAssetMenu(menuName = "ShadowShape")]
+    public class SO_ShadowShape : ScriptableObject
+    {
+        public List<Vector2Int> relativePositions;
+    }
 }

@@ -1,4 +1,4 @@
-namespace Factory.Essentials
+namespace Utilities.Factories
 {
     public class Factory<TObject, TConfig> : AbstractFactory<TObject, TConfig>
         where TObject : IConfigurable<TConfig>, new()

@@ -1,5 +1,6 @@
 using UnityEngine;
-namespace Factory.Essentials
+
+namespace Utilities.Factories
 {
     public abstract class AbstractFactoryMonoBehaviour<TObject, TConfig> where TObject : MonoBehaviour ,IConfigurable<TConfig>
     {
