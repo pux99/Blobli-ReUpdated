@@ -11,48 +11,62 @@ namespace Potions
         [Header("Drawing Shape")]
         [Tooltip("Temporary")]
         [SerializeField] private SO_ShadowShape shape; //This should not be here, it should be set by the Inventory
-    
-        #region Private var
+        public bool ShadowIndicator { get; private set; } = false;
+        #region Private variables
     
         private List<Vector3Int> _markedPositions = new(); //List that shows where the shadow would be placed
         private GridManager _gridManager;
         private Tilemap _shadowMap; //Map in which it will paint
+        private Vector3 _playerDir;
 
         #endregion
-        public bool ShadowIndicator { get; private set; } = false;
-    
+        
         private void Start()
         {
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
-            _shadowMap = _gridManager.TileMaps.shadow; //Has its color set to black and opacity to 200.
+            _shadowMap = _gridManager.TileMaps.shadow;
         }
-        public void ShowIndicator(Vector3 dir) //Shows where the shadow would be placed
+        
+        public void UsePotion(Vector3 dir)
         {
-            ClearIndicator();
-            ShadowIndicator = true;
-            
-            Vector3Int playerPos = _gridManager.PlayerTile();
-            Vector3Int direction = Vector3Int.RoundToInt(dir);
-            Vector3Int forward = playerPos + direction;
-            
-            _markedPositions = shape.relativePositions.Select(rel => RotateDirection(rel, direction)).Select(rotated => forward + new Vector3Int(rotated.x, rotated.y, 0)).ToList();
-
-            var canPlaceAll = _markedPositions.All(pos => _gridManager.CanPlaceShadow(pos));
-            var indicatorColor = canPlaceAll ? new Color(0, 0, 0, 200f / 255f) : new Color(1, 0, 0, 200f / 255f);
-            _shadowMap.color = indicatorColor;
-
-            foreach (var pos in _markedPositions)
+            _playerDir = dir;
+            if (ShadowIndicator)
             {
-                _shadowMap.SetTile(pos, _gridManager.ShadowTile);
+                SetShadow();
+                ShadowIndicator = false;
+            }
+            else
+            {
+                ShowIndicator();
+                ShadowIndicator = true;
             }
         }
-
         public void HideIndicator()
         {
             ShadowIndicator = false;
             ClearIndicator();
         }
-        public void UsePotion() //Sets shadow on the marker positions
+        public void UpdateRotation(Vector3 dir)
+        {
+            _playerDir = dir;
+            ClearIndicator();
+            Vector3Int direction = Vector3Int.RoundToInt(_playerDir);
+            _markedPositions = CalculatePositions(direction);
+            DrawIndicator(_markedPositions);
+        }
+        public void SetShape(SO_ShadowShape newShape) //The inventory should set the shape of the potion
+        {
+            shape = newShape;
+        }
+
+        private void ShowIndicator() //Shows where the shadow would be placed
+        {
+            ClearIndicator();
+            Vector3Int direction = Vector3Int.RoundToInt(_playerDir);
+            _markedPositions = CalculatePositions(direction);
+            DrawIndicator(_markedPositions);
+        }
+        private void SetShadow() //Sets shadow on the marker positions
         {
             foreach (var pos in _markedPositions.Where(pos => _gridManager.CanPlaceShadow(pos)))
             {
@@ -60,10 +74,6 @@ namespace Potions
             }
 
             ClearIndicator();
-        }
-        public void SetShape(SO_ShadowShape newShape) //The inventory should set the shape of the potion
-        {
-            shape = newShape;
         }
         private void ClearIndicator() //Resets the marked positions
         {
@@ -81,6 +91,24 @@ namespace Potions
             if (dir == Vector3Int.right) return new Vector2Int(pos.y, -pos.x); // Right (1, 0) → 90°
             if (dir == Vector3Int.left) return new Vector2Int(-pos.y, pos.x); // Left (-1, 0) → -90°
             return pos; // No rotation
+        }
+        private List<Vector3Int> CalculatePositions(Vector3Int direction)
+        {
+            var playerPos = _gridManager.PlayerTile();
+            var forward = playerPos + direction;
+
+            return shape.relativePositions.Select(rel => RotateDirection(rel, direction)).Select(rotated => forward + new Vector3Int(rotated.x, rotated.y, 0)).ToList();
+        }
+        private void DrawIndicator(List<Vector3Int> positions)
+        {
+            var canPlaceAll = positions.All(pos => _gridManager.CanPlaceShadow(pos));
+            var indicatorColor = canPlaceAll ? new Color(0, 0, 0, 200f / 255f) : new Color(1, 0, 0, 200f / 255f);
+            _shadowMap.color = indicatorColor;
+
+            foreach (var pos in positions)
+            {
+                _shadowMap.SetTile(pos, _gridManager.ShadowTile);
+            }
         }
     }
 }

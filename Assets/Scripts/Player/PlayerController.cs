@@ -28,13 +28,9 @@ namespace Player
 
         private void Update() //To test the potion.
         {
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                currentPotion.ShowIndicator(_lastDir);
-            }            
             if (Input.GetKeyDown(KeyCode.K))
             {
-                currentPotion.UsePotion();
+                UsePotion();
             }
         }
 
@@ -100,7 +96,7 @@ namespace Player
 
         private void ResetRotation()
         {
-            if (currentPotion.ShadowIndicator) currentPotion.ShowIndicator(_lastDir);
+            if (currentPotion.ShadowIndicator) currentPotion.UpdateRotation(_lastDir);
             _isRotating = false;
             transform.rotation = _angle;
         }
@@ -130,6 +126,11 @@ namespace Player
             gem.GameObject.transform.parent = transform;
             gem.GameObject.SetActive(false);
             Debug.Log(gem.Type);
+        }
+
+        private void UsePotion()
+        {
+            currentPotion.UsePotion(_lastDir);
         }
     }
 }
