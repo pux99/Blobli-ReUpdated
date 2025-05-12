@@ -27,6 +27,7 @@ namespace Player
         private GridManager _gridManager;
         public PotionRecipes recipes;
         private Inventory _inventory;
+        public Inventory Inventory => _inventory;
 
         public Potion currentPotion;
         public List<Gem> GemsInInventory= new List<Gem>();
