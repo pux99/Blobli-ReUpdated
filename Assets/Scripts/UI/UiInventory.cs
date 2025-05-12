@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using GemScripts;
 using Potions;
 using UnityEngine;
@@ -14,8 +15,15 @@ namespace UI
         [SerializeField]private Slot[] stored = new Slot[4];
         [SerializeField]private Slot[] keys = new Slot[2];
         [SerializeField]private Slot potion;
+        
         private void Start()
         {
+            StartCoroutine(Delay());
+        }
+
+        private IEnumerator Delay()
+        {
+            yield return new WaitForEndOfFrame();
             _gemManager = ServiceLocator.Instance.GetService<GemManager>();
             _gemManager.playerInventory.UpdateCrafting += UpdateCrafting;
             _gemManager.playerInventory.UpdateStored += UpdateStorage;

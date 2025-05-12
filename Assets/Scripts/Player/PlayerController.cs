@@ -34,10 +34,6 @@ namespace Player
         {
             _moveAction = InputSystem.actions.FindAction("Move");
             _startingPos = transform.position;
-            _inventory = new Inventory(recipes);
-            _inventory.usePotion+=UsePotion;
-            _inventory.UpdateCraftingNoList += currentPotion.HideIndicator;
-            currentPotion.PotionThrown += _inventory.ClearCrating;
             
         }
         //Preguntarle al profe si se puede cambiar el orden de ejecucion
@@ -45,6 +41,10 @@ namespace Player
         private void Start()
         { 
             ServiceLocator.Instance.GetService<CustomUpdateManager>().Register(this);
+            _inventory = new Inventory(recipes);
+            _inventory.usePotion+=UsePotion;
+            _inventory.UpdateCraftingNoList += currentPotion.HideIndicator;
+            currentPotion.PotionThrown += _inventory.ClearCrating;
             _gameManager = ServiceLocator.Instance.GetService<GameManager>();
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
         } 
@@ -67,6 +67,10 @@ namespace Player
 
         public void Tick(float deltaTime)
         {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                ResetScript.ResetLevel();
+            }
             IsDead();
             if(_isMoving)
             {

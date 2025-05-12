@@ -24,7 +24,7 @@ namespace Player
         private PotionRecipes recipes;
         public Inventory(PotionRecipes recipes)
         {
-            ServiceLocator.Instance.GetService<GemManager>().playerInventory = this;
+            ServiceLocator.Instance.GetService<GemManager>().SetInventory(this);
             UpdateCrafting += CheckForRecipe;
             this.recipes = recipes;
         }

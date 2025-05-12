@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
@@ -19,6 +20,12 @@ namespace GemScripts
             SetUpGems();
 
         }
+
+        public void SetInventory(Inventory inventory)
+        {
+            playerInventory = inventory;
+        }
+        
         private void SetUpGems()
         {
             foreach (var item in GetComponentsInChildren<SpriteRenderer>())
