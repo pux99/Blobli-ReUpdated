@@ -4,20 +4,22 @@ using Utilities.MonoManager;
 using UnityEngine.SceneManagement;
 using Player;
 
-public class Altar : MonoBehaviour, IUpdatable
+public class Altar : MonoBehaviour, IUpdatable, IStartable
 {
     private Inventory _inventory;
     private Transform _playerTransform;
     [SerializeField] private float interactionRange = 1.0f;
     [SerializeField] private KeyCode interactionKey = KeyCode.F;
     [SerializeField] PlayerController playerController;
+    [SerializeField] CustomMonoManager _customMonoManager;
     
     private void Awake()
     {
         ServiceLocator.Instance.RegisterService(this);
+        _customMonoManager.RegisterOnStart(this);
     }
     
-    private void Start()
+    public void Beginning()
     {
         _playerTransform =  playerController.transform;
         

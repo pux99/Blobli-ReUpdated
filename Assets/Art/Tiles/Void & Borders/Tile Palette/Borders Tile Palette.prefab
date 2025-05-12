@@ -42,10 +42,10 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
@@ -181,6 +181,26 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 12
       m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 1, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 13
+      m_TileSpriteIndex: 13
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 2, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 14
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -334,6 +354,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 94f4340bd4b5bfd4aa68c1c5932f8798, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: a23cbf11a7a7b094985459b7e4982ab3, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 0f1e15db84ffd2241ae6520d6c664c41, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: e51d8a22bdfdbed45a323e984f577514, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 7139375241928978045, guid: dd0f68e4a87d2584ca89c663df01c4b6, type: 3}
@@ -361,8 +385,12 @@ Tilemap:
     m_Data: {fileID: -1783881599, guid: dd0f68e4a87d2584ca89c663df01c4b6, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1659570517, guid: dd0f68e4a87d2584ca89c663df01c4b6, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1860123896, guid: dd0f68e4a87d2584ca89c663df01c4b6, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1896115540, guid: dd0f68e4a87d2584ca89c663df01c4b6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 13
+  - m_RefCount: 15
     m_Data:
       e00: 1
       e01: 0
@@ -381,7 +409,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 13
+  - m_RefCount: 15
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -501,10 +529,10 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
@@ -546,7 +574,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2401631605193990964
+--- !u!114 &1916328717371901644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
