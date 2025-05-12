@@ -114,7 +114,9 @@ namespace Player
 
         private void IsDead()
         {
-            if (_gridManager.IsInLight()) gameObject.SetActive(false);
+            if (!_gridManager.IsInLight()) return;
+            gameObject.SetActive(false);
+            _gameManager.Defeat();
         }
 
         void AddStep()

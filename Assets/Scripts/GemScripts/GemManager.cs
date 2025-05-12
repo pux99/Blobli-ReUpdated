@@ -33,7 +33,6 @@ namespace GemScripts
                 Gem gem = _gemPool.CreateGemWithGameobject(gemSpritePair.keyValuePairs[item.sprite], item.gameObject);
                 _gems.Add(gem.GameObject, gem);
                 gem.GameObject.transform.position = item.transform.position;
-                Debug.Log(gem.Type);
             }
         }
         public Gem PickupGem(Vector3 pos)

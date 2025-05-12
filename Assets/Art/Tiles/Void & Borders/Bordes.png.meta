@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58eb3321e0eb162488d95696ce6b102f
-      internalID: 411666659
+      spriteID: 733392632e3e3be469b42e9a99b9f110
+      internalID: 258408126
       vertices: []
       indices: 
       edges: []
@@ -159,8 +159,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0ded03881c97e541a1efef91c474261
-      internalID: -1106016403
+      spriteID: 4a93f91914884324f90e03da9d2e877c
+      internalID: -980886929
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c022352e6dc2be4bbb26b46b3f4c131
-      internalID: -853555932
+      spriteID: 7e278d927860e9d40b6d9343aa14e2f5
+      internalID: -1752372826
       vertices: []
       indices: 
       edges: []
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84bbffb954173f84eb6a207efb28cce7
-      internalID: 1421716468
+      spriteID: ba3ad4d4fe8d0dd4eab29d07afdb0636
+      internalID: 854303084
       vertices: []
       indices: 
       edges: []
@@ -225,8 +225,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49e7de94e199c3a49be5ea09691520bc
-      internalID: 1727980153
+      spriteID: b5204dff5f9a4ba4a93517b1c2a43e06
+      internalID: 1948605236
       vertices: []
       indices: 
       edges: []
@@ -235,8 +235,8 @@ TextureImporter:
       name: Bordes_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 96
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5f2aa23d078fd2479bece8aad3b495d
-      internalID: 2129325383
+      spriteID: 29517fb901e3c6c44a1439790037beb5
+      internalID: -1901801314
       vertices: []
       indices: 
       edges: []
@@ -257,6 +257,28 @@ TextureImporter:
       name: Bordes_7
       rect:
         serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853349127c1e82647843019cd309bced
+      internalID: 458430745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bordes_8
+      rect:
+        serializedVersion: 2
         x: 32
         y: 32
         width: 32
@@ -269,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5482b8bccafc15d45a974626638777d6
-      internalID: -667606326
+      spriteID: 6e3a2e5a27559e6458b23d448b4e86fa
+      internalID: 264417965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bordes_8
+      name: Bordes_9
       rect:
         serializedVersion: 2
         x: 64
@@ -291,14 +313,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e27b0b057896664cb6caefcf374bdaa
-      internalID: 628471307
+      spriteID: c03ae38bcf50cb34db8de3b769efe9e3
+      internalID: -312985937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bordes_9
+      name: Bordes_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0cdb121da783d4488a2bcfaf759f13
+      internalID: -295781722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bordes_11
       rect:
         serializedVersion: 2
         x: 0
@@ -313,14 +357,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65878eaa760f3ec4d98624a5bd2b2d64
-      internalID: 864143171
+      spriteID: 9871b55d71d2c29469d36ff7df3576e9
+      internalID: -1783881599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bordes_10
+      name: Bordes_12
       rect:
         serializedVersion: 2
         x: 32
@@ -335,14 +379,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260a750fc12853c42847ea90de3890e8
-      internalID: 536457937
+      spriteID: 70905d11b3434a14e847a5f8db1c3ada
+      internalID: -1659570517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bordes_11
+      name: Bordes_13
       rect:
         serializedVersion: 2
         x: 64
@@ -357,14 +401,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c111138f20e01024e9ceffa231cfdc8e
-      internalID: 1703898235
+      spriteID: 464953c5095756642aa610272b40400b
+      internalID: -1896115540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bordes_12
+      name: Bordes_14
       rect:
         serializedVersion: 2
         x: 96
@@ -379,8 +423,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 065c298bb12cf144485073e4f4152fb3
-      internalID: 522535856
+      spriteID: c2d0998c8ff6b684b9180f0fb271cb35
+      internalID: -1860123896
       vertices: []
       indices: 
       edges: []
@@ -389,7 +433,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ddc1d2025f9a07d49a96a90939ca3081
+    spriteID: 6f78ecb4a0afe95458f138468ba21aa7
     internalID: 0
     vertices: []
     indices: 
@@ -399,18 +443,21 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bordes_1: 411666659
-      Bordes_10: 536457937
-      Bordes_11: 1703898235
-      Bordes_12: 522535856
-      Bordes_2: -1106016403
-      Bordes_3: -853555932
-      Bordes_4: 1421716468
-      Bordes_5: 1727980153
-      Bordes_6: 2129325383
-      Bordes_7: -667606326
-      Bordes_8: 628471307
-      Bordes_9: 864143171
+      Bordes_0: 7139375241928978045
+      Bordes_1: 258408126
+      Bordes_10: -295781722
+      Bordes_11: -1783881599
+      Bordes_12: -1659570517
+      Bordes_13: -1896115540
+      Bordes_14: -1860123896
+      Bordes_2: -980886929
+      Bordes_3: -1752372826
+      Bordes_4: 854303084
+      Bordes_5: 1948605236
+      Bordes_6: -1901801314
+      Bordes_7: 458430745
+      Bordes_8: 264417965
+      Bordes_9: -312985937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
