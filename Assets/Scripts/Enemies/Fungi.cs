@@ -3,11 +3,12 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using Utilities;
+using Utilities.MonoManager;
 using Random = UnityEngine.Random;
 
 namespace Enemies
 {
-    public class Fungi : MonoBehaviour
+    public class Fungi : MonoBehaviour, IStartable
     {
         [Header("Possible LightTiles")]
         [SerializeField] private TileBase[] tileVariants;
@@ -20,12 +21,18 @@ namespace Enemies
         [Header("Fungi Configuration")]
         [SerializeField] private int onToOff = 2;
         [SerializeField] private int offToOn = 2;
-    
+
+        [SerializeField] private CustomMonoManager _customMonoManager;
         private bool _isOn = false;
         private int _stepsSinceLastChange = 0;
         private Vector3Int _cellPos;
     
         private GridManager _gridManager;
+
+        private void Awake()
+        {
+            _customMonoManager.RegisterOnStart(this);
+        }
         private void OnEnable()
         {
             GameManager.OnStepTaken += OnStepTaken;
@@ -35,7 +42,7 @@ namespace Enemies
         {
             GameManager.OnStepTaken -= OnStepTaken;
         }
-        private void Start()
+        public void Beginning()
         {
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
         
@@ -82,5 +89,6 @@ namespace Enemies
                 map.SetTile(_cellPos, null);
             }
         }
+
     }
 }

@@ -1,23 +1,29 @@
 using UnityEngine;
 using UnityEngine.Serialization;
-using Utilities.UpdateManager;
+using Utilities.MonoManager;
 
-public class InventoryButton :MonoBehaviour,IUpdatable
+public class InventoryButton :MonoBehaviour,IUpdatable, IStartable
 {
     [SerializeField] private AnimationCurve _curve;
     [SerializeField] private GameObject inventorySprite;
+    [SerializeField] private CustomMonoManager _customMonoManager;
+
     private Vector3 _inventorySpriteSp;
     private float _duration;
     private float _timer;
     [SerializeField]private bool _open;
     [SerializeField]private bool _move;
-    
-    void Start()
+
+    private void Awake()
+    {
+        _customMonoManager.RegisterOnStart(this);
+    }
+    public void Beginning()
     {
         _inventorySpriteSp = inventorySprite.transform.localPosition;
         if (_curve.length > 0)
             _duration = _curve.keys[_curve.length - 1].time;
-        ServiceLocator.Instance.GetService<CustomUpdateManager>().Register(this);
+        ServiceLocator.Instance.GetService<CustomMonoManager>().RegisterOnUpdate(this);
     }
 
     public void Tick(float deltaTime)

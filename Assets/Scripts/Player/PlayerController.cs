@@ -3,17 +3,19 @@ using Potions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utilities;
-using Utilities.UpdateManager;
+using Utilities.MonoManager;
 using System.Collections.Generic;
 using GemScripts;
 using UnityEngine.Serialization;
+using System.Collections;
 
 namespace Player
 {
-    public class PlayerController : MonoBehaviour, IUpdatable
+    public class PlayerController : MonoBehaviour, IUpdatable, IStartable
     {
         [SerializeField] private float speed;
-        
+        [SerializeField] private CustomMonoManager _customMonoManager;
+
         private InputAction _moveAction;
         private bool _isMoving;
         private bool _isRotating;
@@ -21,7 +23,6 @@ namespace Player
         private Vector3 _lastDir;
         private Vector3 _startingPos;
         private Quaternion _angle;
-        
         private GameManager _gameManager;
         private GridManager _gridManager;
         public PotionRecipes recipes;
@@ -34,20 +35,21 @@ namespace Player
         {
             _moveAction = InputSystem.actions.FindAction("Move");
             _startingPos = transform.position;
-            
+            _customMonoManager.RegisterOnStart(this);
         }
         //Preguntarle al profe si se puede cambiar el orden de ejecucion
         //para que se ejecute primero el customupdate manager y para poder usar el awake y no el start
-        private void Start()
+        public void Beginning()
         { 
-            ServiceLocator.Instance.GetService<CustomUpdateManager>().Register(this);
+            _customMonoManager.RegisterOnUpdate(this);
             _inventory = new Inventory(recipes);
             _inventory.usePotion+=UsePotion;
             _inventory.UpdateCraftingNoList += currentPotion.HideIndicator;
             currentPotion.PotionThrown += _inventory.ClearCrating;
             _gameManager = ServiceLocator.Instance.GetService<GameManager>();
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
-        } 
+        }
+
 
         public void Move()
         {
@@ -67,10 +69,6 @@ namespace Player
 
         public void Tick(float deltaTime)
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                ResetScript.ResetLevel();
-            }
             IsDead();
             if(_isMoving)
             {

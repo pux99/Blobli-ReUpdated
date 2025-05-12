@@ -4,15 +4,16 @@ using System.Linq;
 using Grid;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Utilities.MonoManager;
 
 namespace Potions
 {
-    public class Potion : MonoBehaviour
+    public class Potion : MonoBehaviour, IStartable
     {
         [Header("Drawing Shape")]
         [Tooltip("Temporary")]
         [SerializeField] private SO_ShadowShape shape; //This should not be here, it should be set by the Inventory
-
+        [SerializeField] private CustomMonoManager _customMonoManager;
         public Action PotionThrown;
         public bool ShadowIndicator { get; private set; } = false;
         #region Private variables
@@ -23,13 +24,19 @@ namespace Potions
         private Vector3 _playerDir;
 
         #endregion
-        
-        private void Start()
+
+        private void Awake()
+        {
+            _customMonoManager.RegisterOnStart(this);
+        }
+
+
+        public void Beginning()
         {
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
             _shadowMap = _gridManager.TileMaps.shadow;
         }
-        
+
         public void UsePotion(Vector3 dir)
         {
             _playerDir = dir;
@@ -114,5 +121,6 @@ namespace Potions
                 _shadowMap.SetTile(pos, _gridManager.ShadowTile);
             }
         }
+
     }
 }
