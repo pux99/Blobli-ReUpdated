@@ -1,6 +1,8 @@
 using System;
 using Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace Utilities
 {
@@ -15,6 +17,16 @@ namespace Utilities
         {
             stepCounter++;
             OnStepTaken?.Invoke();
+        }
+        public void ResetLevel(InputAction.CallbackContext context)
+        {
+            if (context.performed || context.canceled) return;
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
+        public void Defeat()
+        {
+            SceneManager.LoadScene("DefeatScene");
         }
     }
 }
