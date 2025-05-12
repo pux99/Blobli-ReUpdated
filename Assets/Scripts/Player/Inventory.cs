@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using GemScripts;
 using Potions;
 using UnityEngine;
@@ -31,14 +32,20 @@ namespace Player
         {
             if (gem.Type == GemType.KeyGem)
             {
-                
+                for (int i = 0; i < _keys.Length; i++)
+                {
+                    if (_keys[i] != null) continue;
+                    _keys[i] = gem;
+                    UpdateKeys?.Invoke(_keys);
+                    return true;
+                }
+                return false;
             }
             for (int i = 0; i < _stored.Length; i++)
             {
                 if (_stored[i] != null) continue;
                 _stored[i] = gem;
                 UpdateStored?.Invoke(_stored);
-                Debug.Log(_stored);
                 return true;
             }
             return false;
@@ -96,6 +103,11 @@ namespace Player
                         RemoveGem(i);
                 RemoveFromCraft(j);
             }
+        }
+
+        public bool CheckKeys()
+        {
+            return _keys.All(key => key != null);
         }
     }
 }
