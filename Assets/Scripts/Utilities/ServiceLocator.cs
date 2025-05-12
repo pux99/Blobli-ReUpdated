@@ -57,5 +57,8 @@ public class ServiceLocator : MonoBehaviour
             return default;
         }
     }
-    
+    public void ClearServices()
+    {
+        _services.Clear();
+    }
 }
