@@ -1,4 +1,5 @@
 using System;
+using Player;
 using UnityEngine;
 
 namespace Utilities
@@ -9,7 +10,7 @@ namespace Utilities
         private void Awake() => ServiceLocator.Instance.RegisterService(this);
 
         [SerializeField] private int stepCounter;
-    
+        
         public void Step()
         {
             stepCounter++;

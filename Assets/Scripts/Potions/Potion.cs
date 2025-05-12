@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Grid;
@@ -11,6 +12,8 @@ namespace Potions
         [Header("Drawing Shape")]
         [Tooltip("Temporary")]
         [SerializeField] private SO_ShadowShape shape; //This should not be here, it should be set by the Inventory
+
+        public Action PotionThrown;
         public bool ShadowIndicator { get; private set; } = false;
         #region Private variables
     
@@ -34,6 +37,7 @@ namespace Potions
             {
                 SetShadow();
                 ShadowIndicator = false;
+                PotionThrown?.Invoke();
             }
             else
             {

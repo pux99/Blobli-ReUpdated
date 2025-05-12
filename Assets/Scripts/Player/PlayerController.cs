@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 using Utilities;
 using Utilities.UpdateManager;
 using System.Collections.Generic;
+using GemScripts;
+using UnityEngine.Serialization;
 
 namespace Player
 {
@@ -22,22 +24,21 @@ namespace Player
         
         private GameManager _gameManager;
         private GridManager _gridManager;
+        public PotionRecipes recipes;
+        private Inventory _inventory;
 
         public Potion currentPotion;
         public List<Gem> GemsInInventory= new List<Gem>();
-
-        private void Update() //To test the potion.
-        {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                UsePotion();
-            }
-        }
-
+        
         private void Awake()
         {
             _moveAction = InputSystem.actions.FindAction("Move");
             _startingPos = transform.position;
+            _inventory = new Inventory(recipes);
+            _inventory.usePotion+=UsePotion;
+            _inventory.UpdateCraftingNoList += currentPotion.HideIndicator;
+            currentPotion.PotionThrown += _inventory.ClearCrating;
+            
         }
         //Preguntarle al profe si se puede cambiar el orden de ejecucion
         //para que se ejecute primero el customupdate manager y para poder usar el awake y no el start
@@ -120,16 +121,18 @@ namespace Player
         }
         public void TryPickUp()
         {
-            Gem gem = ServiceLocator.Instance.GetService<GemManager>().PickupGem(transform.position);
+            GemManager gemManager = ServiceLocator.Instance.GetService<GemManager>();
+            Gem gem = gemManager.PickupGem(transform.position);
             if (gem == null) return;
-            GemsInInventory.Add(gem);
+            if(!_inventory.TryAddGem(gem))return;
+            gemManager.RemoveGem(gem.GameObject);
             gem.GameObject.transform.parent = transform;
             gem.GameObject.SetActive(false);
-            Debug.Log(gem.Type);
         }
 
-        private void UsePotion()
+        private void UsePotion(SO_ShadowShape indicator)
         {
+            currentPotion.SetShape(indicator);
             currentPotion.UsePotion(_lastDir);
         }
     }

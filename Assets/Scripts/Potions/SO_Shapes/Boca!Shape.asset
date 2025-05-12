@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65ba8bb61eda154ca94834b56e71349, type: 3}
   m_Name: Boca!Shape
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 893810458f4be474bbc205e07baaf92f, type: 3}
   relativePositions:
   - {x: -8, y: 1}
   - {x: -7, y: 1}

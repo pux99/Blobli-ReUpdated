@@ -1,3 +1,4 @@
+using GemScripts;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -29,14 +30,14 @@ public class GemPool
     {
         Gem gem = _pool.Get();
         gem.Type = type;
-        gem.setSprite(_pair);
+        gem.SetSprite(_pair);
         return gem;
     }
-    public Gem CreateGremWithGameobject(GemType type,GameObject gameObject)
+    public Gem CreateGemWithGameobject(GemType type,GameObject gameObject)
     {
         Gem gem = new Gem(gameObject);
         gem.Type = type;
-        gem.setSprite(_pair);
+        gem.SetSprite(_pair);
         return gem;
     }
 

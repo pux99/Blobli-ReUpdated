@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GemScripts;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Gem-Sprite-Pair", menuName = "ScriptableObjects/Gem-Sprite-Pair", order = 1)]
