@@ -12,7 +12,7 @@ namespace GemScripts
         private Dictionary<GameObject, Gem> _gems = new Dictionary<GameObject, Gem>();
         public GameObject gemPrefab;
         
-        public Inventory playerInventory;
+        public Inventory PlayerInventory;
         private void Awake()
         {
             _gemPool = new GemPool(gemSpritePair,gemPrefab, transform, 10);
@@ -23,7 +23,7 @@ namespace GemScripts
 
         public void SetInventory(Inventory inventory)
         {
-            playerInventory = inventory;
+            PlayerInventory = inventory;
         }
         
         private void SetUpGems()

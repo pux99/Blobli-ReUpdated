@@ -8,10 +8,11 @@ public class TextBlinker : MonoBehaviour, IUpdatable
     [SerializeField] private TextMeshProUGUI tmpText;
     [SerializeField] private float blinkSpeed = 1f;
     private Color originalColor;
-    [SerializeField] private CustomMonoManager _customMonoManager;
+    private CustomMonoManager _customMonoManager;
 
     private void Awake()
     {
+        _customMonoManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
         _customMonoManager.RegisterOnUpdate(this);
     }
 

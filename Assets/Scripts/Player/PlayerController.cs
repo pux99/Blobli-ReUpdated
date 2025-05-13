@@ -14,7 +14,7 @@ namespace Player
     public class PlayerController : MonoBehaviour, IUpdatable, IStartable
     {
         [SerializeField] private float speed;
-        [SerializeField] private CustomMonoManager _customMonoManager;
+        private CustomMonoManager _customMonoManager;
 
         private InputAction _moveAction;
         private bool _isMoving;
@@ -36,6 +36,7 @@ namespace Player
         {
             _moveAction = InputSystem.actions.FindAction("Move");
             _startingPos = transform.position;
+            _customMonoManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
             _customMonoManager.RegisterOnStart(this);
         }
         //Preguntarle al profe si se puede cambiar el orden de ejecucion

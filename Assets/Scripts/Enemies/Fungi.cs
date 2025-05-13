@@ -21,8 +21,7 @@ namespace Enemies
         [Header("Fungi Configuration")]
         [SerializeField] private int onToOff = 2;
         [SerializeField] private int offToOn = 2;
-
-        [SerializeField] private CustomMonoManager _customMonoManager;
+        
         private bool _isOn = false;
         private int _stepsSinceLastChange = 0;
         private Vector3Int _cellPos;
@@ -31,7 +30,7 @@ namespace Enemies
 
         private void Awake()
         {
-            _customMonoManager.RegisterOnStart(this);
+            ServiceLocator.Instance.GetService<CustomMonoManager>().RegisterOnStart(this);
         }
         private void OnEnable()
         {

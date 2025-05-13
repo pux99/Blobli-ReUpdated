@@ -25,10 +25,10 @@ namespace UI
         {
             yield return new WaitForEndOfFrame();
             _gemManager = ServiceLocator.Instance.GetService<GemManager>();
-            _gemManager.playerInventory.UpdateCrafting += UpdateCrafting;
-            _gemManager.playerInventory.UpdateStored += UpdateStorage;
-            _gemManager.playerInventory.UpdatePotion += UpdatePotion;
-            _gemManager.playerInventory.UpdateKeys += UpdateKeys;
+            _gemManager.PlayerInventory.UpdateCrafting += UpdateCrafting;
+            _gemManager.PlayerInventory.UpdateStored += UpdateStorage;
+            _gemManager.PlayerInventory.UpdatePotion += UpdatePotion;
+            _gemManager.PlayerInventory.UpdateKeys += UpdateKeys;
             SetUpSlots();
         }
 
@@ -60,9 +60,9 @@ namespace UI
             }
         }
         
-        public void RemoveFromCraft(int slot) => _gemManager.playerInventory.RemoveFromCraft(slot);
-        public void ToCrafting(int slot) => _gemManager.playerInventory.ToCrafting(slot);
-        public void UsePotion() => _gemManager.playerInventory.ThrowPotion();
+        public void RemoveFromCraft(int slot) => _gemManager.PlayerInventory.RemoveFromCraft(slot);
+        public void ToCrafting(int slot) => _gemManager.PlayerInventory.ToCrafting(slot);
+        public void UsePotion() => _gemManager.PlayerInventory.ThrowPotion();
     }
 
     [Serializable]

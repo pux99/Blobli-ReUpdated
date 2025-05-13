@@ -1,28 +1,30 @@
 using System;
 using System.Collections.Generic;
-using GemScripts;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Gem-Sprite-Pair", menuName = "ScriptableObjects/Gem-Sprite-Pair", order = 1)]
-public class GemSpritePair : ScriptableObject
+namespace GemScripts
 {
-    [SerializeField] private List<GemSpritePairForArray> PairArray;
-    public Dictionary<Sprite,GemType> keyValuePairs = new Dictionary<Sprite,GemType>();
-    private void OnValidate()
+    [CreateAssetMenu(fileName = "Gem-Sprite-Pair", menuName = "ScriptableObjects/Gem-Sprite-Pair", order = 1)]
+    public class GemSpritePair : ScriptableObject
     {
-        keyValuePairs.Clear();
-        if (PairArray != null)
+        [SerializeField] private List<GemSpritePairForArray> PairArray;
+        public Dictionary<Sprite,GemType> keyValuePairs = new Dictionary<Sprite,GemType>();
+        private void OnValidate()
         {
-            foreach (var Pair in PairArray)
+            keyValuePairs.Clear();
+            if (PairArray != null)
             {
-                keyValuePairs.Add(Pair.sprite, Pair.gemType);
+                foreach (var Pair in PairArray)
+                {
+                    keyValuePairs.Add(Pair.sprite, Pair.gemType);
+                }
             }
         }
     }
-}
-[Serializable]
-public class GemSpritePairForArray
-{
-    public Sprite sprite;
-    public GemType gemType;
+    [Serializable]
+    public class GemSpritePairForArray
+    {
+        public Sprite sprite;
+        public GemType gemType;
+    }
 }

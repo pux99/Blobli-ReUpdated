@@ -13,7 +13,7 @@ namespace Potions
         [Header("Drawing Shape")]
         [Tooltip("Temporary")]
         [SerializeField] private SO_ShadowShape shape; //This should not be here, it should be set by the Inventory
-        [SerializeField] private CustomMonoManager _customMonoManager;
+        private CustomMonoManager _customMonoManager;
         public Action PotionThrown;
         public bool ShadowIndicator { get; private set; } = false;
         #region Private variables
@@ -27,6 +27,7 @@ namespace Potions
 
         private void Awake()
         {
+            _customMonoManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
             _customMonoManager.RegisterOnStart(this);
         }
 

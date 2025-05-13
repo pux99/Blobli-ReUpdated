@@ -1,46 +1,44 @@
 using System.Collections;
-using UnityEngine;
-using Utilities.MonoManager;
-using UnityEngine.SceneManagement;
 using Player;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using Utilities.MonoManager;
 
-public class Altar : MonoBehaviour, IUpdatable, IStartable
+namespace Altar
 {
-    private Inventory _inventory;
-    private Transform _playerTransform;
-    [SerializeField] private float interactionRange = 1.0f;
-    [SerializeField] private KeyCode interactionKey = KeyCode.F;
-    [SerializeField] PlayerController playerController;
-    [SerializeField] CustomMonoManager _customMonoManager;
+    public class Altar : MonoBehaviour, IUpdatable, IStartable
+    {
+        private Inventory _inventory;
+        private Transform _playerTransform;
+        [SerializeField] private float interactionRange = 1.0f;
+        [SerializeField] private KeyCode interactionKey = KeyCode.F;
+        [SerializeField] PlayerController playerController;
+        private CustomMonoManager _customMonoManager;
     
-    private void Awake()
-    {
-        ServiceLocator.Instance.RegisterService(this);
-        _customMonoManager.RegisterOnStart(this);
-    }
-    
-    public void Beginning()
-    {
-        _playerTransform =  playerController.transform;
-        
-        var updateManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
-        updateManager?.RegisterOnUpdate(this);
-
-        StartCoroutine(delay());
-    }
-
-    private IEnumerator delay()
-    {
-        yield return new WaitForEndOfFrame();
-        _inventory =  playerController.Inventory;
-    }
-    
-    public void Tick(float deltaTime)
-    {
-        if (_playerTransform == null || _inventory == null) return;
-
-        if (Input.GetKeyDown(interactionKey))
+        private void Awake()
         {
+            ServiceLocator.Instance.RegisterService(this);
+            _customMonoManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
+            _customMonoManager.RegisterOnStart(this);
+        }
+    
+        public void Beginning()
+        {
+            _playerTransform =  playerController.transform;
+            _customMonoManager.RegisterOnUpdate(this);
+            StartCoroutine(delay());
+        }
+
+        private IEnumerator delay()
+        {
+            yield return new WaitForEndOfFrame();
+            _inventory =  playerController.Inventory;
+        }
+        public void Tick(float deltaTime)
+        {
+            if (!_playerTransform || _inventory == null) return;
+
+            if (!Input.GetKeyDown(interactionKey)) return;
             if (!(Vector2.Distance(transform.position, _playerTransform.position) <= interactionRange)) return;
             if (_inventory.CheckKeys())
             {
