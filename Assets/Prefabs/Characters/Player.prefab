@@ -251,7 +251,7 @@ MonoBehaviour:
   speed: 5
   _customMonoManager: {fileID: 0}
   recipes: {fileID: 11400000, guid: 59821db4118de8048afbc3f9a562c071, type: 2}
-  currentPotion: {fileID: 7918989170102390138}
+  currentPotion: {fileID: 0}
 --- !u!1001 &8731720775635442044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,14 +318,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4828761098374994935, guid: 18de22f8c2df3814fa444b13b9284aea, type: 3}
   m_PrefabInstance: {fileID: 8731720775635442044}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7918989170102390138 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1497635416402580486, guid: 18de22f8c2df3814fa444b13b9284aea, type: 3}
-  m_PrefabInstance: {fileID: 8731720775635442044}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0509c0e272b38c94ab1834b0474cb32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
