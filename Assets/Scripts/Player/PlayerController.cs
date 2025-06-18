@@ -64,7 +64,7 @@ namespace Player
                 LookDir();
                 return;
             }
-            if (!_gridManager.CanMove(_dir)||_isRotating) return;
+            if (!_gridManager.CanPlayerMove(_dir)||_isRotating) return;
             _startingPos = transform.position;
             _isMoving = true;
         }

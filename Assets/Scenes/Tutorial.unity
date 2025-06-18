@@ -143,8 +143,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3862632}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.211252, y: 0.68811965, z: 0.10115493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -153,7 +153,7 @@ Transform:
   - {fileID: 756275314}
   - {fileID: 940898531}
   - {fileID: 1731155430}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1732696971}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &15200701 stripped
 MonoBehaviour:
@@ -16278,6 +16278,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d7c34025692bb74781d05280d27418d, type: 3}
+--- !u!1 &732211175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+  m_PrefabInstance: {fileID: 1019725006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &756275313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16342,7 +16347,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1191853201770839724, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17605,7 +17611,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1191853201770839724, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17707,18 +17714,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3862633}
     m_Modifications:
-    - target: {fileID: 1191853201770839724, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
-      propertyPath: offToOn
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191853201770839724, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
-      propertyPath: onToOff
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1191853201770839724, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
-      propertyPath: _customMonoManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -17954,6 +17949,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4e1acc0d5092a479e86d63b9a3c3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1118062623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+  m_PrefabInstance: {fileID: 1731155429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1143837807
 GameObject:
   m_ObjectHideFlags: 0
@@ -20126,6 +20126,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+--- !u!1 &1268836924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+  m_PrefabInstance: {fileID: 2008013029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1295548736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6912293464612132315, guid: 2c5a283454ac09b45949f5d2a4c7f9f6, type: 3}
@@ -24016,6 +24021,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1462969993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1626730272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+  m_PrefabInstance: {fileID: 756275313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1731155429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24080,7 +24090,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1191853201770839724, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -24090,6 +24101,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
   m_PrefabInstance: {fileID: 1731155429}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1732696970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1732696971}
+  m_Layer: 0
+  m_Name: Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1732696971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732696970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.211252, y: -0.68811965, z: -0.10115493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3862633}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815125911
 GameObject:
   m_ObjectHideFlags: 0
@@ -24261,6 +24304,118 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: fungiSo
+      value: 
+      objectReference: {fileID: 11400000, guid: bbaafcfba3b1160408c89013e892ded6, type: 2}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: lightBugSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 340a51970035c5946acea5dfb0393ef4, type: 2}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: lightBugConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 340a51970035c5946acea5dfb0393ef4, type: 2}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: fungiSharedConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: bbaafcfba3b1160408c89013e892ded6, type: 2}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: bugSpeeds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: offToOnList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: onToOffList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'bugSpeeds.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: bugIntensities.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'offToOnList.Array.data[0]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'offToOnList.Array.data[1]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'offToOnList.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'offToOnList.Array.data[3]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'offToOnList.Array.data[4]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'onToOffList.Array.data[0]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'onToOffList.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'onToOffList.Array.data[2]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'onToOffList.Array.data[3]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'onToOffList.Array.data[4]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: fungiGameObjects.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'bugIntensities.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'fungiGameObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 732211175}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'fungiGameObjects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1268836924}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'fungiGameObjects.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1626730272}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'fungiGameObjects.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1836679863}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'fungiGameObjects.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1118062623}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: lightBugGameObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: 'lightBugGameObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4448975927613789647, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -24270,6 +24425,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+--- !u!1 &1836679863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+  m_PrefabInstance: {fileID: 940898530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1918396748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24368,7 +24528,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1191853201770839724, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -24670,5 +24831,5 @@ SceneRoots:
   - {fileID: 971497053}
   - {fileID: 2042172939}
   - {fileID: 2094541102}
-  - {fileID: 3862633}
   - {fileID: 711483371}
+  - {fileID: 1732696971}
