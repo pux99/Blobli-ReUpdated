@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 232874802}
   - component: {fileID: 232874801}
   - component: {fileID: 232874800}
-  - component: {fileID: 232874799}
+  - component: {fileID: 232874803}
   m_Layer: 5
   m_Name: LevelButton4
   m_TagString: Untagged
@@ -441,22 +441,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -343, y: -251}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -800, y: -87.10617}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &232874799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232874797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &232874800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,9 +488,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 232874799}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 232874803}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -551,6 +538,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232874797}
   m_CullTransparentMesh: 1
+--- !u!114 &232874803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232874797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1 &440834031
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1082,9 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8015562259332938024, guid: 3a04a1e63ee6c784d99bc7095c476b01, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 931277714}
+    - targetCorrespondingSourceObject: {fileID: 8015562259332938024, guid: 3a04a1e63ee6c784d99bc7095c476b01, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1644011413}
     - targetCorrespondingSourceObject: {fileID: 8015562259332938024, guid: 3a04a1e63ee6c784d99bc7095c476b01, type: 3}
       insertIndex: -1
@@ -1124,7 +1127,7 @@ GameObject:
   - component: {fileID: 701380786}
   - component: {fileID: 701380785}
   - component: {fileID: 701380784}
-  - component: {fileID: 701380783}
+  - component: {fileID: 701380787}
   m_Layer: 5
   m_Name: LevelButton3
   m_TagString: Untagged
@@ -1149,22 +1152,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -517, y: -79}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 550, y: 189.56256}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &701380783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701380781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &701380784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,9 +1199,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 701380783}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 701380787}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1259,6 +1249,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701380781}
   m_CullTransparentMesh: 1
+--- !u!114 &701380787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701380781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1 &724775290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1274,7 @@ GameObject:
   - component: {fileID: 724775295}
   - component: {fileID: 724775294}
   - component: {fileID: 724775293}
-  - component: {fileID: 724775292}
+  - component: {fileID: 724775296}
   m_Layer: 5
   m_Name: LevelButton5
   m_TagString: Untagged
@@ -1296,22 +1299,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128, y: -311}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -300, y: -87.10617}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &724775292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724775290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &724775293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1356,9 +1346,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 724775292}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 724775296}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1406,6 +1396,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724775290}
   m_CullTransparentMesh: 1
+--- !u!114 &724775296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724775290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1 &772568322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1550,147 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8015562259332938024, guid: 3a04a1e63ee6c784d99bc7095c476b01, type: 3}
   m_PrefabInstance: {fileID: 693679267}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &931277713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 931277714}
+  - component: {fileID: 931277716}
+  - component: {fileID: 931277715}
+  m_Layer: 5
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &931277714
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931277713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 901179934}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20.520935, y: 400}
+  m_SizeDelta: {x: 750, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &931277715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931277713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: LEVEL SELECTOR
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4291744729
+  m_fontColor: {r: 0.85098046, g: 0.82745105, b: 0.8078432, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 75
+  m_fontSizeBase: 75
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &931277716
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931277713}
+  m_CullTransparentMesh: 1
+--- !u!1 &946359503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7453193006483062188, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
+  m_PrefabInstance: {fileID: 4543550390137005335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1170268168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,7 +1703,7 @@ GameObject:
   - component: {fileID: 1170268173}
   - component: {fileID: 1170268172}
   - component: {fileID: 1170268171}
-  - component: {fileID: 1170268170}
+  - component: {fileID: 1170268174}
   m_Layer: 5
   m_Name: LevelButton9
   m_TagString: Untagged
@@ -1584,22 +1728,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 565, y: 121}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0.000025749, y: -363.77484}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1170268170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1170268168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &1170268171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1644,9 +1775,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1170268170}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1170268174}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1694,6 +1825,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170268168}
   m_CullTransparentMesh: 1
+--- !u!114 &1170268174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170268168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1 &1235732318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,7 +1850,7 @@ GameObject:
   - component: {fileID: 1235732323}
   - component: {fileID: 1235732322}
   - component: {fileID: 1235732321}
-  - component: {fileID: 1235732320}
+  - component: {fileID: 1235732324}
   m_Layer: 5
   m_Name: LevelButton10
   m_TagString: Untagged
@@ -1731,22 +1875,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 742, y: 21}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 550, y: -363.77484}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1235732320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235732318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &1235732321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1791,9 +1922,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1235732320}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1235732324}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1841,6 +1972,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235732318}
   m_CullTransparentMesh: 1
+--- !u!114 &1235732324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235732318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1 &1411928956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,7 +2269,7 @@ GameObject:
   - component: {fileID: 1462717554}
   - component: {fileID: 1462717553}
   - component: {fileID: 1462717552}
-  - component: {fileID: 1462717551}
+  - component: {fileID: 1462717555}
   m_Layer: 5
   m_Name: LevelButton8
   m_TagString: Untagged
@@ -2150,22 +2294,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 399.99997, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -550, y: -363.77484}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1462717551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462717549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &1462717552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2210,9 +2341,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462717551}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1462717555}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2260,6 +2391,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462717549}
   m_CullTransparentMesh: 1
+--- !u!114 &1462717555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462717549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1 &1463175878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2552,7 @@ GameObject:
   - component: {fileID: 1480913940}
   - component: {fileID: 1480913939}
   - component: {fileID: 1480913938}
-  - component: {fileID: 1480913937}
+  - component: {fileID: 1480913941}
   m_Layer: 5
   m_Name: LevelButton7
   m_TagString: Untagged
@@ -2433,22 +2577,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245, y: -151}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 800, y: -87.10617}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1480913937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480913935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &1480913938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2493,9 +2624,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1480913937}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1480913941}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2543,6 +2674,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480913935}
   m_CullTransparentMesh: 1
+--- !u!114 &1480913941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480913935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1 &1485251543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,7 +2835,7 @@ GameObject:
   - component: {fileID: 1585040358}
   - component: {fileID: 1585040357}
   - component: {fileID: 1585040356}
-  - component: {fileID: 1585040355}
+  - component: {fileID: 1585040359}
   m_Layer: 5
   m_Name: LevelButton2
   m_TagString: Untagged
@@ -2716,22 +2860,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -638, y: 101}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 189.56256}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1585040355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585040353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &1585040356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2776,9 +2907,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1585040355}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1585040359}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2826,11 +2957,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585040353}
   m_CullTransparentMesh: 1
+--- !u!114 &1585040359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585040353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!224 &1644011413 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3025487052411905220, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
   m_PrefabInstance: {fileID: 4543550390137005335}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1644011414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946359503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1 &1800960993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,7 +3079,7 @@ GameObject:
   - component: {fileID: 2063551016}
   - component: {fileID: 2063551015}
   - component: {fileID: 2063551014}
-  - component: {fileID: 2063551013}
+  - component: {fileID: 2063551017}
   m_Layer: 5
   m_Name: LevelButton6
   m_TagString: Untagged
@@ -2947,22 +3104,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 66, y: -251}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 300, y: -87.10617}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2063551013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063551011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142645a54a71ba945aaab587d1591a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Tutorial
 --- !u!114 &2063551014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3007,9 +3151,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2063551013}
-        m_TargetAssemblyTypeName: LevelButtonLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 2063551017}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3057,6 +3201,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063551011}
   m_CullTransparentMesh: 1
+--- !u!114 &2063551017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063551011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: Tutorial
 --- !u!1001 &4543550390137005335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3095,11 +3252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3025487052411905220, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3025487052411905220, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3025487052411905220, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3131,11 +3288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3025487052411905220, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -738
+      value: -550
       objectReference: {fileID: 0}
     - target: {fileID: 3025487052411905220, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 277
+      value: 181.0758
       objectReference: {fileID: 0}
     - target: {fileID: 3025487052411905220, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3173,14 +3330,30 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4282795590
       objectReference: {fileID: 0}
+    - target: {fileID: 6369539353716928634, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1644011414}
+    - target: {fileID: 6369539353716928634, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369539353716928634, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneChanger, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7453193006483062188, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
       propertyPath: m_Name
       value: LevelButton
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1068002002899101019, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7453193006483062188, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1644011414}
   m_SourcePrefab: {fileID: 100100000, guid: 27e2e396ea074e843a4d2dbffd4a888d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
