@@ -24410,7 +24410,7 @@ PrefabInstance:
       objectReference: {fileID: 1118062623}
     - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
       propertyPath: lightBugGameObjects.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
       propertyPath: 'lightBugGameObjects.Array.data[0]'
