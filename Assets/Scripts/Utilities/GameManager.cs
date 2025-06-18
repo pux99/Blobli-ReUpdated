@@ -7,6 +7,7 @@ using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace Utilities
 {
@@ -43,27 +44,24 @@ namespace Utilities
 
         #region Fungi
             [Header("Fungi")]
-            [SerializeField] private FungiSO fungiSo;
+            [SerializeField] private FungiLevelSO fungiInLevel;
             [SerializeField] private GameObject[] fungiGameObjects;
-            [SerializeField] private int[] onToOffList;
-            [SerializeField] private int[] offToOnList;
-
-            
             private List<Fungi> _fungiInstances = new();
             
             private void SetUpFungi()
             {
                 if (fungiGameObjects.Length == 0) return;
+                
                 for (int i = 0; i < fungiGameObjects.Length; i++)
                 {
                     var fungi = new Fungi(
                         fungiGameObjects[i],
                         _gridManager,
-                        fungiSo.RandomLightTile(),
-                        fungiSo.offSprite,
-                        fungiSo.onSprite,
-                        onToOffList[i],
-                        offToOnList[i]
+                        fungiInLevel.RandomLightTile(),
+                        fungiInLevel.offSprite,
+                        fungiInLevel.onSprite,
+                        fungiInLevel.onToOffList[i],
+                        fungiInLevel.offToOnList[i]
                     );
                     OnStepTaken += fungi.OnStepTaken;
                     _fungiInstances.Add(fungi);
@@ -73,13 +71,10 @@ namespace Utilities
 
         #region LightBug
             [Header("LightBug")]
-            [SerializeField] private LightBugSO lightBugSo;
+            [SerializeField] private LightBugGenericSO lightBugGenericSo;
+            [SerializeField] private LightBugLevelSO lightBugInLevel;
             [SerializeField] private GameObject[] lightBugGameObjects;
             
-            //[SerializeField] private List<Vector3Int>[] bugPaths;
-            [SerializeField] private int[] bugIntensities;
-            [SerializeField] private int[] bugSpeeds;
-
             private readonly List<LightBug> _lightBugs = new();
 
             private void SetUpLightBug()
@@ -88,10 +83,10 @@ namespace Utilities
                 {
                     var bug = new LightBug(
                         lightBugGameObjects[i],
-                        lightBugSo,
+                        lightBugGenericSo,
                         _gridManager,
-                        bugIntensities[i],
-                        bugSpeeds[i]
+                        lightBugInLevel.bugIntensities[i],
+                        lightBugInLevel.bugSpeeds[i]
                     );
 
                     _lightBugs.Add(bug);

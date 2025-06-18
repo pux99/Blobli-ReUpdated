@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(menuName = "Enemies/LightBug_Config")]
-public class LightBugSO : ScriptableObject
+public class LightBugGenericSO : ScriptableObject
 {
     [Header("Animation")]
     public Sprite[] animationFrames;

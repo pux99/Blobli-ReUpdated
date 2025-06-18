@@ -9,19 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf382717295e914bb151cb4eb7d356f, type: 3}
-  m_Name: LightBug
+  m_Script: {fileID: 11500000, guid: 29d97f491ad714b42b67e715b29a0814, type: 3}
+  m_Name: Fungi_Level1
   m_EditorClassIdentifier: 
-  animationFrames:
-  - {fileID: 806917784628590662, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: -2659103654846114735, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: -1352780039449957417, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: 2823230939805905642, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: -4923173990558527356, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: -6368692858900460398, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: 6078738100055434161, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: 4438389618886910419, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: -8039474235555039774, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
   tileVariants:
   - {fileID: 11400000, guid: 2e1edf98a0ca98d49b2b3d77ff8d253e, type: 2}
   - {fileID: 11400000, guid: 4d608c70134af4a409270c8bd7c1e6bd, type: 2}
@@ -39,3 +29,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 14834353da60a5c49b0daf22ce4c0898, type: 2}
   - {fileID: 11400000, guid: 799092caa9aa6584fad1ee099fc30bda, type: 2}
   - {fileID: 11400000, guid: 18f2cfab1cf428741a3bdb82076ce00b, type: 2}
+  offSprite: {fileID: 21300000, guid: b5b270497be7a0e4c887bcc8da5b8ac1, type: 3}
+  onSprite: {fileID: 21300000, guid: 7cb6944b9cea3324c9d66451ef0db74f, type: 3}
+  onToOffList: 0100000001000000030000000300000003000000
+  offToOnList: 0400000004000000050000000500000005000000

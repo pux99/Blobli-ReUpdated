@@ -21,9 +21,9 @@ namespace Enemies.LightBug
         private readonly int _intensity;
     
         //SO
-        private readonly LightBugSO _config;
+        private readonly LightBugGenericSO _config;
     
-        public LightBug(GameObject gameObject, LightBugSO config, GridManager gridManager, int intensity, int speed)
+        public LightBug(GameObject gameObject, LightBugGenericSO config, GridManager gridManager, int intensity, int speed)
         {
             _transform = gameObject.transform;
             SpriteRenderer = gameObject.GetComponent<SpriteRenderer>();

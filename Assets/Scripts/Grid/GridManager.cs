@@ -44,11 +44,11 @@ namespace Grid
             if (tileMaps.border.HasTile(nextCell) || tileMaps.rock.HasTile(nextCell)) return false;
             return tileMaps.floor.HasTile(nextCell);
         }
-        public bool IsShadowTile(Vector3Int pos)
+        public bool IsShadowTile(Vector3Int pos) //TileHasShadow
         {
             return !(tileMaps.light.GetTile(pos) == shadowTile);
         }
-        public bool IsInLight() //For the player
+        public bool IsInLight() //Should be changed to TileHasLight
         {
             var currentCell = grid.WorldToCell(player.position);
             return (tileMaps.light.HasTile(currentCell) && tileMaps.light.GetTile(currentCell) != shadowTile);
@@ -60,7 +60,7 @@ namespace Grid
         }
         public Vector3Int PlayerTile()
         {
-            return grid.WorldToCell(player.position);
+            return PositionInGrid(player.position);
         }
         public Vector3Int PositionInGrid(Vector3 position)
         {
