@@ -2,22 +2,22 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Gems
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemies
+  - Floor
+  - Background
+  - Obstacles
+  - Walls
+  - Lights
   - 
   - 
   - 
@@ -41,3 +41,32 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3851834781
+    locked: 0
+  - name: Floor
+    uniqueID: 2326634745
+    locked: 0
+  - name: Lights
+    uniqueID: 2279036157
+    locked: 0
+  - name: Obstacles
+    uniqueID: 3758566141
+    locked: 0
+  - name: Gems
+    uniqueID: 1552852765
+    locked: 0
+  - name: Walls
+    uniqueID: 2684489101
+    locked: 0
+  - name: Enemies
+    uniqueID: 1759464197
+    locked: 0
+  - name: Player
+    uniqueID: 2574991639
+    locked: 0
+  - name: UI
+    uniqueID: 656096617
+    locked: 0
+  m_RenderingLayers:
+  - Default
