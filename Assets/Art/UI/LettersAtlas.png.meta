@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 3d2721338e5f6f94b82610eea1d3f025
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4484744603616082656
+    second: LettersAtlas_0
+  - first:
+      213: 8231999756048586869
+    second: LettersAtlas_1
+  - first:
+      213: 4012015588656022888
+    second: LettersAtlas_2
+  - first:
+      213: 7423156490257607928
+    second: LettersAtlas_3
+  - first:
+      213: 655326796652633606
+    second: LettersAtlas_4
+  - first:
+      213: -2538926639778972773
+    second: LettersAtlas_5
+  - first:
+      213: -7336676443790211626
+    second: LettersAtlas_6
+  - first:
+      213: -5390588360385377793
+    second: LettersAtlas_7
+  - first:
+      213: 6727745066103801180
+    second: LettersAtlas_8
+  - first:
+      213: -1534741000341266245
+    second: LettersAtlas_9
+  - first:
+      213: -2604888823190815684
+    second: LettersAtlas_10
+  - first:
+      213: -4310649743085531576
+    second: LettersAtlas_11
+  - first:
+      213: 303705095274501594
+    second: LettersAtlas_12
+  - first:
+      213: 49201080116501790
+    second: LettersAtlas_13
+  - first:
+      213: -5368719151024860630
+    second: LettersAtlas_14
+  - first:
+      213: 961095560746154474
+    second: LettersAtlas_15
+  - first:
+      213: 8003521328873830126
+    second: LettersAtlas_16
+  - first:
+      213: -2766685045836316645
+    second: LettersAtlas_17
+  - first:
+      213: -1196019861732130073
+    second: LettersAtlas_18
+  - first:
+      213: -7460220577838709297
+    second: LettersAtlas_19
+  - first:
+      213: 5155275320125575632
+    second: LettersAtlas_20
+  - first:
+      213: 8210301841284615074
+    second: LettersAtlas_21
+  - first:
+      213: 2149719910805949024
+    second: LettersAtlas_22
+  - first:
+      213: -1398921189533959677
+    second: LettersAtlas_23
+  - first:
+      213: -7518950372283849223
+    second: LettersAtlas_24
+  - first:
+      213: 3939803367659326037
+    second: LettersAtlas_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LettersAtlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 389
+        width: 311
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eaf2eea4730d3e30800000000000000
+      internalID: 4484744603616082656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_1
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 389
+        width: 302
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578d062c920fd3270800000000000000
+      internalID: 8231999756048586869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_2
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 389
+        width: 302
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8650c2bdbea8da730800000000000000
+      internalID: 4012015588656022888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_3
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 389
+        width: 312
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fca0f19f79540760800000000000000
+      internalID: 7423156490257607928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_4
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 389
+        width: 312
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e564edf30381900800000000000000
+      internalID: 655326796652633606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_5
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 389
+        width: 312
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bb2354cabe3ccd0800000000000000
+      internalID: -2538926639778972773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_6
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 389
+        width: 312
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d588ef45a3ee2a90800000000000000
+      internalID: -7336676443790211626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_7
+      rect:
+        serializedVersion: 2
+        x: 2459
+        y: 389
+        width: 312
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff9cfd06278c035b0800000000000000
+      internalID: -5390588360385377793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_8
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 389
+        width: 172
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5501841e70cd5d50800000000000000
+      internalID: 6727745066103801180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_9
+      rect:
+        serializedVersion: 2
+        x: 3029
+        y: 389
+        width: 312
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb06e6c013183bae0800000000000000
+      internalID: -1534741000341266245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_10
+      rect:
+        serializedVersion: 2
+        x: 3389
+        y: 389
+        width: 302
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c7356aa6399dbd0800000000000000
+      internalID: -2604888823190815684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_11
+      rect:
+        serializedVersion: 2
+        x: 3739
+        y: 389
+        width: 302
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e0240c5ee7d24c0800000000000000
+      internalID: -4310649743085531576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_12
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 389
+        width: 392
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad51050dc2af63400800000000000000
+      internalID: 303705095274501594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 361
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1dd8e62f1ccea000800000000000000
+      internalID: 49201080116501790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_14
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 0
+        width: 312
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a229358706a7e75b0800000000000000
+      internalID: -5368719151024860630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_15
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 0
+        width: 312
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9ba75025f765d00800000000000000
+      internalID: 961095560746154474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_16
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 0
+        width: 352
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee679cf7e38321f60800000000000000
+      internalID: 8003521328873830126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_17
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 0
+        width: 302
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b108a8dfb92ca99d0800000000000000
+      internalID: -2766685045836316645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_18
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 0
+        width: 312
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e20525c542e66fe0800000000000000
+      internalID: -1196019861732130073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_19
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 0
+        width: 352
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc54ddf09e8f77890800000000000000
+      internalID: -7460220577838709297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_20
+      rect:
+        serializedVersion: 2
+        x: 2599
+        y: 0
+        width: 302
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d15c6ff6973b8740800000000000000
+      internalID: 5155275320125575632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_21
+      rect:
+        serializedVersion: 2
+        x: 2949
+        y: 0
+        width: 302
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab418c460ad0f170800000000000000
+      internalID: 8210301841284615074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_22
+      rect:
+        serializedVersion: 2
+        x: 3299
+        y: 0
+        width: 392
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a4c228ed655dd10800000000000000
+      internalID: 2149719910805949024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_23
+      rect:
+        serializedVersion: 2
+        x: 3739
+        y: 0
+        width: 302
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30abf050798069ce0800000000000000
+      internalID: -1398921189533959677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_24
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 0
+        width: 352
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5ea38397257a790800000000000000
+      internalID: -7518950372283849223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LettersAtlas_25
+      rect:
+        serializedVersion: 2
+        x: 4479
+        y: 0
+        width: 311
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ac836f94efca630800000000000000
+      internalID: 3939803367659326037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
