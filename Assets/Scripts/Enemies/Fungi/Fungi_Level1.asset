@@ -31,5 +31,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18f2cfab1cf428741a3bdb82076ce00b, type: 2}
   offSprite: {fileID: 21300000, guid: b5b270497be7a0e4c887bcc8da5b8ac1, type: 3}
   onSprite: {fileID: 21300000, guid: 7cb6944b9cea3324c9d66451ef0db74f, type: 3}
-  onToOffList: 0100000001000000030000000300000003000000
-  offToOnList: 0400000004000000050000000500000005000000
+  fungi:
+  - fungiGameObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+    position: {x: 3, y: -4}
+    onToOff: 1
+    offToOn: 4
+  - fungiGameObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+    position: {x: 3, y: -5}
+    onToOff: 1
+    offToOn: 4
+  - fungiGameObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+    position: {x: -7, y: 6}
+    onToOff: 3
+    offToOn: 5
+  - fungiGameObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+    position: {x: -7, y: 7}
+    onToOff: 3
+    offToOn: 5
+  - fungiGameObject: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+    position: {x: -7, y: 8}
+    onToOff: 3
+    offToOn: 5

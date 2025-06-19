@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccf382717295e914bb151cb4eb7d356f, type: 3}
-  m_Name: LightBugGeneric
+  m_Script: {fileID: 11500000, guid: 0b66ddb80b653cd468dde7b57aede7c8, type: 3}
+  m_Name: LightBug_Level1
   m_EditorClassIdentifier: 
   animationFrames:
   - {fileID: 806917784628590662, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
@@ -39,3 +39,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 14834353da60a5c49b0daf22ce4c0898, type: 2}
   - {fileID: 11400000, guid: 799092caa9aa6584fad1ee099fc30bda, type: 2}
   - {fileID: 11400000, guid: 18f2cfab1cf428741a3bdb82076ce00b, type: 2}
+  lightBugs:
+  - lightBugGameObject: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+    initialPosition: {x: 2, y: 2, z: 0}
+    path:
+    - {x: 1, y: 0}
+    - {x: 1, y: 0}
+    - {x: 1, y: 0}
+    lightIntensity: 1
+    speed: 1

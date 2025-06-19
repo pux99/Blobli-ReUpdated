@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using Enemies.Fungi;
 using Enemies.LightBug;
 using Grid;
-using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
+using UnityEngine.Tilemaps;
 
 namespace Utilities
 {
@@ -22,8 +21,13 @@ namespace Utilities
         void Start()
         {
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
+            StartLevel();
+        }
+
+        private void StartLevel()
+        {
             SetUpFungi();
-            SetUpLightBug();
+            SetUpLightBugs();
         }
         public void Step()
         {
@@ -44,56 +48,68 @@ namespace Utilities
 
         #region Fungi
             [Header("Fungi")]
-            [SerializeField] private FungiLevelSO fungiInLevel;
-            [SerializeField] private GameObject[] fungiGameObjects;
-            private List<Fungi> _fungiInstances = new();
+            [SerializeField] private FungiLevelSO fungiData;
+            private readonly List<Fungi> _spawnedFungi = new();
             
             private void SetUpFungi()
             {
-                if (fungiGameObjects.Length == 0) return;
-                
-                for (int i = 0; i < fungiGameObjects.Length; i++)
+                foreach (var stat in fungiData.fungi)
                 {
-                    var fungi = new Fungi(
-                        fungiGameObjects[i],
+                    var fungiGO = Instantiate(stat.fungiGameObject, (Vector3Int)stat.position, Quaternion.identity);
+                    TileBase tile = fungiData.tileVariants[UnityEngine.Random.Range(0, fungiData.tileVariants.Length)];
+                    
+                    Fungi fungi = new Fungi(
+                        fungiGO,
                         _gridManager,
-                        fungiInLevel.RandomLightTile(),
-                        fungiInLevel.offSprite,
-                        fungiInLevel.onSprite,
-                        fungiInLevel.onToOffList[i],
-                        fungiInLevel.offToOnList[i]
+                        tile,
+                        fungiData.offSprite,
+                        fungiData.onSprite,
+                        stat.onToOff,
+                        stat.offToOn
                     );
                     OnStepTaken += fungi.OnStepTaken;
-                    _fungiInstances.Add(fungi);
+                    _spawnedFungi.Add(fungi);
                 }
             }
-        #endregion
 
-        #region LightBug
-            [Header("LightBug")]
-            [SerializeField] private LightBugGenericSO lightBugGenericSo;
-            [SerializeField] private LightBugLevelSO lightBugInLevel;
-            [SerializeField] private GameObject[] lightBugGameObjects;
-            
-            private readonly List<LightBug> _lightBugs = new();
-
-            private void SetUpLightBug()
+            private void ClearFungi()
             {
-                for (int i = 0; i < lightBugGameObjects.Length; i++)
-                {
-                    var bug = new LightBug(
-                        lightBugGameObjects[i],
-                        lightBugGenericSo,
-                        _gridManager,
-                        lightBugInLevel.bugIntensities[i],
-                        lightBugInLevel.bugSpeeds[i]
-                    );
-
-                    _lightBugs.Add(bug);
-                    OnStepTaken += bug.OnStepTaken;
-                }
+                _spawnedFungi.Clear();
             }
+            
+        #endregion
+        
+        #region LightBug
+        [Header("LightBug")]
+        [SerializeField] private LightBugLevelSO lightBugData;
+        private readonly List<LightBug> _spawnedLightBugs = new();
+            
+        private void SetUpLightBugs()
+        {
+            foreach (var stat in lightBugData.lightBugs)
+            {
+                var lightBugGo = Instantiate(stat.lightBugGameObject, (Vector3Int)stat.initialPosition, Quaternion.identity);
+                TileBase tile = lightBugData.tileVariants[UnityEngine.Random.Range(0, lightBugData.tileVariants.Length)];
+                    
+                LightBug lightBug = new LightBug(
+                    lightBugGo, 
+                    _gridManager,
+                    stat.path,
+                    stat.speed,
+                    stat.lightIntensity,
+                    lightBugData,
+                    stat.initialPosition
+                );
+                OnStepTaken += lightBug.OnStepTaken;
+                _spawnedLightBugs.Add(lightBug);
+            }
+        }
 
+        private void ClearLightBugs()
+        {
+            _spawnedFungi.Clear();
+        }
+            
         #endregion
     }
 }

@@ -7,7 +7,6 @@ namespace Enemies.Fungi
     public class Fungi : Enemy
     {
         //Sprite variables
-        private readonly SpriteRenderer _spriteRenderer;
         private readonly TileBase _lightTile;
         private readonly Sprite _offSprite;
         private readonly Sprite _onSprite;
@@ -20,7 +19,7 @@ namespace Enemies.Fungi
     
         public Fungi(GameObject fungiGo,GridManager gridManager,TileBase tile, Sprite offSprite, Sprite onSprite, int onToOff, int offToOn)
         {
-            _spriteRenderer = fungiGo.GetComponent<SpriteRenderer>();
+            SpriteRenderer = fungiGo.GetComponent<SpriteRenderer>();
             _lightTile = tile;
             _offSprite = offSprite;
             _onSprite = onSprite;
@@ -57,18 +56,18 @@ namespace Enemies.Fungi
         {
             if (!GridManager.IsShadowTile(CellPos))
             {
-                _spriteRenderer.sprite = _offSprite;
+                SpriteRenderer.sprite = _offSprite;
                 return;
             }
 
             if (_isOn)
             {
-                _spriteRenderer.sprite = _onSprite;
+                SpriteRenderer.sprite = _onSprite;
                 LightMap.SetTile(CellPos, _lightTile);
             }
             else
             {
-                _spriteRenderer.sprite = _offSprite;
+                SpriteRenderer.sprite = _offSprite;
                 LightMap.SetTile(CellPos, null);
             }
         }

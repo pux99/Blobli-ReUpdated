@@ -759,7 +759,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LettersAtlas_0: 4484744603616082656
+      LettersAtlas_1: 8231999756048586869
+      LettersAtlas_10: -2604888823190815684
+      LettersAtlas_11: -4310649743085531576
+      LettersAtlas_12: 303705095274501594
+      LettersAtlas_13: 49201080116501790
+      LettersAtlas_14: -5368719151024860630
+      LettersAtlas_15: 961095560746154474
+      LettersAtlas_16: 8003521328873830126
+      LettersAtlas_17: -2766685045836316645
+      LettersAtlas_18: -1196019861732130073
+      LettersAtlas_19: -7460220577838709297
+      LettersAtlas_2: 4012015588656022888
+      LettersAtlas_20: 5155275320125575632
+      LettersAtlas_21: 8210301841284615074
+      LettersAtlas_22: 2149719910805949024
+      LettersAtlas_23: -1398921189533959677
+      LettersAtlas_24: -7518950372283849223
+      LettersAtlas_25: 3939803367659326037
+      LettersAtlas_3: 7423156490257607928
+      LettersAtlas_4: 655326796652633606
+      LettersAtlas_5: -2538926639778972773
+      LettersAtlas_6: -7336676443790211626
+      LettersAtlas_7: -5390588360385377793
+      LettersAtlas_8: 6727745066103801180
+      LettersAtlas_9: -1534741000341266245
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

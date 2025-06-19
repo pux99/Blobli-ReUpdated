@@ -1,9 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.Tilemaps;
+
 [CreateAssetMenu(menuName = "Enemies/LightBug_Level")]
 public class LightBugLevelSO : ScriptableObject
 {
-    [SerializeField] protected internal List<Vector3Int>[] bugPaths;
-    [SerializeField] protected internal int[] bugIntensities;
-    [SerializeField] protected internal int[] bugSpeeds;
+    [Header("Generic for all")]
+    public Sprite[] animationFrames;
+    public TileBase[] tileVariants;
+    
+    [Header("LightBug specific")]
+    [SerializeField] protected internal List<LightBugStats> lightBugs;
 }

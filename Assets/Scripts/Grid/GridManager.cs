@@ -38,11 +38,10 @@ namespace Grid
             return tileMaps.floor.HasTile(nextCell);
         }
 
-        public bool CanEnemyMove(Vector3 currentPos, Vector3 direction, int speed = 1)
+        public bool CanEnemyMove(Vector3Int destination)
         {
-            var nextCell = grid.WorldToCell(currentPos + (direction) * speed);
-            if (tileMaps.border.HasTile(nextCell) || tileMaps.rock.HasTile(nextCell)) return false;
-            return tileMaps.floor.HasTile(nextCell);
+            if (tileMaps.border.HasTile(destination) || tileMaps.rock.HasTile(destination)) return false;
+            return tileMaps.floor.HasTile(destination);
         }
         public bool IsShadowTile(Vector3Int pos) //TileHasShadow
         {
@@ -54,9 +53,9 @@ namespace Grid
             return (tileMaps.light.HasTile(currentCell) && tileMaps.light.GetTile(currentCell) != shadowTile);
         }
 
-        public bool CanPlaceShadow(Vector3Int pos)
+        public bool CanPlaceShadow(Vector3Int cell)
         {
-            return tileMaps.floor.HasTile(pos) && !tileMaps.rock.HasTile(pos);
+            return tileMaps.floor.HasTile(cell) && !tileMaps.rock.HasTile(cell);
         }
         public Vector3Int PlayerTile()
         {
@@ -66,19 +65,30 @@ namespace Grid
         {
             return grid.WorldToCell(position);
         }
-        
-        public IEnumerable<Vector3Int> GetCellsInRadius(Vector3Int center, int radius)
+
+        public bool CanPlaceTile(Vector3Int cell)
         {
+            if (tileMaps.light.HasTile(cell)||tileMaps.rock.HasTile(cell) || tileMaps.shadow.HasTile(cell)) return false;
+            return tileMaps.floor.HasTile(cell);
+        }
+        
+        public List<Vector3Int> GetCellsInRadius(Vector3Int center, int radius)
+        {
+            List<Vector3Int> cellsInRadius = new();
+
             for (int x = -radius; x <= radius; x++)
             {
                 for (int y = -radius; y <= radius; y++)
                 {
-                    if (x * x + y * y <= radius * radius) // Circular radius
+                    if (x * x + y * y <= radius * radius)
                     {
-                        yield return new Vector3Int(center.x + x, center.y + y, 0);
+                        Vector3Int pos = new(center.x + x, center.y + y, 0);
+                        cellsInRadius.Add(pos);
                     }
                 }
             }
+
+            return cellsInRadius;
         }
     }
 }
