@@ -18,10 +18,10 @@ MonoBehaviour:
   - {fileID: -1352780039449957417, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
   - {fileID: 2823230939805905642, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
   - {fileID: -4923173990558527356, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: -6368692858900460398, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
   - {fileID: 6078738100055434161, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
-  - {fileID: 4438389618886910419, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
+  - {fileID: -6368692858900460398, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
   - {fileID: -8039474235555039774, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
+  - {fileID: 4438389618886910419, guid: d9fa4c7f93d3d1944b592b5d5b2271d9, type: 3}
   tileVariants:
   - {fileID: 11400000, guid: 2e1edf98a0ca98d49b2b3d77ff8d253e, type: 2}
   - {fileID: 11400000, guid: 4d608c70134af4a409270c8bd7c1e6bd, type: 2}
@@ -43,8 +43,7 @@ MonoBehaviour:
   - lightBugGameObject: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
     initialPosition: {x: 2, y: 2, z: 0}
     path:
-    - {x: 1, y: 0}
-    - {x: 1, y: 0}
-    - {x: 1, y: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 3, z: 0}
     lightIntensity: 1
     speed: 1

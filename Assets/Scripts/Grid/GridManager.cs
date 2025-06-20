@@ -65,6 +65,11 @@ namespace Grid
         {
             return grid.WorldToCell(position);
         }
+        
+        public Vector3Int PositionInWorld(Vector3 position)
+        {
+            return grid.WorldToCell(position);
+        }
 
         public bool CanPlaceTile(Vector3Int cell)
         {

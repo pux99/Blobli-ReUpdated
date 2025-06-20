@@ -7,7 +7,7 @@ public class LightBugStats
 {
     public GameObject lightBugGameObject;
     public Vector3Int initialPosition;
-    public List<Vector2Int> path;
+    public List<Vector3Int> path;
     public int lightIntensity;
     public int speed;
 }
