@@ -41,9 +41,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18f2cfab1cf428741a3bdb82076ce00b, type: 2}
   lightBugs:
   - lightBugGameObject: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
-    initialPosition: {x: 2, y: 2, z: 0}
-    path:
-    - {x: 0, y: 0, z: 0}
-    - {x: 0, y: 3, z: 0}
+    initialPosition: {x: 1, y: 1, z: 0}
+    directions:
+    - {x: -2, y: -2, z: 0}
+    - {x: 0, y: -5, z: 0}
+    - {x: 5, y: 9, z: 0}
     lightIntensity: 1
     speed: 1

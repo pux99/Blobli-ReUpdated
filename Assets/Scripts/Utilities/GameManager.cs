@@ -13,11 +13,10 @@ namespace Utilities
     public class GameManager : MonoBehaviour
     {
         private GridManager _gridManager;
+        private int stepCounter;
         public static event Action OnStepTaken;
         private void Awake() => ServiceLocator.Instance.RegisterService(this);
-
-        [SerializeField] private int stepCounter;
-
+        
         void Start()
         {
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
@@ -80,35 +79,35 @@ namespace Utilities
         #endregion
         
         #region LightBug
-        [Header("LightBug")]
-        [SerializeField] private LightBugLevelSO lightBugData;
-        private readonly List<LightBug> _spawnedLightBugs = new();
-            
-        private void SetUpLightBugs()
-        {
-            foreach (var stat in lightBugData.lightBugs)
+            [Header("LightBug")]
+            [SerializeField] private LightBugLevelSO lightBugData;
+            private readonly List<LightBug> _spawnedLightBugs = new();
+                
+            private void SetUpLightBugs()
             {
-                var lightBugGo = Instantiate(stat.lightBugGameObject, (Vector3Int)stat.initialPosition, Quaternion.identity);
-                TileBase tile = lightBugData.tileVariants[UnityEngine.Random.Range(0, lightBugData.tileVariants.Length)];
-                    
-                LightBug lightBug = new LightBug(
-                    lightBugGo, 
-                    _gridManager,
-                    stat.directions,
-                    stat.speed,
-                    stat.lightIntensity,
-                    lightBugData,
-                    stat.initialPosition
-                );
-                OnStepTaken += lightBug.OnStepTaken;
-                _spawnedLightBugs.Add(lightBug);
+                foreach (var stat in lightBugData.lightBugs)
+                {
+                    var lightBugGo = Instantiate(stat.lightBugGameObject, (Vector3Int)stat.initialPosition, Quaternion.identity);
+                    TileBase tile = lightBugData.tileVariants[UnityEngine.Random.Range(0, lightBugData.tileVariants.Length)];
+                        
+                    LightBug lightBug = new LightBug(
+                        lightBugGo, 
+                        _gridManager,
+                        stat.directions,
+                        stat.speed,
+                        stat.lightIntensity,
+                        lightBugData,
+                        stat.initialPosition
+                    );
+                    OnStepTaken += lightBug.OnStepTaken;
+                    _spawnedLightBugs.Add(lightBug);
+                }
             }
-        }
 
-        private void ClearLightBugs()
-        {
-            _spawnedLightBugs.Clear();
-        }
+            private void ClearLightBugs()
+            {
+                _spawnedLightBugs.Clear();
+            }
             
         #endregion
     }
