@@ -94,7 +94,7 @@ namespace Utilities
                 LightBug lightBug = new LightBug(
                     lightBugGo, 
                     _gridManager,
-                    stat.path,
+                    stat.directions,
                     stat.speed,
                     stat.lightIntensity,
                     lightBugData,
@@ -107,7 +107,7 @@ namespace Utilities
 
         private void ClearLightBugs()
         {
-            _spawnedFungi.Clear();
+            _spawnedLightBugs.Clear();
         }
             
         #endregion

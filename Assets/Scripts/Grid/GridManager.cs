@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -59,14 +61,9 @@ namespace Grid
         }
         public Vector3Int PlayerTile()
         {
-            return PositionInGrid(player.position);
+            return WorldToCell(player.position);
         }
-        public Vector3Int PositionInGrid(Vector3 position)
-        {
-            return grid.WorldToCell(position);
-        }
-        
-        public Vector3Int PositionInWorld(Vector3 position)
+        public Vector3Int WorldToCell(Vector3 position)
         {
             return grid.WorldToCell(position);
         }
@@ -94,6 +91,12 @@ namespace Grid
             }
 
             return cellsInRadius;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(Vector3.zero, 0.2f);
         }
     }
 }

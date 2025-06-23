@@ -27,7 +27,8 @@ namespace Enemies.Fungi
             _offToOn = offToOn;
 
             GridManager = gridManager;
-            CellPos = gridManager.PositionInGrid(fungiGo.transform.position); 
+
+            CellPos = GridManager.WorldToCell(fungiGo.transform.position);
         
             LightMap = gridManager.TileMaps.light;
 
@@ -70,6 +71,11 @@ namespace Enemies.Fungi
                 SpriteRenderer.sprite = _offSprite;
                 LightMap.SetTile(CellPos, null);
             }
+        }
+
+        public override void OnSceneChange()
+        {
+            //Destroy the object or rest if object pooling
         }
     }
 }
