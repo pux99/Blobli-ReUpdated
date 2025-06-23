@@ -25,8 +25,14 @@ namespace Utilities
 
         private void StartLevel()
         {
-            SetUpFungi();
-            SetUpLightBugs();
+            if (fungiData != null)
+            {
+                SetUpFungi();
+            }
+            if (lightBugData != null)
+            {
+                SetUpLightBugs();
+            }
         }
         public void Step()
         {

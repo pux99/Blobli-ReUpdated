@@ -32,6 +32,9 @@ namespace Enemies.Fungi
         
             LightMap = gridManager.TileMaps.light;
 
+            _isOn = false;
+            _stepsSinceLastChange = 0;
+
             UpdateState();
         }
     
@@ -55,7 +58,7 @@ namespace Enemies.Fungi
         }
         private void UpdateState()
         {
-            if (!GridManager.IsShadowTile(CellPos))
+            if (GridManager.IsShadowTile(CellPos))
             {
                 SpriteRenderer.sprite = _offSprite;
                 return;

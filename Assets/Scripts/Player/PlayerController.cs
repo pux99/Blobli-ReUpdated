@@ -116,7 +116,7 @@ namespace Player
 
         private void IsDead()
         {
-            if (!_gridManager.IsInLight()) return;
+            if (!_gridManager.TileHasLight(_gridManager.WorldToCell(transform.position))) return;
             gameObject.SetActive(false);
             _gameManager.Defeat();
         }
