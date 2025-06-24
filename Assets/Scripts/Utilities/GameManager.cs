@@ -12,17 +12,14 @@ namespace Utilities
 {
     public class GameManager : MonoBehaviour
     {
-        private GridManager _gridManager;
         private int stepCounter;
         public static event Action OnStepTaken;
         private void Awake() => ServiceLocator.Instance.RegisterService(this);
         
         void Start()
         {
-            _gridManager = ServiceLocator.Instance.GetService<GridManager>();
             StartLevel();
         }
-
         private void StartLevel()
         {
             if (fungiData != null)
@@ -42,6 +39,8 @@ namespace Utilities
         public void ResetLevel(InputAction.CallbackContext context)
         {
             if (context.performed || context.canceled) return;
+            
+            ServiceLocator.Instance.ClearServices();
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
         }
@@ -60,13 +59,10 @@ namespace Utilities
             {
                 foreach (var stat in fungiData.fungi)
                 {
-                    var fungiGO = Instantiate(stat.fungiGameObject, (Vector3Int)stat.position, Quaternion.identity);
-                    TileBase tile = fungiData.tileVariants[UnityEngine.Random.Range(0, fungiData.tileVariants.Length)];
+                    var fungiGO = Instantiate(stat.fungiGameObject, (Vector3Int)stat.position, Quaternion.identity, transform);
                     
                     Fungi fungi = new Fungi(
                         fungiGO,
-                        _gridManager,
-                        tile,
                         fungiData.offSprite,
                         fungiData.onSprite,
                         stat.onToOff,
@@ -93,17 +89,12 @@ namespace Utilities
             {
                 foreach (var stat in lightBugData.lightBugs)
                 {
-                    var lightBugGo = Instantiate(stat.lightBugGameObject, (Vector3Int)stat.initialPosition, Quaternion.identity);
-                    TileBase tile = lightBugData.tileVariants[UnityEngine.Random.Range(0, lightBugData.tileVariants.Length)];
+                    var lightBugGo = Instantiate(stat.lightBugGameObject, (Vector3Int)stat.initialPosition, Quaternion.identity, transform);
                         
                     LightBug lightBug = new LightBug(
                         lightBugGo, 
-                        _gridManager,
-                        stat.directions,
-                        stat.speed,
-                        stat.lightIntensity,
-                        lightBugData,
-                        stat.initialPosition
+                        stat,
+                        lightBugData.animationFrames
                     );
                     OnStepTaken += lightBug.OnStepTaken;
                     _spawnedLightBugs.Add(lightBug);

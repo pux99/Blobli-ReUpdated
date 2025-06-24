@@ -35,7 +35,7 @@ namespace Potions
         public void Beginning()
         {
             _gridManager = ServiceLocator.Instance.GetService<GridManager>();
-            _shadowMap = _gridManager.TileMaps.shadow;
+            _shadowMap = _gridManager.TileMaps.Shadow;
         }
 
         public void UsePotion(Vector3 dir)
@@ -82,7 +82,7 @@ namespace Potions
         {
             foreach (var pos in _markedPositions.Where(pos => _gridManager.CanPlaceShadow(pos)))
             {
-                _gridManager.TileMaps.light.SetTile(pos, _gridManager.ShadowTile);
+                _gridManager.TileMaps.Light.SetTile(pos, _gridManager.ShadowTile);
             }
 
             ClearIndicator();

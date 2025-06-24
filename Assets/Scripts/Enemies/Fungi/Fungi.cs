@@ -17,21 +17,17 @@ namespace Enemies.Fungi
         private bool _isOn = false;
         private int _stepsSinceLastChange = 0;
     
-        public Fungi(GameObject fungiGo,GridManager gridManager,TileBase tile, Sprite offSprite, Sprite onSprite, int onToOff, int offToOn)
+        public Fungi(GameObject fungiGo, Sprite offSprite, Sprite onSprite, int onToOff, int offToOn)
         {
             SpriteRenderer = fungiGo.GetComponent<SpriteRenderer>();
-            _lightTile = tile;
             _offSprite = offSprite;
             _onSprite = onSprite;
             _onToOff = onToOff;
             _offToOn = offToOn;
-
-            GridManager = gridManager;
-
+            GridManager = ServiceLocator.Instance.GetService<GridManager>();
+            _lightTile = GridManager.LightTileVariants[Random.Range(0, GridManager.LightTileVariants.Length)];
             CellPos = GridManager.WorldToCell(fungiGo.transform.position);
-        
-            LightMap = gridManager.TileMaps.light;
-
+            LightMap = GridManager.TileMaps.Light;
             _isOn = false;
             _stepsSinceLastChange = 0;
 

@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 public class FungiLevelSO : ScriptableObject
 {
     [Header("Generic for all")]
-    [SerializeField] protected internal TileBase[] tileVariants;
     [SerializeField] protected internal Sprite offSprite;
     [SerializeField] protected internal Sprite onSprite;
 

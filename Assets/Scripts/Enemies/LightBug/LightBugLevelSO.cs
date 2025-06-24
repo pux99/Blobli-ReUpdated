@@ -8,8 +8,7 @@ public class LightBugLevelSO : ScriptableObject
 {
     [Header("Generic for all")]
     public Sprite[] animationFrames;
-    public TileBase[] tileVariants;
     
     [Header("LightBug specific")]
-    [SerializeField] protected internal List<LightBugStats> lightBugs;
+    public List<LightBugStats> lightBugs;
 }

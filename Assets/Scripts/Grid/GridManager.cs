@@ -14,23 +14,17 @@ namespace Grid
 
         [Header("Tiles")]
         [SerializeField] private TileBase shadowTile;
+        [SerializeField] private TileBase[] lightTiles;
+        
         public TileBase ShadowTile => shadowTile;
-
-        [System.Serializable]
-        public class TileMapGroup
-        {
-            public Tilemap border;
-            public Tilemap floor;
-            public Tilemap light;
-            public Tilemap shadow;
-            public Tilemap rock;
-        }
-
+        public TileBase[] LightTileVariants => lightTiles;
+        
         [SerializeField] private TileMapGroup tileMaps;
         public TileMapGroup TileMaps => tileMaps;
-    
+
         private void Awake() => ServiceLocator.Instance.RegisterService(this);
         
+
         // ────────────────────── Position Utilities ──────────────────────
         public Vector3Int WorldToCell(Vector3 position) => grid.WorldToCell(position);
         public Vector3Int PlayerTile() => WorldToCell(player.position);
@@ -40,32 +34,32 @@ namespace Grid
         {
             Vector3Int nextCell = WorldToCell(player.position + direction.normalized);
 
-            if (HasAnyTile(nextCell, tileMaps.border, tileMaps.rock)) return false;
-            if (tileMaps.light.HasTile(nextCell) && !IsShadowTile(nextCell)) return false;
+            if (HasAnyTile(nextCell, tileMaps.Border, tileMaps.Rock)) return false;
+            if (tileMaps.Light.HasTile(nextCell) && !IsShadowTile(nextCell)) return false;
 
-            return tileMaps.floor.HasTile(nextCell);
+            return tileMaps.Floor.HasTile(nextCell);
         }
         
         // ────────────────────── Tile Checks ──────────────────────
         public bool CanPlaceTile(Vector3Int cell)
         {
-            if (HasAnyTile(cell, tileMaps.light, tileMaps.rock, tileMaps.shadow)) return false;
-            return tileMaps.floor.HasTile(cell);
+            if (HasAnyTile(cell, tileMaps.Light, tileMaps.Rock, tileMaps.Shadow)) return false;
+            return tileMaps.Floor.HasTile(cell);
         }
 
         public bool CanPlaceShadow(Vector3Int cell)
         {
-            return tileMaps.floor.HasTile(cell) && !tileMaps.rock.HasTile(cell);
+            return tileMaps.Floor.HasTile(cell) && !tileMaps.Rock.HasTile(cell);
         }
 
         public bool IsShadowTile(Vector3Int pos)
         {
-            return tileMaps.light.GetTile(pos) == shadowTile;
+            return tileMaps.Light.GetTile(pos) == shadowTile;
         }
 
         public bool TileHasLight(Vector3Int pos)
         {
-            return tileMaps.light.HasTile(pos) && !IsShadowTile(pos);
+            return tileMaps.Light.HasTile(pos) && !IsShadowTile(pos);
         }
         
         // ────────────────────── Radius Query ──────────────────────

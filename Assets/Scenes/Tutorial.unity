@@ -20101,12 +20101,29 @@ MonoBehaviour:
   player: {fileID: 398982748}
   grid: {fileID: 1462969992}
   shadowTile: {fileID: 11400000, guid: c30e8be219a0b9040bb3748c01ded5cb, type: 2}
+  lightTiles:
+  - {fileID: 11400000, guid: 2e1edf98a0ca98d49b2b3d77ff8d253e, type: 2}
+  - {fileID: 11400000, guid: 4d608c70134af4a409270c8bd7c1e6bd, type: 2}
+  - {fileID: 11400000, guid: 74b20eb7047896d45a9acb03b6bda992, type: 2}
+  - {fileID: 11400000, guid: af40e06f0e3b31e468039cce8662d65b, type: 2}
+  - {fileID: 11400000, guid: 2f33d672edc9ae940b794d58665f1e2d, type: 2}
+  - {fileID: 11400000, guid: 96109917b73ff984089b2052a9229e68, type: 2}
+  - {fileID: 11400000, guid: f1d8de466fd6e274883f74c9409a010f, type: 2}
+  - {fileID: 11400000, guid: 3e8d8a17cde5f704da2425d3643df1cd, type: 2}
+  - {fileID: 11400000, guid: fb159e40fdfba744095503a24e48bdca, type: 2}
+  - {fileID: 11400000, guid: 26905830ab51ea54fa8c7a86ea9e79ce, type: 2}
+  - {fileID: 11400000, guid: 2ed6f4cc1582bf344bfaf8d18c2d12e9, type: 2}
+  - {fileID: 11400000, guid: 20f35ba9e91a8954e93d6a72668f2fc5, type: 2}
+  - {fileID: 11400000, guid: 6d6e01281e98dda4ab64bfe7574c1894, type: 2}
+  - {fileID: 11400000, guid: 14834353da60a5c49b0daf22ce4c0898, type: 2}
+  - {fileID: 11400000, guid: 799092caa9aa6584fad1ee099fc30bda, type: 2}
+  - {fileID: 11400000, guid: 18f2cfab1cf428741a3bdb82076ce00b, type: 2}
   tileMaps:
-    border: {fileID: 1210626872}
-    floor: {fileID: 1611582902}
-    light: {fileID: 798634523}
-    shadow: {fileID: 1815125912}
-    rock: {fileID: 1143837808}
+    Border: {fileID: 1210626872}
+    Floor: {fileID: 1611582902}
+    Light: {fileID: 798634523}
+    Shadow: {fileID: 1815125912}
+    Rock: {fileID: 1143837808}
 --- !u!156049354 &1462969992
 Grid:
   m_ObjectHideFlags: 0
@@ -24040,7 +24057,7 @@ PrefabInstance:
     - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
       propertyPath: lightBugData
       value: 
-      objectReference: {fileID: 11400000, guid: bddeed4dc2af11a438bac048f7427dd4, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4146874052836403742, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
       propertyPath: lightBugConfig
       value: 

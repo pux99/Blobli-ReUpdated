@@ -31,26 +31,30 @@ namespace Enemies.LightBug
         private readonly TileBase[] _tileVariants;
         private readonly int _lightIntensity;
         
-        public LightBug(GameObject go,GridManager grid, List<Vector3Int> directions, int speed, int lightIntensity, LightBugLevelSO so,Vector3Int position)
+        public LightBug(GameObject go, LightBugStats stats, Sprite[] animation)
         {
+            var sl = ServiceLocator.Instance;
+            
             _go = go;
-            GridManager = grid;
+            
+            //Light & Grid
+            GridManager = sl.GetService<GridManager>();
+            _lightIntensity = stats.lightIntensity;
+            _tileVariants = GridManager.LightTileVariants;
+            CellPos = GridManager.WorldToCell(stats.initialPosition);
+            LightMap = GridManager.TileMaps.Light;
+            UpdateLight();
 
-            _directions = directions;
+            //Movement
+            _directions = stats.directions;
+            _speed = stats.speed;
             _currentDirectionIndex = 0;
             _remainingSteps = _directions[_currentDirectionIndex];
             
-            _speed = speed;
-            _lightIntensity = lightIntensity;
-            _tileVariants = so.tileVariants;
-            _animationFrames = so.animationFrames;
-            CellPos = GridManager.WorldToCell(position);
-            
-            LightMap = grid.TileMaps.light;
+            //Animation
+            _animationFrames = animation;
             SpriteRenderer = _go.GetComponent<SpriteRenderer>();
-
-            ServiceLocator.Instance.GetService<CustomMonoManager>().RegisterOnUpdate(this);
-            UpdateLight();
+            sl.GetService<CustomMonoManager>().RegisterOnUpdate(this);
         }
 
         public void Tick(float deltaTime) //Acts like an UPDATE(), without MONO-BEHAVIOUR
