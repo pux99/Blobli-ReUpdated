@@ -66,12 +66,13 @@ MonoBehaviour:
   player: {fileID: 0}
   grid: {fileID: 6352732857607270675}
   shadowTile: {fileID: 11400000, guid: c30e8be219a0b9040bb3748c01ded5cb, type: 2}
+  lightTiles: []
   tileMaps:
-    border: {fileID: 7708605846357582225}
-    floor: {fileID: 4610051671337320524}
-    light: {fileID: 3582889681348641579}
-    shadow: {fileID: 6035456421561931965}
-    rock: {fileID: 8012270947052740185}
+    Border: {fileID: 7708605846357582225}
+    Floor: {fileID: 4610051671337320524}
+    Light: {fileID: 3582889681348641579}
+    Shadow: {fileID: 6035456421561931965}
+    Rock: {fileID: 8012270947052740185}
 --- !u!1 &3954704107019485567
 GameObject:
   m_ObjectHideFlags: 0
