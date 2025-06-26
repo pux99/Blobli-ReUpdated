@@ -17,16 +17,16 @@ namespace Enemies.Fungi
         private bool _isOn = false;
         private int _stepsSinceLastChange = 0;
     
-        public Fungi(GameObject fungiGo, Sprite offSprite, Sprite onSprite, int onToOff, int offToOn)
+        public Fungi(FungiStats stats, EnemySO genericData)
         {
-            SpriteRenderer = fungiGo.GetComponent<SpriteRenderer>();
-            _offSprite = offSprite;
-            _onSprite = onSprite;
-            _onToOff = onToOff;
-            _offToOn = offToOn;
+            SpriteRenderer = stats.fungiGameObject.GetComponent<SpriteRenderer>();
+            _offSprite = genericData.offSprite;
+            _onSprite = genericData.onSprite;
+            _onToOff = stats.onToOff;
+            _offToOn = stats.offToOn;
             GridManager = ServiceLocator.Instance.GetService<GridManager>();
             _lightTile = GridManager.LightTileVariants[Random.Range(0, GridManager.LightTileVariants.Length)];
-            CellPos = GridManager.WorldToCell(fungiGo.transform.position);
+            CellPos = GridManager.WorldToCell(stats.fungiGameObject.transform.position);
             LightMap = GridManager.TileMaps.Light;
             _isOn = false;
             _stepsSinceLastChange = 0;
@@ -70,11 +70,6 @@ namespace Enemies.Fungi
                 SpriteRenderer.sprite = _offSprite;
                 LightMap.SetTile(CellPos, null);
             }
-        }
-
-        public override void OnSceneChange()
-        {
-            //Destroy the object or rest if object pooling
         }
     }
 }

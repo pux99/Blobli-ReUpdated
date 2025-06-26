@@ -31,17 +31,17 @@ namespace Enemies.LightBug
         private readonly TileBase[] _tileVariants;
         private readonly int _lightIntensity;
         
-        public LightBug(GameObject go, LightBugStats stats, Sprite[] animation)
+        public LightBug(LightBugStats stats, EnemySO genericData)
         {
             var sl = ServiceLocator.Instance;
             
-            _go = go;
+            _go = stats.lightBugGameObject;
             
             //Light & Grid
             GridManager = sl.GetService<GridManager>();
             _lightIntensity = stats.lightIntensity;
             _tileVariants = GridManager.LightTileVariants;
-            CellPos = GridManager.WorldToCell(stats.initialPosition);
+            CellPos = GridManager.WorldToCell(_go.transform.position);
             LightMap = GridManager.TileMaps.Light;
             UpdateLight();
 
@@ -52,7 +52,7 @@ namespace Enemies.LightBug
             _remainingSteps = _directions[_currentDirectionIndex];
             
             //Animation
-            _animationFrames = animation;
+            _animationFrames = genericData.animationFrames;
             SpriteRenderer = _go.GetComponent<SpriteRenderer>();
             sl.GetService<CustomMonoManager>().RegisterOnUpdate(this);
         }
@@ -67,13 +67,11 @@ namespace Enemies.LightBug
                 Animation();
             }
         }
-        
         public void OnStepTaken() //Player event
         {
             Move();
             UpdateLight();
         }
-
         private void Animation() //Cycles through the sprite-sheet
         {
             _frameIndex++;
@@ -83,7 +81,6 @@ namespace Enemies.LightBug
             }
             SpriteRenderer.sprite = _animationFrames[_frameIndex];
         }
-        
         private void Move()
         {
             if (_directions.Count == 0 || _speed <= 0) return;
@@ -128,7 +125,6 @@ namespace Enemies.LightBug
             }
             CellPos = GridManager.WorldToCell(_go.transform.position);
         }
-        
         private void UpdateLight()
         {
             //Deletes all the tiles from the previous spot
@@ -147,11 +143,6 @@ namespace Enemies.LightBug
                 LightMap.SetTile(pos, tile);
                 lightCells.Add(pos);
             }
-        }
-        
-        public override void OnSceneChange()
-        {
-            Object.Destroy(_go);
         }
     }
 }

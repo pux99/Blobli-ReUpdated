@@ -4,7 +4,6 @@ using UnityEngine;
 public class FungiStats
 {
     public GameObject fungiGameObject;
-    public Vector2Int position;
     public int onToOff;
     public int offToOn;
 }

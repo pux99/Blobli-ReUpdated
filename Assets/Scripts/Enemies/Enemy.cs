@@ -8,9 +8,4 @@ public class Enemy
     protected Vector3Int CellPos;
     protected Tilemap LightMap;
     protected SpriteRenderer SpriteRenderer;
-
-    public virtual void OnSceneChange()
-    {
-        
-    }
 }

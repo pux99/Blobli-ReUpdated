@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using Enemies.Fungi;
 using Enemies.LightBug;
 using Grid;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 namespace Utilities
@@ -13,7 +15,10 @@ namespace Utilities
     public class GameManager : MonoBehaviour
     {
         private int stepCounter;
-        public static event Action OnStepTaken;
+        
+        [Header("Enemies generic data")]
+        [SerializeField] private EnemySO genericData;
+        public event Action OnStepTaken;
         private void Awake() => ServiceLocator.Instance.RegisterService(this);
         
         void Start()
@@ -22,11 +27,11 @@ namespace Utilities
         }
         private void StartLevel()
         {
-            if (fungiData != null)
+            if (fungus != null)
             {
                 SetUpFungi();
             }
-            if (lightBugData != null)
+            if (lightBugs != null)
             {
                 SetUpLightBugs();
             }
@@ -39,8 +44,6 @@ namespace Utilities
         public void ResetLevel(InputAction.CallbackContext context)
         {
             if (context.performed || context.canceled) return;
-            
-            ServiceLocator.Instance.ClearServices();
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
         }
@@ -52,60 +55,63 @@ namespace Utilities
 
         #region Fungi
             [Header("Fungi")]
-            [SerializeField] private FungiLevelSO fungiData;
-            private readonly List<Fungi> _spawnedFungi = new();
+            [SerializeField] private List<FungiStats> fungus;
+            private readonly List<Fungi> spawnedFungi = new();
             
             private void SetUpFungi()
             {
-                foreach (var stat in fungiData.fungi)
+                foreach (var stat in fungus)
                 {
-                    var fungiGO = Instantiate(stat.fungiGameObject, (Vector3Int)stat.position, Quaternion.identity, transform);
-                    
                     Fungi fungi = new Fungi(
-                        fungiGO,
-                        fungiData.offSprite,
-                        fungiData.onSprite,
-                        stat.onToOff,
-                        stat.offToOn
+                        stat,
+                        genericData
                     );
                     OnStepTaken += fungi.OnStepTaken;
-                    _spawnedFungi.Add(fungi);
+                    spawnedFungi.Add(fungi);
                 }
-            }
-
-            private void ClearFungi()
-            {
-                _spawnedFungi.Clear();
             }
             
         #endregion
         
         #region LightBug
             [Header("LightBug")]
-            [SerializeField] private LightBugLevelSO lightBugData;
-            private readonly List<LightBug> _spawnedLightBugs = new();
+            [SerializeField] private List<LightBugStats> lightBugs;
+            private readonly List<LightBug> spawnedLightBugs = new();
                 
             private void SetUpLightBugs()
             {
-                foreach (var stat in lightBugData.lightBugs)
+                foreach (var stat in lightBugs)
                 {
-                    var lightBugGo = Instantiate(stat.lightBugGameObject, (Vector3Int)stat.initialPosition, Quaternion.identity, transform);
-                        
                     LightBug lightBug = new LightBug(
-                        lightBugGo, 
                         stat,
-                        lightBugData.animationFrames
+                        genericData
                     );
                     OnStepTaken += lightBug.OnStepTaken;
-                    _spawnedLightBugs.Add(lightBug);
+                    spawnedLightBugs.Add(lightBug);
                 }
             }
 
-            private void ClearLightBugs()
+            private void OnDrawGizmosSelected()
             {
-                _spawnedLightBugs.Clear();
+                foreach (var bug in lightBugs)
+                {
+                    Vector3 currentPos = bug.lightBugGameObject.transform.position;
+                    Gizmos.color = Color.black;
+                    Gizmos.DrawSphere(currentPos, 0.2f);
+                    
+                    for (int i = 0; i < bug.directions.Count; i++)
+                    {
+                        Vector3 nextPos = currentPos + bug.directions[i];
+                        
+                        Gizmos.DrawLine(currentPos, nextPos);
+
+                        currentPos = nextPos;
+                        
+                        Gizmos.DrawSphere(currentPos, 0.2f);
+                    }
+                }
             }
-            
-        #endregion
+
+            #endregion
     }
 }
