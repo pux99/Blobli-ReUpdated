@@ -14,11 +14,17 @@ namespace Utilities
 {
     public class GameManager : MonoBehaviour
     {
-        private int stepCounter;
-        
         [Header("Enemies generic data")]
         [SerializeField] private EnemySO genericData;
+        
+        [Header("Fungus in level")]
+        [SerializeField] private List<FungiStats> fungus;
+        
+        [Header("LightBugs in leve")]
+        [SerializeField] private List<LightBugStats> lightBugs;
+        
         public event Action OnStepTaken;
+        private int stepCounter;
         private void Awake() => ServiceLocator.Instance.RegisterService(this);
         
         void Start()
@@ -54,10 +60,7 @@ namespace Utilities
 
 
         #region Fungi
-            [Header("Fungi")]
-            [SerializeField] private List<FungiStats> fungus;
             private readonly List<Fungi> spawnedFungi = new();
-            
             private void SetUpFungi()
             {
                 foreach (var stat in fungus)
@@ -74,10 +77,7 @@ namespace Utilities
         #endregion
         
         #region LightBug
-            [Header("LightBug")]
-            [SerializeField] private List<LightBugStats> lightBugs;
             private readonly List<LightBug> spawnedLightBugs = new();
-                
             private void SetUpLightBugs()
             {
                 foreach (var stat in lightBugs)
