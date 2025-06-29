@@ -15,19 +15,19 @@ MonoBehaviour:
   recipes:
   - gem1: 1
     gem2: 1
+    potion: {fileID: 11400000, guid: f2d16246403ac9847b94829b7f119c86, type: 2}
+  - gem1: 3
+    gem2: 3
     potion: {fileID: 11400000, guid: 87ba35afa329c4343a184a1410bebb79, type: 2}
   - gem1: 2
     gem2: 2
-    potion: {fileID: 11400000, guid: 87ba35afa329c4343a184a1410bebb79, type: 2}
-  - gem1: 3
-    gem2: 3
     potion: {fileID: 11400000, guid: 55188c96f13ec04439a63613b0772240, type: 2}
   - gem1: 1
     gem2: 2
     potion: {fileID: 11400000, guid: 24b85a1808271ae45baae1dfacaa669c, type: 2}
   - gem1: 1
     gem2: 3
-    potion: {fileID: 11400000, guid: dc1fe7f053e9b1846ab4f0cff0308609, type: 2}
+    potion: {fileID: 11400000, guid: 7571d285e1ecbf74785c3b647141bb3c, type: 2}
   - gem1: 2
     gem2: 3
-    potion: {fileID: 11400000, guid: 87ba35afa329c4343a184a1410bebb79, type: 2}
+    potion: {fileID: 11400000, guid: 63f33b949d054194084e537d3a3feafc, type: 2}
