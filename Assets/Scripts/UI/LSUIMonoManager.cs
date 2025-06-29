@@ -21,8 +21,18 @@ public class LSUIMonoManager : MonoBehaviour
 
     private void HandleLevelSelected(int level)
     {
-        if (level == 1)
-            SceneManager.LoadScene("Tutorial");
+        string sceneName = level switch
+        {
+            1 => "Tutorial",
+            2 => "Level2",
+            3 => "Level3",
+            4 => "Level4",
+            5 => "Level5",
+            _ => null
+        };
+
+        if (!string.IsNullOrEmpty(sceneName))
+            SceneManager.LoadScene(sceneName);
         else
             Debug.Log($"Nivel {level} aún no desbloqueado.");
     }
