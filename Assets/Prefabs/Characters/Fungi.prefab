@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6863580574312635226}
   - component: {fileID: 6813825505983639220}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fungi
   m_TagString: Untagged
   m_Icon: {fileID: 0}

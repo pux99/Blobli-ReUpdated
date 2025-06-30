@@ -15953,11 +15953,15 @@ PrefabInstance:
     - target: {fileID: 3885236618290753134, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
       propertyPath: currentPotion
       value: 
-      objectReference: {fileID: 416114895}
+      objectReference: {fileID: 0}
     - target: {fileID: 3885236618290753134, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
       propertyPath: _customMonoManager
       value: 
       objectReference: {fileID: 15200701}
+    - target: {fileID: 3885236618290753134, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
+      propertyPath: currentPotion.shape
+      value: 
+      objectReference: {fileID: 11400000, guid: 7571d285e1ecbf74785c3b647141bb3c, type: 2}
     - target: {fileID: 6225373572009818236, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -16040,17 +16044,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1593064139509959178, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
   m_PrefabInstance: {fileID: 398982747}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &416114895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7918989170102390138, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
-  m_PrefabInstance: {fileID: 398982747}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0509c0e272b38c94ab1834b0474cb32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &492371750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6041917412007690755, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
@@ -16246,6 +16239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16333,6 +16330,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17765,6 +17766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17821,6 +17826,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24325,6 +24334,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3228403510574092152, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355322982938459673, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3533339610291243324, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -25201,6 +25218,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

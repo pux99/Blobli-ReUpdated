@@ -193,6 +193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -260,6 +264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -276,6 +284,10 @@ PrefabInstance:
     - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_Name
       value: LightBug (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -388,6 +400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyGem
       objectReference: {fileID: 0}
+    - target: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -449,6 +465,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15661,6 +15681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15727,11 +15751,15 @@ PrefabInstance:
     - target: {fileID: 3885236618290753134, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
       propertyPath: currentPotion
       value: 
-      objectReference: {fileID: 416114895}
+      objectReference: {fileID: 0}
     - target: {fileID: 3885236618290753134, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
       propertyPath: _customMonoManager
       value: 
       objectReference: {fileID: 15200701}
+    - target: {fileID: 3885236618290753134, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
+      propertyPath: currentPotion.shape
+      value: 
+      objectReference: {fileID: 11400000, guid: 7571d285e1ecbf74785c3b647141bb3c, type: 2}
     - target: {fileID: 6225373572009818236, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15805,7 +15833,8 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8056837526797886966, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
@@ -15814,17 +15843,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1593064139509959178, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
   m_PrefabInstance: {fileID: 398982747}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &416114895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7918989170102390138, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
-  m_PrefabInstance: {fileID: 398982747}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0509c0e272b38c94ab1834b0474cb32d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &420315327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15876,6 +15894,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15943,6 +15965,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16015,6 +16041,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16094,6 +16124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16160,6 +16194,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16231,6 +16269,10 @@ PrefabInstance:
     - target: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
       propertyPath: m_Name
       value: Gem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16335,6 +16377,10 @@ PrefabInstance:
     - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_Name
       value: LightBug (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16442,6 +16488,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16919,7 +16969,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &896557288
 Transform:
@@ -17100,6 +17150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17170,6 +17224,10 @@ PrefabInstance:
     - target: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
       propertyPath: m_Name
       value: Gem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20011,6 +20069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gem
       objectReference: {fileID: 0}
+    - target: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20078,6 +20140,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20144,6 +20210,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20301,6 +20371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20367,6 +20441,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24838,6 +24916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBug (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16
@@ -24945,6 +25027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25011,6 +25097,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25158,6 +25248,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3228403510574092152, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355322982938459673, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3533339610291243324, guid: 7e70443867167cf4da46e61930cdbff7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -26241,6 +26339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gem (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26307,6 +26409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyGem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26328,6 +26434,10 @@ PrefabInstance:
     - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_Name
       value: LightBug (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26436,6 +26546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26503,6 +26617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26529,6 +26647,10 @@ PrefabInstance:
     - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_Name
       value: LightBug
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26636,6 +26758,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26745,13 +26871,113 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -30
       objectReference: {fileID: 0}
+    - target: {fileID: 504578719104439050, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 582517553347720963, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 696950135927448253, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 889180334625432468, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 896292290382468719, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1583383335604187698, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160877090029112784, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230339698455184218, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390916684482539048, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776647654675733251, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2834187875233979285, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2834187875233979285, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888382850065547775, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016619538636003356, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130952339548691664, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423114455804958530, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545509971026805624, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576066409404970975, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953405991568804150, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091227302962571350, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4323858705765371771, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4323858705765371771, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422115510534310776, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499560553578526487, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696218949860516234, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5335290599396519556, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475310471573520487, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5502946315741763343, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
       propertyPath: m_Pivot.x
@@ -26833,6 +27059,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5687544706413522169, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198707630889232659, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6396677366370411945, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849685184042718268, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166583758635151570, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7313005000090416651, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -26857,6 +27103,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -120
       objectReference: {fileID: 0}
+    - target: {fileID: 7528732641511537951, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7530116155753101925, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8165397790683186190, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -26880,6 +27134,10 @@ PrefabInstance:
     - target: {fileID: 8165397790683186190, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -210
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372239331110881038, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26937,6 +27195,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27053,6 +27315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBug (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -27160,6 +27426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fungi (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27226,6 +27496,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

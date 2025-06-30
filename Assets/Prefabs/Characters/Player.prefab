@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 734354958701463251}
   - component: {fileID: 9167503285748883869}
   - component: {fileID: 3885236618290753134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,6 +231,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 930b1c16-dc99-4d91-b378-1e305917ac5d
     m_ActionName: 'Player/ResetLevel[/Keyboard/r]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1347b2c9-15b8-4640-824a-7106ed5dfc99
+    m_ActionName: 'Player/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -249,7 +253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  _customMonoManager: {fileID: 0}
   recipes: {fileID: 11400000, guid: 59821db4118de8048afbc3f9a562c071, type: 2}
   currentPotion: {fileID: 0}
 --- !u!1001 &8731720775635442044
@@ -267,6 +270,10 @@ PrefabInstance:
     - target: {fileID: 1649142936072699018, guid: 18de22f8c2df3814fa444b13b9284aea, type: 3}
       propertyPath: m_Name
       value: Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649142936072699018, guid: 18de22f8c2df3814fa444b13b9284aea, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4828761098374994935, guid: 18de22f8c2df3814fa444b13b9284aea, type: 3}
       propertyPath: m_LocalPosition.x

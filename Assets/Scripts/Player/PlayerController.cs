@@ -38,6 +38,7 @@ namespace Player
             _startingPos = transform.position;
             _customMonoManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
             _customMonoManager.RegisterOnStart(this);
+            currentPotion.Awake();
         }
         //Preguntarle al profe si se puede cambiar el orden de ejecucion
         //para que se ejecute primero el customupdate manager y para poder usar el awake y no el start

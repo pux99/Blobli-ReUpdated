@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8492879158127868588}
   - component: {fileID: 8178457078972344939}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightBug
   m_TagString: Untagged
   m_Icon: {fileID: 0}

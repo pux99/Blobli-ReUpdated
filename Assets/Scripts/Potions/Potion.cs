@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Grid;
+using Potions;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Utilities.MonoManager;
 
-namespace Potions
-{
-    public class Potion : MonoBehaviour, IStartable
+    [Serializable]
+    public class Potion : IStartable
     {
         [Header("Drawing Shape")]
         [Tooltip("Temporary")]
@@ -25,7 +25,7 @@ namespace Potions
 
         #endregion
 
-        private void Awake()
+        public void Awake()
         {
             _customMonoManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
             _customMonoManager.RegisterOnStart(this);
@@ -124,4 +124,4 @@ namespace Potions
         }
 
     }
-}
+
