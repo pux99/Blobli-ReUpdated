@@ -28584,7 +28584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 398982748}
   grid: {fileID: 1462969992}
-  shadowTile: {fileID: 0}
+  shadowTile: {fileID: 11400000, guid: c30e8be219a0b9040bb3748c01ded5cb, type: 2}
   lightTiles:
   - {fileID: 11400000, guid: 2e1edf98a0ca98d49b2b3d77ff8d253e, type: 2}
   - {fileID: 11400000, guid: 4d608c70134af4a409270c8bd7c1e6bd, type: 2}
