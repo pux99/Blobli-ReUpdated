@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Packed Assets
   m_GUID: e647b5235ca324a4981cc4d6efc27bac
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: c30e8be219a0b9040bb3748c01ded5cb
+    m_Address: Assets/Art/Tiles/FloorLight/Tile Palette/ShadowIndicator.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4d3a2e8da84218a4bbf25bba76e2c5b0, type: 2}
   m_SchemaSet:
