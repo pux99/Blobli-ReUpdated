@@ -10,10 +10,11 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
+using Utilities.MonoManager;
 
 namespace Utilities
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, IStartable
     {
         [Header("Enemies generic data")] [SerializeField]
         private EnemySO genericData;
@@ -30,15 +31,16 @@ namespace Utilities
         private void Awake()
         {
             ServiceLocator.Instance.RegisterService(this);
+
+           ServiceLocator.Instance.GetService<CustomMonoManager>().RegisterOnStart(this);
             
             if (gemManager.gemContainer != null) gemManager.Awake();
             
             if (altar.altar != null) altar.Awake(this);
         }
-
-    void Start()
+        public void Beginning()
         {
-            StartLevel();
+         StartLevel();
         }
         private void StartLevel()
         {
@@ -129,7 +131,8 @@ namespace Utilities
             public Altar altar;
 
         #endregion
-        
+
+
         
     }
 }

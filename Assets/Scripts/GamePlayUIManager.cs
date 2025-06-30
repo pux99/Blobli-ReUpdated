@@ -10,7 +10,7 @@ public class GamePlayUIManager : MonoBehaviour
 {
     public UiInventory Inventory;
     public PauseMenu PauseMenu;
-    void Start()
+    void Awake()
     {
         Inventory.Start(this);
         PauseMenu.Setup();

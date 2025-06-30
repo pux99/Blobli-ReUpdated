@@ -14,12 +14,9 @@ public class TextBlinker : MonoBehaviour, IUpdatable
     {
         _customMonoManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
         _customMonoManager.RegisterOnUpdate(this);
-    }
-
-    private void Start()
-    {
         originalColor = tmpText.color;
     }
+    
     public void Tick(float deltaTime)
     {
         float alpha = Mathf.PingPong(Time.time * blinkSpeed, 1f);
