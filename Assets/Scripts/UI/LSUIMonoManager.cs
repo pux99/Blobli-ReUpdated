@@ -38,7 +38,7 @@ public class LSUIMonoManager : MonoBehaviour
     {
         string sceneName = level switch
         {
-            1 => "Tutorial",
+            1 => "Level1",
             2 => "Level2",
             3 => "Level3",
             4 => "Level4",

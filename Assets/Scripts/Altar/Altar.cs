@@ -30,10 +30,10 @@ using Utilities.MonoManager;
         {
             _playerTransform =  playerController.transform;
             _customMonoManager.RegisterOnUpdate(this);
-            _monoBehaviour.StartCoroutine(delay());
+            _monoBehaviour.StartCoroutine(Delay());
         }
 
-        private IEnumerator delay()
+        private IEnumerator Delay()
         {
             yield return new WaitForEndOfFrame();
             _inventory =  playerController.Inventory;
