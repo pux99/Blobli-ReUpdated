@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
@@ -22,7 +25,33 @@ namespace Grid
         [SerializeField] private TileMapGroup tileMaps;
         public TileMapGroup TileMaps => tileMaps;
 
-        private void Awake() => ServiceLocator.Instance.RegisterService(this);
+        private void Awake(){
+            ServiceLocator.Instance.RegisterService(this);
+            //AsyncOperationHandle<IList<TileBase>> async = Addressables.LoadAssetsAsync<TileBase>("Assets/Art/Tiles/FloorLight/ShadowIndicator.png");
+            //async.Completed += AsyncComplet;
+        }
+
+        private void Update()
+        {
+            if (shadowTile == null)
+            {
+                AsyncOperationHandle<IList<TileBase>> async = Addressables.LoadAssetsAsync<TileBase>("Assets/Art/Tiles/FloorLight/Tile Palette/ShadowIndicator.asset");
+                async.Completed += AsyncComplet;
+            }
+        }
+
+        private void AsyncComplet(AsyncOperationHandle<IList<TileBase>> handle)
+        {
+            if (handle.Status==AsyncOperationStatus.Succeeded)
+            {
+                shadowTile = handle.Result[0];
+            }
+            else
+            {
+                Debug.Log("puto");
+            }
+                
+        }
         
 
         // ────────────────────── Position Utilities ──────────────────────
