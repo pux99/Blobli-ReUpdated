@@ -665,6 +665,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 625546640769930439, guid: 3a04a1e63ee6c784d99bc7095c476b01, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1132066835838802807, guid: 3a04a1e63ee6c784d99bc7095c476b01, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 50
@@ -1258,6 +1262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelButtons: []
   buttonToMainMenu: {fileID: 1029057870}
+  buttonToLevelSelector: {fileID: 0}
 --- !u!4 &1412547234
 Transform:
   m_ObjectHideFlags: 0

@@ -19,9 +19,9 @@ public class LSUIMonoManager : MonoBehaviour
             var uiButton = new UIButton(levelButtons[i], i + 1);
             uiButton.Subscribe(HandleLevelSelected);
             _uiButtons.Add(uiButton);
-            buttonToMainMenu.onClick.AddListener(ToMainMenu);
-            buttonToLevelSelector.onClick.AddListener(ToLevelSelector);
         }
+        buttonToMainMenu?.onClick.AddListener(ToMainMenu);
+        buttonToLevelSelector?.onClick.AddListener(ToLevelSelector);
     }
 
     private void ToMainMenu()
@@ -31,7 +31,7 @@ public class LSUIMonoManager : MonoBehaviour
     
     private void ToLevelSelector()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene("LevelSelector");
     }
 
     private void HandleLevelSelected(int level)

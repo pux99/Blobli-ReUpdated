@@ -30,10 +30,10 @@ namespace Utilities
         private void Awake()
         {
             ServiceLocator.Instance.RegisterService(this);
-            if (gemManager.gemContainer != null)
-            {
-                gemManager.Awake();
-            }
+            
+            if (gemManager.gemContainer != null) gemManager.Awake();
+            
+            if (altar.altar != null) altar.Awake(this);
         }
 
     void Start()
@@ -123,10 +123,13 @@ namespace Utilities
 
             #endregion
 
-            #region Gems
+        #region Gems
 
             public GemManager gemManager;
+            public Altar altar;
 
-            #endregion
+        #endregion
+        
+        
     }
 }

@@ -1,12 +1,12 @@
+using System;
 using System.Collections;
 using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities.MonoManager;
 
-namespace Altar
-{
-    public class Altar : MonoBehaviour, IUpdatable, IStartable
+    [Serializable]
+    public class Altar : IUpdatable, IStartable
     {
         private Inventory _inventory;
         private Transform _playerTransform;
@@ -14,19 +14,23 @@ namespace Altar
         [SerializeField] private KeyCode interactionKey = KeyCode.F;
         [SerializeField] PlayerController playerController;
         private CustomMonoManager _customMonoManager;
+        
+        private MonoBehaviour _monoBehaviour;
+        [SerializeField] public GameObject altar;
     
-        private void Awake()
+        public void Awake(MonoBehaviour mono)
         {
             ServiceLocator.Instance.RegisterService(this);
             _customMonoManager = ServiceLocator.Instance.GetService<CustomMonoManager>();
             _customMonoManager.RegisterOnStart(this);
+            _monoBehaviour = mono;
         }
     
         public void Beginning()
         {
             _playerTransform =  playerController.transform;
             _customMonoManager.RegisterOnUpdate(this);
-            StartCoroutine(delay());
+            _monoBehaviour.StartCoroutine(delay());
         }
 
         private IEnumerator delay()
@@ -39,11 +43,10 @@ namespace Altar
             if (!_playerTransform || _inventory == null) return;
 
             if (!Input.GetKeyDown(interactionKey)) return;
-            if (!(Vector2.Distance(transform.position, _playerTransform.position) <= interactionRange)) return;
+            if (!(Vector2.Distance(altar.transform.position, _playerTransform.position) <= interactionRange)) return;
             if (_inventory.CheckKeys())
             {
                 SceneManager.LoadScene("VictoryScene");
             }
         }
     }
-}

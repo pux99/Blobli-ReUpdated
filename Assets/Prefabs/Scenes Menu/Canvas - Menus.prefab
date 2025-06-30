@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 3402524870042480159}
   - component: {fileID: 4254437050711433051}
   - component: {fileID: 625546640769930439}
-  - component: {fileID: 7836239612671127587}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -225,7 +224,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7836239612671127587}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
@@ -237,19 +236,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7836239612671127587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140133716765985851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e3fea25ee797e24fa98018bd4944ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextScene: Tutorial
 --- !u!1 &2581799264817167761
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tmpText: {fileID: 7305627757348230597}
   blinkSpeed: 1
-  _customMonoManager: {fileID: 0}
 --- !u!1 &9009060390377680905
 GameObject:
   m_ObjectHideFlags: 0
