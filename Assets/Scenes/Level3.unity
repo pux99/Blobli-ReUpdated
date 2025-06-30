@@ -149,6 +149,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
@@ -194,6 +202,10 @@ PrefabInstance:
       value: Fungi (18)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -220,6 +232,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11
@@ -265,6 +285,10 @@ PrefabInstance:
       value: Fungi (15)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -288,6 +312,14 @@ PrefabInstance:
     - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1759464197
       objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -356,6 +388,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2801231552284419624, guid: 02dcd8a2085083f4a9d09fa1b650c83a, type: 3}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1552852765
+      objectReference: {fileID: 0}
     - target: {fileID: 6041917412007690755, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11
@@ -422,6 +462,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -465,6 +513,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -559,8 +611,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -443132515
+  m_SortingLayer: 1
   m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15637,6 +15689,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -15682,6 +15742,10 @@ PrefabInstance:
       value: Fungi (23)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -15708,6 +15772,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 734354958701463251, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 734354958701463251, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1719975657
+      objectReference: {fileID: 0}
     - target: {fileID: 1593064139509959178, guid: 2ba612be18229ff4ebe0c2b0e3335be7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.000001
@@ -15851,6 +15923,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16
@@ -15896,6 +15976,10 @@ PrefabInstance:
       value: Fungi (9)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -15922,6 +16006,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17
@@ -15967,6 +16059,10 @@ PrefabInstance:
       value: Fungi (8)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -15998,6 +16094,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10
@@ -16043,6 +16147,10 @@ PrefabInstance:
       value: Fungi (20)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -16080,6 +16188,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -16125,6 +16241,10 @@ PrefabInstance:
       value: Fungi (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -16151,6 +16271,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13
@@ -16196,6 +16324,10 @@ PrefabInstance:
       value: Fungi (14)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -16226,6 +16358,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3690084496328417868, guid: 02dcd8a2085083f4a9d09fa1b650c83a, type: 3}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1552852765
+      objectReference: {fileID: 0}
     - target: {fileID: 6041917412007690755, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -16344,6 +16484,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1797879775031419443, guid: 8d7c34025692bb74781d05280d27418d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797879775031419443, guid: 8d7c34025692bb74781d05280d27418d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1610478195
+      objectReference: {fileID: 0}
     - target: {fileID: 6159242653373862012, guid: 8d7c34025692bb74781d05280d27418d, type: 3}
       propertyPath: m_Name
       value: Altar
@@ -16381,6 +16529,14 @@ PrefabInstance:
     - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1759464197
       objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16445,6 +16601,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -16488,6 +16652,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16929,8 +17097,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2015931139
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -17106,6 +17274,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -17151,6 +17327,10 @@ PrefabInstance:
       value: Fungi (4)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -17181,6 +17361,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4177220209166712611, guid: 02dcd8a2085083f4a9d09fa1b650c83a, type: 3}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1552852765
+      objectReference: {fileID: 0}
     - target: {fileID: 6041917412007690755, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -18746,8 +18934,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1610478195
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -19982,8 +20170,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1968332551
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -20025,6 +20213,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4825632588510966998, guid: 02dcd8a2085083f4a9d09fa1b650c83a, type: 3}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1552852765
+      objectReference: {fileID: 0}
     - target: {fileID: 6041917412007690755, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
@@ -20096,6 +20292,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9
@@ -20141,6 +20345,10 @@ PrefabInstance:
       value: Fungi (19)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -20167,6 +20375,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11
@@ -20210,6 +20426,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -20327,6 +20547,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -20372,6 +20600,10 @@ PrefabInstance:
       value: Fungi (12)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -20398,6 +20630,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17
@@ -20441,6 +20681,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -24878,8 +25122,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1968332551
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -24919,6 +25163,14 @@ PrefabInstance:
     - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1759464197
       objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24983,6 +25235,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -25028,6 +25288,10 @@ PrefabInstance:
       value: Fungi
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -25054,6 +25318,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -25097,6 +25369,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25214,8 +25490,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2015931139
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -26295,6 +26571,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3690084496328417868, guid: 02dcd8a2085083f4a9d09fa1b650c83a, type: 3}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1552852765
+      objectReference: {fileID: 0}
     - target: {fileID: 6041917412007690755, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -26365,6 +26649,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2801231552284419624, guid: 02dcd8a2085083f4a9d09fa1b650c83a, type: 3}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5973535135979356410, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1552852765
+      objectReference: {fileID: 0}
     - target: {fileID: 6041917412007690755, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -26439,6 +26731,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1759464197
+      objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6
@@ -26502,6 +26802,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -26547,6 +26855,10 @@ PrefabInstance:
       value: Fungi (22)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -26573,6 +26885,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14
@@ -26618,6 +26938,10 @@ PrefabInstance:
       value: Fungi (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -26651,6 +26975,14 @@ PrefabInstance:
     - target: {fileID: 7226363833197435854, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1759464197
       objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26715,6 +27047,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14
@@ -26758,6 +27098,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26904,6 +27248,10 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2390916684482539048, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454444922587285540, guid: 325b306d8c8c0ec4c8341c2c2ad3172f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -27152,6 +27500,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -27195,6 +27551,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27319,6 +27679,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178457078972344939, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1759464197
+      objectReference: {fileID: 0}
     - target: {fileID: 8492879158127868588, guid: daf5c44429a6fe6428f8b110395f91bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -27382,6 +27750,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
@@ -27427,6 +27803,10 @@ PrefabInstance:
       value: Fungi (13)
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -27453,6 +27833,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 896557288}
     m_Modifications:
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6813825505983639220, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -536401155
+      objectReference: {fileID: 0}
     - target: {fileID: 6863580574312635226, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16
@@ -27496,6 +27884,10 @@ PrefabInstance:
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_Name
       value: Fungi (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6956850344807685466, guid: d7dc2276fe0658249adce4d083a8cdd2, type: 3}
       propertyPath: m_StaticEditorFlags
