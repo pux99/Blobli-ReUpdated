@@ -8,7 +8,8 @@ using Image = UnityEngine.UI.Image;
 
 namespace UI
 {
-    public class UiInventory : MonoBehaviour
+    [Serializable]
+    public class UiInventory 
     {
         private GemManager _gemManager;
         [SerializeField]private Slot[] crating = new Slot[2];
@@ -16,9 +17,9 @@ namespace UI
         [SerializeField]private Slot[] keys = new Slot[2];
         [SerializeField]private Slot potion;
         
-        private void Start()
+        public void Start(MonoBehaviour mono)
         {
-            StartCoroutine(Delay());
+            mono.StartCoroutine(Delay());
         }
 
         private IEnumerator Delay()
@@ -34,10 +35,23 @@ namespace UI
 
         private void SetUpSlots()
         {
-            foreach (var slot in crating) slot.Setup();
-            foreach (var slot in stored) slot.Setup();
+            for (var i = 0; i < crating.Length; i++)
+            {
+                var slot = crating[i];
+                slot.Setup();
+                slot.button.onClick.AddListener(()=>RemoveFromCraft(slot));
+            }
+
+            for (var i = 0; i < stored.Length; i++)
+            {
+                var slot = stored[i];
+                slot.Setup();
+                slot.button.onClick.AddListener(() => ToCrafting(slot));
+            }
+
             foreach (var slot in keys) slot.Setup();
             potion.Setup();
+            potion.button.onClick.AddListener(UsePotion);
         }
         private void UpdatePotion( SO_ShadowShape newPotion)
         {
@@ -60,18 +74,19 @@ namespace UI
             }
         }
         
-        public void RemoveFromCraft(int slot) => _gemManager.PlayerInventory.RemoveFromCraft(slot);
-        public void ToCrafting(int slot) => _gemManager.PlayerInventory.ToCrafting(slot);
+        public void RemoveFromCraft(Slot slot) => _gemManager.PlayerInventory.RemoveFromCraft(slot.SlotNumbter);
+        public void ToCrafting(Slot slot) => _gemManager.PlayerInventory.ToCrafting(slot.SlotNumbter);
         public void UsePotion() => _gemManager.PlayerInventory.ThrowPotion();
     }
 
     [Serializable]
-    internal class Slot
+    public class Slot
     {
         public GameObject gameObject;
-        public Image sptite;
-        public GameObject sptiteGameObject;
-        public Button button;
+        [HideInInspector]public Image sptite;
+        [HideInInspector]public GameObject sptiteGameObject;
+        [HideInInspector]public Button button;
+        public int SlotNumbter;
 
         public void Update(bool state,Sprite art)
         {

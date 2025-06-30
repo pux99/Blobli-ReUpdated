@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Enemies.Fungi;
 using Enemies.LightBug;
+using GemScripts;
 using Grid;
 using UnityEditor;
 using UnityEngine;
@@ -14,20 +15,25 @@ namespace Utilities
 {
     public class GameManager : MonoBehaviour
     {
-        [Header("Enemies generic data")]
-        [SerializeField] private EnemySO genericData;
-        
-        [Header("Fungus in level")]
-        [SerializeField] private List<FungiStats> fungus;
-        
-        [Header("LightBugs in leve")]
-        [SerializeField] private List<LightBugStats> lightBugs;
-        
+        [Header("Enemies generic data")] [SerializeField]
+        private EnemySO genericData;
+
+        [Header("Fungus in level")] [SerializeField]
+        private List<FungiStats> fungus;
+
+        [Header("LightBugs in leve")] [SerializeField]
+        private List<LightBugStats> lightBugs;
+
         public event Action OnStepTaken;
         private int stepCounter;
-        private void Awake() => ServiceLocator.Instance.RegisterService(this);
-        
-        void Start()
+
+        private void Awake()
+        {
+            ServiceLocator.Instance.RegisterService(this);
+            gemManager.Awake();
+        }
+
+    void Start()
         {
             StartLevel();
         }
@@ -111,6 +117,12 @@ namespace Utilities
                     }
                 }
             }
+
+            #endregion
+
+            #region Gems
+
+            public GemManager gemManager;
 
             #endregion
     }

@@ -2,20 +2,23 @@ using System;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace GemScripts
 {
-    public class GemManager : MonoBehaviour
+    [Serializable]
+    public class GemManager 
     {
         [SerializeField] private GemSpritePair gemSpritePair;
         private GemPool _gemPool;
         private Dictionary<GameObject, Gem> _gems = new Dictionary<GameObject, Gem>();
         public GameObject gemPrefab;
+        public GameObject gemContainer;
         
         public Inventory PlayerInventory;
-        private void Awake()
+        public void Awake()
         {
-            _gemPool = new GemPool(gemSpritePair,gemPrefab, transform, 10);
+            _gemPool = new GemPool(gemSpritePair,gemPrefab, gemContainer.transform, 10);
             ServiceLocator.Instance.RegisterService(this);
             SetUpGems();
 
@@ -28,7 +31,7 @@ namespace GemScripts
         
         private void SetUpGems()
         {
-            foreach (var item in GetComponentsInChildren<SpriteRenderer>())
+            foreach (var item in gemContainer.GetComponentsInChildren<SpriteRenderer>())
             {
                 Gem gem = _gemPool.CreateGemWithGameobject(gemSpritePair.keyValuePairs[item.sprite], item.gameObject);
                 _gems.Add(gem.GameObject, gem);

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6912293464612132315}
-  - component: {fileID: 2973850213117836071}
   m_Layer: 0
   m_Name: GemSystem
   m_TagString: Untagged
@@ -32,17 +31,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2973850213117836071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3008311596626109480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f913d522fc1b15a419d88046259b313a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gemPrefab: {fileID: 6115569156369082560, guid: 0325093408f8ced4fbb79e1b67cfcb56, type: 3}
-  _gemSpritePair: {fileID: 11400000, guid: 884aa1331a25cb64886130d6c3723995, type: 2}
