@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: ShadowAssets
+  m_EditorClassIdentifier: 
+  m_GroupName: Packed Assets
+  m_GUID: e647b5235ca324a4981cc4d6efc27bac
+  m_SerializeEntries:
+  - m_GUID: c30e8be219a0b9040bb3748c01ded5cb
+    m_Address: Assets/Art/Tiles/FloorLight/Tile Palette/ShadowIndicator.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4d3a2e8da84218a4bbf25bba76e2c5b0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 11dccba6216956d4f8d94fc72e74af2a, type: 2}
+    - {fileID: 11400000, guid: fe5d337f01d3632488f96de5a72a32af, type: 2}
