@@ -9,6 +9,9 @@ public class LSUIMonoManager : MonoBehaviour
 
     private List<UIButton> _uiButtons = new();
 
+    public Button buttonToMainMenu;
+    public Button buttonToLevelSelector;
+
     private void Awake()
     {
         for (int i = 0; i < levelButtons.Count; i++)
@@ -16,7 +19,19 @@ public class LSUIMonoManager : MonoBehaviour
             var uiButton = new UIButton(levelButtons[i], i + 1);
             uiButton.Subscribe(HandleLevelSelected);
             _uiButtons.Add(uiButton);
+            buttonToMainMenu.onClick.AddListener(ToMainMenu);
+            buttonToLevelSelector.onClick.AddListener(ToLevelSelector);
         }
+    }
+
+    private void ToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    
+    private void ToLevelSelector()
+    {
+        SceneManager.LoadScene(7);
     }
 
     private void HandleLevelSelected(int level)

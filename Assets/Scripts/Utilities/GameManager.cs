@@ -30,7 +30,10 @@ namespace Utilities
         private void Awake()
         {
             ServiceLocator.Instance.RegisterService(this);
-            gemManager.Awake();
+            if (gemManager.gemContainer != null)
+            {
+                gemManager.Awake();
+            }
         }
 
     void Start()
