@@ -2222,7 +2222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1034015004}
-  - component: {fileID: 1034015003}
+  - component: {fileID: 1034015005}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2230,32 +2230,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &1034015003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034015002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38618d171815b504eb34a393cc916346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelButtons:
-  - {fileID: 1644011416}
-  - {fileID: 1585040356}
-  - {fileID: 701380784}
-  - {fileID: 232874800}
-  - {fileID: 724775293}
-  - {fileID: 2063551014}
-  - {fileID: 1480913938}
-  - {fileID: 1462717552}
-  - {fileID: 1170268171}
-  - {fileID: 1235732321}
-  buttonToMainMenu: {fileID: 182751943}
-  buttonToLevelSelector: {fileID: 0}
-  buttonToCredits: {fileID: 0}
 --- !u!4 &1034015004
 Transform:
   m_ObjectHideFlags: 0
@@ -2271,6 +2245,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1034015005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034015002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd02cd94b7c9fa14dac68fae4e743eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneButtons:
+  - button: {fileID: 1644011416}
+    sceneName: Level1
+  - button: {fileID: 1585040356}
+    sceneName: Level2
+  - button: {fileID: 701380784}
+    sceneName: Level3
+  - button: {fileID: 232874800}
+    sceneName: Level4
+  - button: {fileID: 182751943}
+    sceneName: MainMenu
 --- !u!1 &1083617132
 GameObject:
   m_ObjectHideFlags: 0

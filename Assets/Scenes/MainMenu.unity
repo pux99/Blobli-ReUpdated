@@ -601,7 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 811600431}
-  - component: {fileID: 811600430}
+  - component: {fileID: 811600432}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -609,22 +609,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!114 &811600430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811600429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38618d171815b504eb34a393cc916346, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelButtons: []
-  buttonToMainMenu: {fileID: 0}
-  buttonToLevelSelector: {fileID: 315853074}
-  buttonToCredits: {fileID: 2124144046}
 --- !u!4 &811600431
 Transform:
   m_ObjectHideFlags: 0
@@ -640,6 +624,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &811600432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811600429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd02cd94b7c9fa14dac68fae4e743eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneButtons:
+  - button: {fileID: 315853074}
+    sceneName: LevelSelector
+  - button: {fileID: 2124144046}
+    sceneName: Credits
 --- !u!1001 &873957188
 PrefabInstance:
   m_ObjectHideFlags: 0

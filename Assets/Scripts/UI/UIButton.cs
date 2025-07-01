@@ -4,16 +4,16 @@ using System;
 public class UIButton
 {
     public Button ButtonComponent { get; private set; }
-    public int LevelIndex { get; private set; }
+    public string Scene { get; private set; }
 
-    public UIButton(Button button, int index)
+    public UIButton(Button button, string sceneName)
     {
         ButtonComponent = button;
-        LevelIndex = index;
+        Scene = sceneName;
     }
 
-    public void Subscribe(Action<int> callback)
+    public void Subscribe(Action<string> callback)
     {
-        ButtonComponent.onClick.AddListener(() => callback(LevelIndex));
+        ButtonComponent.onClick.AddListener(() => callback(Scene));
     }
 }
