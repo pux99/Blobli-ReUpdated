@@ -11,6 +11,7 @@ public class LSUIMonoManager : MonoBehaviour
 
     public Button buttonToMainMenu;
     public Button buttonToLevelSelector;
+    public Button buttonToCredits;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class LSUIMonoManager : MonoBehaviour
         }
         buttonToMainMenu?.onClick.AddListener(ToMainMenu);
         buttonToLevelSelector?.onClick.AddListener(ToLevelSelector);
+        buttonToCredits?.onClick.AddListener(ToCredits);
     }
 
     private void ToMainMenu()
@@ -32,6 +34,11 @@ public class LSUIMonoManager : MonoBehaviour
     private void ToLevelSelector()
     {
         SceneManager.LoadScene("LevelSelector");
+    }
+    
+    private void ToCredits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     private void HandleLevelSelected(int level)
