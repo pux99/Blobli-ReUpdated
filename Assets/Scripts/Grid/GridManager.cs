@@ -7,10 +7,11 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
+using Utilities.MonoManager;
 
 namespace Grid
 {
-    public class GridManager : MonoBehaviour
+    public class GridManager : MonoBehaviour,IStartable
     {
         [SerializeField] private Transform player;
         [SerializeField] public UnityEngine.Grid grid;
@@ -27,20 +28,25 @@ namespace Grid
 
         private void Awake(){
             ServiceLocator.Instance.RegisterService(this);
+            ServiceLocator.Instance.GetService<CustomMonoManager>().RegisterOnStart(this);
             //AsyncOperationHandle<IList<TileBase>> async = Addressables.LoadAssetsAsync<TileBase>("Assets/Art/Tiles/FloorLight/ShadowIndicator.png");
             //async.Completed += AsyncComplet;
         }
+        public void Beginning()
+        {
+            LoadShadowTile();
+        }
 
-        private void Update()
+        private void LoadShadowTile()
         {
             if (shadowTile == null)
             {
                 AsyncOperationHandle<IList<TileBase>> async = Addressables.LoadAssetsAsync<TileBase>("Assets/Art/Tiles/FloorLight/Tile Palette/ShadowIndicator.asset");
-                async.Completed += AsyncComplet;
+                async.Completed += AsyncCCompleted;
             }
         }
 
-        private void AsyncComplet(AsyncOperationHandle<IList<TileBase>> handle)
+        private void AsyncCCompleted(AsyncOperationHandle<IList<TileBase>> handle)
         {
             if (handle.Status==AsyncOperationStatus.Succeeded)
             {
@@ -48,7 +54,8 @@ namespace Grid
             }
             else
             {
-                Debug.Log("puto");
+                Debug.Log("Fail In charging Asset");
+                LoadShadowTile();
             }
                 
         }
@@ -113,6 +120,7 @@ namespace Grid
                 if (map.HasTile(cell)) return true;
             return false;
         }
+
         
     }
 }
