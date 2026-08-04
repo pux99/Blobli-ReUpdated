@@ -33,6 +33,7 @@ MonoBehaviour:
   m_UniqueBundleIds: 0
   m_EnableJsonCatalog: 0
   m_NonRecursiveBuilding: 1
+  m_AllowNestedBundleFolders: 0
   m_CCDEnabled: 0
   m_maxConcurrentWebRequests: 3
   m_UseUWRForLocalBundles: 0
@@ -41,6 +42,7 @@ MonoBehaviour:
   m_BundleRedirectLimit: -1
   m_SharedBundleSettings: 0
   m_SharedBundleSettingsCustomGroupIndex: 0
+  m_simulatedLoadDelay: 0.1
   m_ContiguousBundles: 1
   m_StripUnityVersionFromBundleBuild: 0
   m_DisableVisibleSubAssetRepresentations: 0
@@ -67,20 +69,6 @@ MonoBehaviour:
   m_ProfileSettings:
     m_Profiles:
     - m_InheritedParent: 
-      m_Id: 4e55f3ef9bc7e4b4aaef076f99ef8530
-      m_ProfileName: New Profile
-      m_Values:
-      - m_Id: 2c15b0145225287489841d6fbf642ea8
-        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: 38492a841032c1b49991c94aaabcd840
-        m_Value: 'ServerData/Local/[BuildTarget]'
-      - m_Id: 626767045715630419b64906d180df6c
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: 86ddd0096eac0fb4cb597b1376b1609a
-        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
-      - m_Id: e8b3c826c1747aa4d8beb2a552e25634
-        m_Value: 'http://localhost:3000/static/[BuildTarget]'
-    - m_InheritedParent: 
       m_Id: 80684721ce82af04f90f3951ac8f0749
       m_ProfileName: Default
       m_Values:
@@ -94,6 +82,20 @@ MonoBehaviour:
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: e8b3c826c1747aa4d8beb2a552e25634
         m_Value: <undefined>
+    - m_InheritedParent: 
+      m_Id: 4e55f3ef9bc7e4b4aaef076f99ef8530
+      m_ProfileName: New Profile
+      m_Values:
+      - m_Id: 2c15b0145225287489841d6fbf642ea8
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: 38492a841032c1b49991c94aaabcd840
+        m_Value: 'ServerData/Local/[BuildTarget]'
+      - m_Id: 626767045715630419b64906d180df6c
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 86ddd0096eac0fb4cb597b1376b1609a
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: e8b3c826c1747aa4d8beb2a552e25634
+        m_Value: 'http://localhost:3000/static/[BuildTarget]'
     m_ProfileEntryNames:
     - m_Id: 2c15b0145225287489841d6fbf642ea8
       m_Name: BuildTarget
