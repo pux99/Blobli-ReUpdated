@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{44D6B3CC-7EAC-4413-9C56-54F3C0741B3F}" SchemaVersion="119">
+	<Effects>
+		<WorkUnit Name="Default Work Unit" ID="{44D6B3CC-7EAC-4413-9C56-54F3C0741B3F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="Reverb_Altar" ID="{A072661A-606A-4EAE-99AE-194367A4A6BF}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+					<Comment>ShareSet de reverb de la camara del Altar: piedra, grande, cola larga y oscura. DryLevel -96 porque vive en un Auxiliary Bus y solo tiene que devolver la senal humeda; la seca sigue su camino por Bus_SFX. Es un ShareSet y no un insert para que una sola instancia del efecto procese a todos los emisores.</Comment>
+					<PropertyList>
+						<Property Name="DecayTime" Type="Real32" Value="5.2"/>
+						<Property Name="Density" Type="Real32" Value="92"/>
+						<Property Name="Diffusion" Type="Real32" Value="0.78"/>
+						<Property Name="DryLevel" Type="Real32" Value="-96"/>
+						<Property Name="ERFrontBackDelay" Type="Real32" Value="45"/>
+						<Property Name="ERLevel" Type="Real32" Value="-11"/>
+						<Property Name="EnableEarlyReflections" Type="bool" Value="True"/>
+						<Property Name="EnableToneControls" Type="bool" Value="True"/>
+						<Property Name="Filter3Freq" Type="Real32" Value="5500"/>
+						<Property Name="Filter3Gain" Type="Real32" Value="-7"/>
+						<Property Name="HFDamping" Type="Real32" Value="7.5"/>
+						<Property Name="PreDelay" Type="Real32" Value="32"/>
+						<Property Name="ReverbLevel" Type="Real32" Value="-2"/>
+						<Property Name="RoomSize" Type="Real32" Value="90"/>
+						<Property Name="StereoWidth" Type="Real32" Value="150"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
+	</Effects>
+</WwiseDocument>

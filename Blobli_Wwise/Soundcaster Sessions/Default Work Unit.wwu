@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{29FEB249-3BD2-4304-AF79-A359BC06D3B5}" SchemaVersion="119">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{29FEB249-3BD2-4304-AF79-A359BC06D3B5}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="SC_Blobli_TP1" ID="{08C87AC6-9543-4AD8-AD88-99307170C2A5}">
+					<Comment>Sesion de testeo del TP1. Modulos: los 13 Events. Sliders: SunExposure (clima), AltarDistance (zona) y Turns (variable de gameplay). Selector de Switch: Tile, para las tres superficies. Selector de State: Recinto, para el reverb del Altar. Zone y Fauna no se tocan a mano: se derivan solos de AltarDistance y SunExposure con Use Game Parameter, y eso mismo se puede demostrar moviendo el slider y mirando como cambia el switch activo. El recorrido de prueba completo esta en 01_INFORME_Esqueleto.md, seccion 8.</Comment>
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_Ambience" ID="{09FE8A40-4E17-4B4F-9D93-8C68C06BFA65}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_Ambience" ID="{C9C0D603-B4D6-482E-ABEE-607FA8E1A0DB}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Footstep" ID="{398AA259-440D-4A51-9F8E-607A4ACD5312}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Turn" ID="{FD220042-36E6-416F-B8F5-F0762B8EAC06}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Gem_Pickup" ID="{C846D205-5A13-4577-B0E8-57955ACC2A76}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Shadow_Place" ID="{734F4061-427E-4111-B259-FDD98493A0D7}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="5"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Key_Place" ID="{577CBFFD-D204-47D9-B9B2-5812CB9044FE}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="6"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Death" ID="{0A101EAB-EEAF-4636-90EA-6226B52DF3E5}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="7"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Win" ID="{E96D4CD7-BE84-46BC-9CAB-57291F23D18F}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="8"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Hover" ID="{1D214B38-7CFF-41B8-A341-84B227AE0AB6}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="9"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Click" ID="{EF5FB1CD-0CE5-48D2-95D2-711019BC760A}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="10"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Set_Recinto_Altar" ID="{4B6EAB88-AEFF-4886-A38A-373825222984}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="11"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Set_Recinto_Exterior" ID="{C4932615-0B85-4A14-97CD-DB1095D44481}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
+							<Position X="0" Y="12"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="SunExposure" ID="{7DDEE1D3-C7E7-4809-B010-6FE3537F4820}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="AltarDistance" ID="{A1B2BC36-F3C6-4364-A91B-B4F015BF7728}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Turns" ID="{BA7E6CEE-B03B-4DBF-9DE9-1896DE94AEBF}"/>
+							<Value>0</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Exterior" ID="{D3655061-F23C-46D9-9457-F70BDF20124A}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Ground" ID="{D1E83381-B886-46CD-B6E9-392C9CB6D214}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

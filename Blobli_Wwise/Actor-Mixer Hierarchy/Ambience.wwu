@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5CE22E0B-4105-433E-BDD7-97B562D8A230}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Ambience" ID="{5CE22E0B-4105-433E-BDD7-97B562D8A230}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="AMX_Ambience" ID="{E3174682-88E3-4996-8307-0C6DDADD83FA}" ShortID="207263671">
+					<Comment>Paisaje sonoro del bioma. Actor-Mixer, no contenedor: no toma decisiones de reproduccion, solo agrupa, rutea a Bus_AMB y concentra el send a Aux_Altar.</Comment>
+					<PropertyList>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
+						<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+						<Property Name="UserAuxSendVolume0" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Bus_AMB" ID="{0A3AFBBD-105A-4F43-AAB1-69D28736A5C9}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Aux_Altar" ID="{9193A0B3-886C-458C-B959-9265F1534F9A}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SwitchContainer Name="SW_Zone_Ambience" ID="{03EA2824-079F-4948-A9C2-AEC267EABA04}" ShortID="444645847">
+							<Comment>Raiz de todo el ambiente. Un unico Event, Play_Ambience, lo arranca al cargar el nivel. Play Mode CONTINUOUS: el Event se llama una sola vez y el contenedor queda escuchando el Switch Group Zone, que a su vez se deriva de AltarDistance. Cuando Blobli se acerca al Altar el contenedor cambia de hijo solo, con Fade-in/Fade-out de 2 s, sin que el juego tenga que volver a llamar al Event. En Step no pasaria nada hasta el proximo Play. Ademas, fuera de su switch un objeto no se instancia: en el campo no existen las capas del Altar y en el Altar no existe el clima.</Comment>
+							<PropertyList>
+								<Property Name="SwitchBehavior" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}" WorkUnitID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="Zone" ID="{81976640-24C1-40F0-8E82-091B546DD8D5}" WorkUnitID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<BlendContainer Name="BLD_Field" ID="{406B152D-A0A8-4D2A-8413-78BF581A8AD2}" ShortID="1013159788">
+									<Comment>El claro abierto. Blend Container en Continuous con un Blend Track llamado "Sun", Crossfade tildado y SunExposure como Game Parameter: ese es el sistema dinamico de clima. Las tres zonas se SOLAPAN (0-40 / 25-75 / 60-100) para que el cambio sea continuo y sin escalones, y entre las tres cubren todo el rango, asi no queda ningun valor del parametro sin capa. SW_Fauna es hijo de este Blend pero NO esta asignado a ningun Blend Track: por eso suena siempre que estemos en el campo, independientemente del sol.</Comment>
+									<PropertyList>
+										<Property Name="BlendBehavior" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_Wind_Soft" ID="{F410D4A7-7C79-4A4F-BAD7-35B57A22CB79}" ShortID="19548887">
+											<Comment>Viento quieto de la zona en sombra. Cama: Loop Infinite en el HIJO, porque un Blend Container no repite a sus hijos.</Comment>
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_Wind_Soft" ID="{B72801BA-D591-47D0-8388-99A2DC924E40}">
+													<Language>SFX</Language>
+													<AudioFile>Blobli\AMB_Wind_Soft.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="84865902"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_Wind_Soft" ID="{B72801BA-D591-47D0-8388-99A2DC924E40}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Wind_Med" ID="{5345A838-9480-4BB7-88A0-AE7428EF3EEE}" ShortID="255174868">
+											<Comment>Viento medio: el sol empieza a dar sobre el claro y el aire se mueve mas. Cama en Loop Infinite.</Comment>
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_Wind_Med" ID="{1D19687E-548F-4D31-B67B-88CFD27009FB}">
+													<Language>SFX</Language>
+													<AudioFile>Blobli\AMB_Wind_Med.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="946770982"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_Wind_Med" ID="{1D19687E-548F-4D31-B67B-88CFD27009FB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<BlendContainer Name="BLD_Sun_High" ID="{05609DF4-FC3B-4AEA-86FF-EB2727C4692C}" ShortID="1046273015">
+											<Comment>Sol pleno. Es la unica zona del Blend Track que necesita dos capas, porque es la que introduce la amenaza: al viento seco se le suma el chisporroteo del sol. Blend agrupador en Continuous, sin Blend Track propio: sus dos hijos suenan siempre juntos mientras la capa este en zona.</Comment>
+											<PropertyList>
+												<Property Name="BlendBehavior" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SFX_Wind_Hot" ID="{9B9E8D22-5DAF-43AA-9470-B8C22E2B2443}" ShortID="714059975">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_Wind_Hot" ID="{16CF5EC9-9679-42AA-B411-725B84744142}">
+															<Language>SFX</Language>
+															<AudioFile>Blobli\AMB_Wind_Hot.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="388367116"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_Wind_Hot" ID="{16CF5EC9-9679-42AA-B411-725B84744142}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Sun_Sizzle" ID="{1C1DA485-E759-4124-AEE0-6C6D85528979}" ShortID="266168896">
+													<Comment>El sol quemando la tierra. Es el sonido de la amenaza del juego: cuando esto se escucha fuerte, Blobli esta en peligro. Cama en Loop Infinite.</Comment>
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SunSizzle" ID="{62DD0BAB-AA1C-41FC-B7DB-FEEAB45C746E}">
+															<Language>SFX</Language>
+															<AudioFile>Blobli\AMB_SunSizzle.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="203362226"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SunSizzle" ID="{62DD0BAB-AA1C-41FC-B7DB-FEEAB45C746E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</BlendContainer>
+										<SwitchContainer Name="SW_Fauna" ID="{E7D92A10-2A15-4620-908D-2A01F2BBC7CB}" ShortID="1060018912">
+											<Comment>La fauna del claro. Switch Container en Continuous con el Switch Group Fauna, que se deriva de SunExposure con Use Game Parameter (0-65 Active, 65-100 Silent). El switch Silent esta VACIO: con el sol alto los bichos se callan y, lo mas importante, sus Random Containers no se instancian, o sea que no existen ni gastan voz. Es el mismo criterio de optimizacion que el Switch Group Zone. Este contenedor no esta asignado a ningun Blend Track del padre, asi que vive en paralelo a las capas de viento.</Comment>
+											<PropertyList>
+												<Property Name="SwitchBehavior" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Active" ID="{E6E4D096-7FAD-451D-98F1-AE02F03DEDC1}" WorkUnitID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+												</Reference>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="Fauna" ID="{3AE30E7F-5CB2-468A-92BC-62481F1E3766}" WorkUnitID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<BlendContainer Name="BLD_Fauna" ID="{E5ED8B6F-50D3-44E2-A07A-210833C2BE66}" ShortID="513553882">
+													<Comment>Blend agrupador en Continuous: junta los dos sistemas intermitentes para poder asignarlos al switch Active como un solo objeto y balancearlos juntos.</Comment>
+													<PropertyList>
+														<Property Name="BlendBehavior" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="RND_Insects" ID="{B08263D5-C3CB-4A2B-B6FD-5412633FF0EC}" ShortID="861958702">
+															<Comment>Insectos del claro. Patron de ambiente intermitente: Random Container en CONTINUOUS + Loop Infinite, con el Loop en el CONTENEDOR y no en los hijos (un hijo que loopea no termina nunca y el contenedor jamas dispararia el siguiente). La separacion la da una Transition de tipo Delay de 7 s con randomizer -3/+5, o sea entre 4 y 12 s desde que TERMINA uno hasta que arranca el otro: asi nunca se pisan. El objeto Silence con peso 40 abre los huecos largos. Random Standard con Limit repetition desactivado a proposito: con Shuffle o con el limite activo el silencio no podria salir dos veces seguidas y los weights quedarian sin efecto. Randomizers de Pitch, Volume y Low-pass para que los mismos dos assets se lean como bichos a distintas distancias.</Comment>
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{A972D336-6744-4494-B350-A0B65646251B}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="30"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{847FCC14-2F25-40E4-B0F4-5EA54DA561A8}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="200"/>
+																					<Property Name="Min" Type="Real64" Value="-200"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+																<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="7">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{1DAF0B6D-9B8C-4E60-A4A1-CEA8CD0160CB}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="5"/>
+																					<Property Name="Min" Type="Real64" Value="-3"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{0BDA7C3C-2932-49C2-8407-02E0C6C37803}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="3"/>
+																					<Property Name="Min" Type="Real64" Value="-3"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="SFX_Insects_01" ID="{6770982F-EA05-4CE1-9955-10316A6721DF}" ShortID="381893694">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>30</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_Insects_01" ID="{715C50A8-BF68-42B5-9893-528A301C8F8D}">
+																			<Language>SFX</Language>
+																			<AudioFile>Blobli\AMB_Insects_01.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="199612725"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_Insects_01" ID="{715C50A8-BF68-42B5-9893-528A301C8F8D}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="SFX_Insects_02" ID="{43617490-641A-43FA-8AA5-AFEE14854D71}" ShortID="52563807">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>30</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_Insects_02" ID="{117926A8-E825-4BD4-94FD-3B04409F2586}">
+																			<Language>SFX</Language>
+																			<AudioFile>Blobli\AMB_Insects_02.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="762247273"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_Insects_02" ID="{117926A8-E825-4BD4-94FD-3B04409F2586}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="SIL_Insects_Gap" ID="{ADBD77A8-2810-4C1F-9FB9-8287986E24F3}" ShortID="819026159">
+																	<Comment>Objeto Silence (source Wwise Silence). Duration 6 s con Random Min -3 / Random Max 8: entre 3 y 14 s de hueco. Peso 40 para que el silencio sea mas probable que cualquiera de los dos bichos.</Comment>
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>40</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<SourcePlugin Name="Silence" ID="{0E11B6D2-3B1C-44CB-9315-09E40C1A1607}" ShortID="820408369" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+																			<PropertyList>
+																				<Property Name="Length" Type="Real32" Value="6"/>
+																				<Property Name="LengthMax" Type="Real32" Value="8"/>
+																				<Property Name="LengthMin" Type="Real32" Value="-3"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																		</SourcePlugin>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="Silence" ID="{0E11B6D2-3B1C-44CB-9315-09E40C1A1607}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
+														<RandomSequenceContainer Name="RND_Mushrooms" ID="{E4D976BE-DEBC-48EC-8975-30C6F3DD1E5C}" ShortID="1000573640">
+															<Comment>Los hongos del claro: respiran, se abren, sueltan esporas. Mismo patron intermitente que los insectos pero mucho mas espaciado (Delay 11 s con randomizer -5/+7) y con el Silence en peso 50, porque es un detalle y no una cama. Los dos sistemas corriendo en paralelo con cadencias distintas evitan que el claro suene a bucle.</Comment>
+															<PropertyList>
+																<Property Name="Lowpass" Type="int16">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{16E0F867-8682-449A-B8D4-330218382C4F}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="25"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{87EA6547-F636-41F9-8936-9E17C39E3788}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="250"/>
+																					<Property Name="Min" Type="Real64" Value="-250"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+																<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="11">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{3A5A8F5C-2EDF-418E-BE50-B4BB81A7A907}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="7"/>
+																					<Property Name="Min" Type="Real64" Value="-5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+																<Property Name="Volume" Type="Real64">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{0F9D4DF8-C780-4D98-9FE9-C9811819B9FC}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="2.5"/>
+																					<Property Name="Min" Type="Real64" Value="-2.5"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="SFX_Mushrooms_01" ID="{E1C0248C-8467-4874-84D3-F45BC3AF86F1}" ShortID="278618257">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>25</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_Mushrooms_01" ID="{BEBC6852-CFA6-4327-A15D-A99815A91853}">
+																			<Language>SFX</Language>
+																			<AudioFile>Blobli\AMB_Mushrooms_01.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="227865293"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_Mushrooms_01" ID="{BEBC6852-CFA6-4327-A15D-A99815A91853}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="SFX_Mushrooms_02" ID="{64D468AB-1C0E-47AA-BB4C-52A13C686346}" ShortID="246720343">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>25</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_Mushrooms_02" ID="{ACBF1507-9566-4C5C-B70A-B1439DEF3C93}">
+																			<Language>SFX</Language>
+																			<AudioFile>Blobli\AMB_Mushrooms_02.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="331503382"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_Mushrooms_02" ID="{ACBF1507-9566-4C5C-B70A-B1439DEF3C93}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="SIL_Mushrooms_Gap" ID="{D3870F3C-D448-4DF4-A314-E62ADC08961C}" ShortID="531831607">
+																	<ReferenceList>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<SourcePlugin Name="Silence" ID="{D27721DB-F0A2-4334-B7C3-8E8E9B2D3E45}" ShortID="418098564" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+																			<PropertyList>
+																				<Property Name="Length" Type="Real32" Value="10"/>
+																				<Property Name="LengthMax" Type="Real32" Value="14"/>
+																				<Property Name="LengthMin" Type="Real32" Value="-5"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																		</SourcePlugin>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="Silence" ID="{D27721DB-F0A2-4334-B7C3-8E8E9B2D3E45}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
+													</ChildrenList>
+												</BlendContainer>
+											</ChildrenList>
+											<GroupingInfo>
+												<GroupingBehaviorList>
+													<GroupingBehavior>
+														<ItemRef Name="BLD_Fauna" ID="{E5ED8B6F-50D3-44E2-A07A-210833C2BE66}"/>
+														<PropertyList>
+															<Property Name="FadeInTime" Type="Real64">
+																<ValueList>
+																	<Value>3</Value>
+																</ValueList>
+															</Property>
+															<Property Name="FadeOutTime" Type="Real64">
+																<ValueList>
+																	<Value>4</Value>
+																</ValueList>
+															</Property>
+														</PropertyList>
+													</GroupingBehavior>
+												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Active" ID="{E6E4D096-7FAD-451D-98F1-AE02F03DEDC1}"/>
+														<ItemList>
+															<ItemRef Name="BLD_Fauna" ID="{E5ED8B6F-50D3-44E2-A07A-210833C2BE66}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
+											</GroupingInfo>
+										</SwitchContainer>
+									</ChildrenList>
+									<BlendTrackList>
+										<BlendTrack Name="Sun" ID="{7C4130B7-11D4-40FF-BCA5-4D67905D552D}" ShortID="268346480">
+											<PropertyList>
+												<Property Name="EnableCrossFading" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="LayerCrossFadeControlInput">
+													<ObjectRef Name="SunExposure" ID="{7DDEE1D3-C7E7-4809-B010-6FE3537F4820}" WorkUnitID="{2ADFBBFC-5FA8-4C92-B8B3-B19989225ED7}"/>
+												</Reference>
+											</ReferenceList>
+											<BlendTrackAssocList>
+												<BlendTrackAssoc>
+													<ItemRef Name="SFX_Wind_Soft" ID="{F410D4A7-7C79-4A4F-BAD7-35B57A22CB79}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>0</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>40</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="SFX_Wind_Med" ID="{5345A838-9480-4BB7-88A0-AE7428EF3EEE}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>25</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>75</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+												<BlendTrackAssoc>
+													<ItemRef Name="BLD_Sun_High" ID="{05609DF4-FC3B-4AEA-86FF-EB2727C4692C}"/>
+													<CrossfadingInfo>
+														<LeftEdgePos>60</LeftEdgePos>
+														<LeftFadingMode>Automatic</LeftFadingMode>
+														<RightEdgePos>100</RightEdgePos>
+														<RightFadingMode>Automatic</RightFadingMode>
+													</CrossfadingInfo>
+												</BlendTrackAssoc>
+											</BlendTrackAssocList>
+										</BlendTrack>
+									</BlendTrackList>
+								</BlendContainer>
+								<BlendContainer Name="BLD_Altar" ID="{9EDA149B-9B63-4830-9C6F-63DF483B7780}" ShortID="1038547107">
+									<Comment>La camara del Altar. Blend agrupador en Continuous y SIN Blend Track: aca no hay ninguna variable que cruce capas, las tres suenan siempre juntas. Las tres van con Loop Infinite en el hijo. Lo que hace que el Altar suene a recinto NO esta en este contenedor: eso lo resuelve el State Recinto sobre los buses. Este objeto solo decide QUE se oye en la zona; el State decide COMO suena el espacio.</Comment>
+									<PropertyList>
+										<Property Name="BlendBehavior" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_Altar_Voices" ID="{863BB1D5-BAFD-4311-AACE-A2C29D7BD2B7}" ShortID="486468638">
+											<Comment>El coro / las voces del Altar. Cama en Loop Infinite.</Comment>
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ALTAR_Voices" ID="{9D049087-23EC-4564-9567-22A535DCBB2B}">
+													<Language>SFX</Language>
+													<AudioFile>Blobli\ALTAR_Voices.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="147620351"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="ALTAR_Voices" ID="{9D049087-23EC-4564-9567-22A535DCBB2B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Altar_Static" ID="{68401A9B-C2EE-4F2A-8D94-6B855D855FEC}" ShortID="576038869">
+											<Comment>Estatica. Cama en Loop Infinite.</Comment>
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ALTAR_Static" ID="{05CD1CCA-96A6-4E4D-A10F-FC9C55C3A77E}">
+													<Language>SFX</Language>
+													<AudioFile>Blobli\ALTAR_Static.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="271758708"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="ALTAR_Static" ID="{05CD1CCA-96A6-4E4D-A10F-FC9C55C3A77E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Altar_Aura" ID="{717591DE-1ED1-4E69-8C7F-682EEA9C2023}" ShortID="553387893">
+											<Comment>El aura del Altar. Cama en Loop Infinite.</Comment>
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="ALTAR_Aura" ID="{7BF504B0-74D1-42C7-9CC2-4892D7DBEE08}">
+													<Language>SFX</Language>
+													<AudioFile>Blobli\ALTAR_Aura.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="979287941"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="ALTAR_Aura" ID="{7BF504B0-74D1-42C7-9CC2-4892D7DBEE08}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</BlendContainer>
+								<Sound Name="SFX_Void" ID="{5D003A53-1C63-48A3-962B-32BC0DF3362D}" ShortID="106576690">
+									<Comment>El void: el drone de la dimension de sombra. Es el unico objeto asignado a los DOS switches de Zone, porque el void esta siempre, adentro y afuera del Altar. Lleva Continue to play across switch transitions para que al cruzar de zona NO se reinicie desde el principio, y Fade-in/Fade-out de 2 s para que el cambio no corte seco. Loop Infinite porque no para nunca: es cama, no evento. Ademas tiene una curva RTPC contra Turns sobre Voice Volume: a medida que pasan los turnos el void se hace mas presente, el tiempo se agota y la sombra avanza. La curva esta SOLO en este objeto, nunca repetida en un padre, porque dos curvas iguales en padre e hijo se suman.</Comment>
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="AMB_Void" ID="{3DBBE856-DFBC-429C-93BA-708E83DD6BB5}">
+											<Language>SFX</Language>
+											<AudioFile>Blobli\AMB_Void.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="245773270"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{BCACD991-0188-49CE-9D14-C68CA0C799BB}" ShortID="1004153460">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="Volume"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Turns" ID="{BA7E6CEE-B03B-4DBF-9DE9-1896DE94AEBF}" WorkUnitID="{2ADFBBFC-5FA8-4C92-B8B3-B19989225ED7}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{F0B7415D-C061-4D16-986A-18F06FEC010E}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="3"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-6</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>0</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="AMB_Void" ID="{3DBBE856-DFBC-429C-93BA-708E83DD6BB5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="BLD_Field" ID="{406B152D-A0A8-4D2A-8413-78BF581A8AD2}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>2</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>2</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="SFX_Void" ID="{5D003A53-1C63-48A3-962B-32BC0DF3362D}"/>
+										<PropertyList>
+											<Property Name="ContinuePlay" Type="bool" Value="True"/>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>2</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>2</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="BLD_Altar" ID="{9EDA149B-9B63-4830-9C6F-63DF483B7780}"/>
+										<PropertyList>
+											<Property Name="FadeInTime" Type="Real64">
+												<ValueList>
+													<Value>2</Value>
+												</ValueList>
+											</Property>
+											<Property Name="FadeOutTime" Type="Real64">
+												<ValueList>
+													<Value>2</Value>
+												</ValueList>
+											</Property>
+										</PropertyList>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}"/>
+										<ItemList>
+											<ItemRef Name="BLD_Field" ID="{406B152D-A0A8-4D2A-8413-78BF581A8AD2}"/>
+											<ItemRef Name="SFX_Void" ID="{5D003A53-1C63-48A3-962B-32BC0DF3362D}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Altar" ID="{5B3D64CF-1A59-421C-B4D4-BAE04C3630C7}"/>
+										<ItemList>
+											<ItemRef Name="BLD_Altar" ID="{9EDA149B-9B63-4830-9C6F-63DF483B7780}"/>
+											<ItemRef Name="SFX_Void" ID="{5D003A53-1C63-48A3-962B-32BC0DF3362D}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

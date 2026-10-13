@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}" SchemaVersion="119">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{B473AA5B-9C90-49F4-9753-535F941D38C5}" WorkUnitID="{E86FE2BF-54C4-451A-B3B1-41084741F95D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Bus_SFX" ID="{E5A4CC82-BDB3-4102-8A36-1822B0E5D416}">
+							<Comment>Todo lo que ocurre DENTRO del mundo: Blobli y el paisaje. Es el unico bus al que el State Recinto le aplica un Low-pass, porque la piedra de la camara del Altar bloquea los agudos y deja pasar los graves. Un solo State sobre el bus hace el trabajo de tocarle el filtro a cada objeto por separado.</Comment>
+							<ChildrenList>
+								<Bus Name="Bus_Player" ID="{C448015F-1BA6-4339-90E4-99ECE8C48126}">
+									<Comment>Blobli: pisadas, gemas, sombras, llaves, muerte. Separado del ambiente para poder balancear personaje contra paisaje con un solo fader.</Comment>
+								</Bus>
+								<Bus Name="Bus_AMB" ID="{0A3AFBBD-105A-4F43-AAB1-69D28736A5C9}">
+									<Comment>Paisaje sonoro: el void, el viento, el sol, la fauna y el Altar.</Comment>
+								</Bus>
+							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Recinto" ID="{7BB12C85-3214-414D-B379-34A4EB45B25F}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="Altar" ID="{7EF10EDA-3142-4C37-BA92-0DEE88F11F94}"/>
+										<CustomState Name="Custom State" ID="{DD834148-FCB2-4EEF-8BB3-BBCB368DC562}">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16" Value="12"/>
+												<Property Name="Volume" Type="Real64" Value="-1"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+						</Bus>
+						<Bus Name="Bus_UI" ID="{EA2E2CAF-1751-48E4-A2F1-9E7C0BA29845}">
+							<Comment>Lo NO diegetico: hover, click, el jingle de victoria y el pulso de turno. A proposito NO cuelga de Bus_SFX y no tiene State ni send a Aux_Altar: esos sonidos no ocurren adentro del mundo, son informacion para el jugador. Si se oscurecieran y se llenaran de reverb al entrar al Altar, el jugador perderia feedback justo en el momento mas importante del nivel.</Comment>
+						</Bus>
+						<AuxBus Name="Aux_Altar" ID="{9193A0B3-886C-458C-B959-9265F1534F9A}">
+							<Comment>Camino humedo del recinto. AMX_Player y AMX_Ambience le mandan un User-Defined Auxiliary Send fijo; el State Recinto decide si el retorno se oye (Altar, offset 0 dB) o no (Exterior y None, offset -96 dB). Asi la reverb nunca se re-instancia al cambiar de zona: una sola instancia del efecto sube y baja de nivel con el Default Transition Time del State Group.</Comment>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="Recinto" ID="{7BB12C85-3214-414D-B379-34A4EB45B25F}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="None" ID="{9C1116A1-62BC-4B31-9A32-134A25A98012}"/>
+										<CustomState Name="Custom State" ID="{F3E81C1F-CD8C-467D-89A3-B14C8BC9ECB4}">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Exterior" ID="{D3655061-F23C-46D9-9457-F70BDF20124A}"/>
+										<CustomState Name="Custom State" ID="{F868ADA9-DF49-4903-B675-971F6238AE31}">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="Altar" ID="{7EF10EDA-3142-4C37-BA92-0DEE88F11F94}"/>
+										<CustomState Name="Custom State" ID="{E5F6CBA1-951C-441C-A94E-85D8992F0BAF}">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="0"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{891AA6C9-29E1-4B2A-8387-E224570C0B56}">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="Reverb_Altar" ID="{A072661A-606A-4EAE-99AE-194367A4A6BF}" WorkUnitID="{44D6B3CC-7EAC-4413-9C56-54F3C0741B3F}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</AuxBus>
+					</ChildrenList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

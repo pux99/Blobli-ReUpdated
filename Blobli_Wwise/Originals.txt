@@ -1,0 +1,87 @@
+WAV Files
+
+Path	Format Tag	Num Channels	Channel Mask	Sample Rate	Avg Bytes Per Sec	Block Align	Bit Depth	Num Samples
+
+\Plugins\iZotope Hybrid Reverb\Auditorium.wav	0xFFFE	2	0x00000003	48000	288000	6	24	83236
+\Plugins\iZotope Hybrid Reverb\Car Interior.wav	0xFFFE	2	0x00000003	48000	288000	6	24	23621
+\Plugins\iZotope Hybrid Reverb\Cavern.wav	0xFFFE	2	0x00000003	48000	288000	6	24	97526
+\Plugins\iZotope Hybrid Reverb\Church.wav	0xFFFE	2	0x00000003	48000	288000	6	24	179809
+\Plugins\iZotope Hybrid Reverb\City Center.wav	0xFFFE	2	0x00000003	48000	288000	6	24	156676
+\Plugins\iZotope Hybrid Reverb\City Streets.wav	0xFFFE	2	0x00000003	48000	288000	6	24	112337
+\Plugins\iZotope Hybrid Reverb\Forest.wav	0xFFFE	2	0x00000003	48000	288000	6	24	76018
+\Plugins\iZotope Hybrid Reverb\Medium Metal Room.wav	0xFFFE	2	0x00000003	48000	288000	6	24	64472
+\Plugins\iZotope Hybrid Reverb\Medium Wood Hall.wav	0xFFFE	2	0x00000003	48000	288000	6	24	43884
+\Plugins\iZotope Hybrid Reverb\Medium Wood Room.wav	0xFFFE	2	0x00000003	48000	288000	6	24	35595
+\Plugins\iZotope Hybrid Reverb\Metallic Hall.wav	0xFFFE	2	0x00000003	48000	288000	6	24	130598
+\Plugins\iZotope Hybrid Reverb\Rock Wall.wav	0xFFFE	2	0x00000003	48000	288000	6	24	59245
+\Plugins\iZotope Hybrid Reverb\Small Metal Room.wav	0xFFFE	2	0x00000003	48000	288000	6	24	53291
+\Plugins\iZotope Hybrid Reverb\Small Wood Room.wav	0xFFFE	2	0x00000003	48000	288000	6	24	24135
+\SFX\Heartbeat.wav	0xFFFE	1	0x00000004	44100	88200	2	16	46336
+\SFX\Jump.wav	0xFFFE	2	0x00000003	44100	176400	4	16	1548950
+\SFX\night insects.wav	0xFFFE	2	0x00000003	48000	192000	4	16	2685952
+\SFX\PAD PAUSA.wav	0xFFFE	2	0x00000003	48000	288000	6	24	606316
+\SFX\Rain_Full.wav	0xFFFE	2	0x00000003	44100	176400	4	16	3969000
+\SFX\Rain_Med.wav	0xFFFE	2	0x00000003	44100	176400	4	16	3661476
+\SFX\Rain_Soft.wav	0xFFFE	2	0x00000003	44100	176400	4	16	3426921
+\SFX\Thunder close.wav	0xFFFE	2	0x00000003	48000	288000	6	24	1215024
+\SFX\Thunder distant.wav	0xFFFE	2	0x00000003	48000	288000	6	24	1131894
+\SFX\waterbubbles.wav	0xFFFE	1	0x00000004	48000	96000	2	16	568796
+\SFX\Winchester Single Shot Natural Far-002.wav	0xFFFE	2	0x00000003	48000	192000	4	16	237756
+\SFX\Winchester Single Shot Natural Far-003.wav	0xFFFE	2	0x00000003	48000	192000	4	16	257534
+\SFX\Winchester Single Shot Natural Mid-002.wav	0xFFFE	2	0x00000003	48000	192000	4	16	232143
+\SFX\Winchester Single Shot Natural Mid-003.wav	0xFFFE	2	0x00000003	48000	192000	4	16	228028
+\SFX\Winchester Single Shot Natural Near-002.wav	0xFFFE	2	0x00000003	48000	192000	4	16	296731
+\SFX\Winchester Single Shot Natural Near-003.wav	0xFFFE	2	0x00000003	48000	192000	4	16	271281
+\SFX\assets\Arroyo.wav	0xFFFE	2	0x00000003	44100	176400	4	16	5580414
+\SFX\assets\BBC SOUND FX_BONFIRE.wav	0xFFFE	2	0x00000003	44100	176400	4	16	3969000
+\SFX\assets\bonfire1.wav	0xFFFE	2	0x00000003	48000	192000	4	16	2887808
+\SFX\assets\bonfire2.wav	0xFFFE	2	0x00000003	48000	192000	4	16	2923590
+\SFX\assets\Heartbeat.wav	0xFFFE	1	0x00000004	44100	88200	2	16	46336
+\SFX\assets\Jump.wav	0xFFFE	2	0x00000003	44100	176400	4	16	1548950
+\SFX\assets\night insects.wav	0xFFFE	2	0x00000003	48000	192000	4	16	2685952
+\SFX\assets\PAD PAUSA.wav	0xFFFE	2	0x00000003	48000	288000	6	24	606316
+\SFX\assets\Rain_Full.wav	0xFFFE	2	0x00000003	44100	176400	4	16	3969000
+\SFX\assets\Rain_Med.wav	0xFFFE	2	0x00000003	44100	176400	4	16	3661476
+\SFX\assets\Rain_Soft.wav	0xFFFE	2	0x00000003	44100	176400	4	16	3426921
+\SFX\assets\Thunder close.wav	0xFFFE	2	0x00000003	48000	288000	6	24	1215024
+\SFX\assets\Thunder distant.wav	0xFFFE	2	0x00000003	48000	288000	6	24	1131894
+\SFX\assets\waterbubbles.wav	0xFFFE	1	0x00000004	48000	96000	2	16	568796
+\SFX\assets\Builder Game Footstep\Walk Dirt\Builder_Game_Footstep_Walk_Dirt_1.wav	0xFFFE	2	0x00000003	44100	176400	4	16	25872
+\SFX\assets\Builder Game Footstep\Walk Dirt\Builder_Game_Footstep_Walk_Dirt_2.wav	0xFFFE	2	0x00000003	44100	176400	4	16	29400
+\SFX\assets\Builder Game Footstep\Walk Dirt\Builder_Game_Footstep_Walk_Dirt_3.wav	0xFFFE	2	0x00000003	44100	176400	4	16	22344
+\SFX\assets\Builder Game Footstep\Walk Dirt\Builder_Game_Footstep_Walk_Dirt_4.wav	0xFFFE	2	0x00000003	44100	176400	4	16	24931
+\SFX\assets\Builder Game Footstep\Walk Dirt\Builder_Game_Footstep_Walk_Dirt_5.wav	0xFFFE	2	0x00000003	44100	176400	4	16	25872
+\SFX\assets\Builder Game Footstep\Walk Dirt\Builder_Game_Footstep_Walk_Dirt_6.wav	0xFFFE	2	0x00000003	44100	176400	4	16	26342
+\SFX\assets\Builder Game Footstep\Walk Grass\Builder_Game_Footstep_Walk_Grass_1.wav	0xFFFE	2	0x00000003	44100	176400	4	16	22468
+\SFX\assets\Builder Game Footstep\Walk Grass\Builder_Game_Footstep_Walk_Grass_2.wav	0xFFFE	2	0x00000003	44100	176400	4	16	14997
+\SFX\assets\Builder Game Footstep\Walk Grass\Builder_Game_Footstep_Walk_Grass_3.wav	0xFFFE	2	0x00000003	44100	176400	4	16	23219
+\SFX\assets\Builder Game Footstep\Walk Grass\Builder_Game_Footstep_Walk_Grass_4.wav	0xFFFE	2	0x00000003	44100	176400	4	16	22230
+\SFX\assets\Builder Game Footstep\Walk Grass\Builder_Game_Footstep_Walk_Grass_5.wav	0xFFFE	2	0x00000003	44100	176400	4	16	21887
+\SFX\assets\Builder Game Footstep\Walk Grass\Builder_Game_Footstep_Walk_Grass_6.wav	0xFFFE	2	0x00000003	44100	176400	4	16	22182
+\SFX\assets\Builder Game Footstep\Walk Snow\Builder_Game_Footstep_Walk_Snow_1.wav	0xFFFE	2	0x00000003	44100	176400	4	16	19239
+\SFX\assets\Builder Game Footstep\Walk Snow\Builder_Game_Footstep_Walk_Snow_2.wav	0xFFFE	2	0x00000003	44100	176400	4	16	18533
+\SFX\assets\Builder Game Footstep\Walk Snow\Builder_Game_Footstep_Walk_Snow_3.wav	0xFFFE	2	0x00000003	44100	176400	4	16	18775
+\SFX\assets\Builder Game Footstep\Walk Snow\Builder_Game_Footstep_Walk_Snow_4.wav	0xFFFE	2	0x00000003	44100	176400	4	16	18702
+\SFX\assets\Builder Game Footstep\Walk Snow\Builder_Game_Footstep_Walk_Snow_5.wav	0xFFFE	2	0x00000003	44100	176400	4	16	19951
+\SFX\assets\Builder Game Footstep\Walk Snow\Builder_Game_Footstep_Walk_Snow_6.wav	0xFFFE	2	0x00000003	44100	176400	4	16	20352
+\SFX\assets\Builder Game Footstep\Walk Stone\Builder_Game_Footstep_Walk_Stone_1.wav	0xFFFE	2	0x00000003	44100	176400	4	16	21248
+\SFX\assets\Builder Game Footstep\Walk Stone\Builder_Game_Footstep_Walk_Stone_2.wav	0xFFFE	2	0x00000003	44100	176400	4	16	21903
+\SFX\assets\Builder Game Footstep\Walk Stone\Builder_Game_Footstep_Walk_Stone_3.wav	0xFFFE	2	0x00000003	44100	176400	4	16	21903
+\SFX\assets\Builder Game Footstep\Walk Stone\Builder_Game_Footstep_Walk_Stone_4.wav	0xFFFE	2	0x00000003	44100	176400	4	16	19035
+\SFX\assets\Builder Game Footstep\Walk Stone\Builder_Game_Footstep_Walk_Stone_5.wav	0xFFFE	2	0x00000003	44100	176400	4	16	25293
+\SFX\assets\Builder Game Footstep\Walk Stone\Builder_Game_Footstep_Walk_Stone_6.wav	0xFFFE	2	0x00000003	44100	176400	4	16	20599
+\SFX\assets\Builder Game Footstep\Walk Water\Builder_Game_Footstep_Walk_Water_1.wav	0xFFFE	2	0x00000003	44100	176400	4	16	18499
+\SFX\assets\Builder Game Footstep\Walk Water\Builder_Game_Footstep_Walk_Water_2.wav	0xFFFE	2	0x00000003	44100	176400	4	16	17849
+\SFX\assets\Builder Game Footstep\Walk Water\Builder_Game_Footstep_Walk_Water_3.wav	0xFFFE	2	0x00000003	44100	176400	4	16	16712
+\SFX\assets\Builder Game Footstep\Walk Water\Builder_Game_Footstep_Walk_Water_4.wav	0xFFFE	2	0x00000003	44100	176400	4	16	18896
+\SFX\assets\Builder Game Footstep\Walk Water\Builder_Game_Footstep_Walk_Water_5.wav	0xFFFE	2	0x00000003	44100	176400	4	16	17108
+\SFX\assets\Builder Game Footstep\Walk Water\Builder_Game_Footstep_Walk_Water_6.wav	0xFFFE	2	0x00000003	44100	176400	4	16	18516
+\SFX\assets\numeros\1.wav	0xFFFE	2	0x00000003	48000	384000	8	32	34200
+\SFX\assets\numeros\2.wav	0xFFFE	2	0x00000003	48000	384000	8	32	27000
+\SFX\assets\numeros\3.wav	0xFFFE	2	0x00000003	48000	384000	8	32	34200
+\SFX\assets\numeros\4.wav	0xFFFE	2	0x00000003	48000	384000	8	32	37800
+\SFX\assets\numeros\5.wav	0xFFFE	2	0x00000003	48000	384000	8	32	37800
+\SFX\assets\numeros\6.wav	0xFFFE	2	0x00000003	48000	384000	8	32	41400
+\SFX\assets\numeros\7.wav	0xFFFE	2	0x00000003	48000	384000	8	32	37800
+\SFX\assets\numeros\8.wav	0xFFFE	2	0x00000003	48000	384000	8	32	28800
+\SFX\assets\numeros\9.wav	0xFFFE	2	0x00000003	48000	384000	8	32	34200

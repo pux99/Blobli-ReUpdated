@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BBBB9AA4-7EBF-4978-9AE6-A7CAE9204594}" SchemaVersion="119">
+	<AudioObjects>
+		<WorkUnit Name="Interface" ID="{BBBB9AA4-7EBF-4978-9AE6-A7CAE9204594}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="AMX_UI" ID="{DD9951C2-A1E8-4397-991C-D3FDAB3CA730}" ShortID="629549682">
+					<Comment>Todo lo NO diegetico: la interfaz, el jingle de victoria y el pulso de turno. Rutea a Bus_UI, que cuelga directo del Master y NO tiene ni el State Recinto ni send a Aux_Altar. La razon: estos sonidos no ocurren adentro del mundo de Blobli, son informacion para el jugador. Si se oscurecieran con el Low-pass y se llenaran de reverb al entrar al Altar, el jugador perderia feedback justo en el momento mas importante del nivel.</Comment>
+					<PropertyList>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Bus_UI" ID="{EA2E2CAF-1751-48E4-A2F1-9E7C0BA29845}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="SFX_Turn_Pulse" ID="{53111D3A-BA53-49F2-9DBB-2C408C1C7DD9}" ShortID="455603253">
+							<Comment>El pulso del turno. En este juego el entorno solo avanza cuando el jugador se mueve, asi que el tiempo es discreto: cada movimiento es un tic. Por eso es un one-shot SIN Loop disparado por el Event Play_Turn, y no un contenedor en Continuous con Trigger Rate: el ritmo lo marca el juego, no el contenedor. Lo que cambia con la variable de gameplay no es la cadencia sino el CARACTER del sonido. Dos curvas RTPC contra Turns, las dos sobre este objeto: Voice Pitch de 0 a +500 cents (mas agudo = mas urgencia) y Voice Volume de -9 a 0 dB (mas presente). Acordate de que el Voice Pitch de Wwise es velocidad de reproduccion: cambia altura Y duracion, asi que sobre el final del nivel el tic tambien se acorta, lo que refuerza la sensacion de apuro. Ademas un randomizer chico de Pitch (+-40 cents) para que dos turnos seguidos no suenen calcados.</Comment>
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{839B740E-B94C-4D1D-ADA8-4CDFC9F75E14}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="40"/>
+													<Property Name="Min" Type="Real64" Value="-40"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="GP_Turn" ID="{5534E00F-AACB-434C-B526-A02F9317CEC1}">
+									<Language>SFX</Language>
+									<AudioFile>Blobli\GP_Turn.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="590378144"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{37A093E0-D9C0-4AE2-83AD-B88819812DE0}" ShortID="126301721">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Pitch"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Turns" ID="{BA7E6CEE-B03B-4DBF-9DE9-1896DE94AEBF}" WorkUnitID="{2ADFBBFC-5FA8-4C92-B8B3-B19989225ED7}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{15AC6A09-88E2-429A-8628-C1A7453651EA}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>0</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>60</XPos>
+																		<YPos>120</YPos>
+																		<Flags>0</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>500</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{542EF3A9-1764-41B9-B9A9-906BE2DE5C6F}" ShortID="624424795">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="Volume"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Turns" ID="{BA7E6CEE-B03B-4DBF-9DE9-1896DE94AEBF}" WorkUnitID="{2ADFBBFC-5FA8-4C92-B8B3-B19989225ED7}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{7AB654FB-508B-4AAC-A300-233265EF74C2}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-9</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>0</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="GP_Turn" ID="{5534E00F-AACB-434C-B526-A02F9317CEC1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SFX_UI_Hover" ID="{E8DCC9C6-E2D0-47B0-99C9-651F9213605B}" ShortID="43626990">
+							<Comment>Hover de menu. Apunta al MISMO archivo que SFX_UI_Click: son dos Sound SFX sobre una sola source, asi que no se duplica nada en disco ni en memoria. La diferencia la hacen las propiedades: +250 cents de Pitch y -7 dB, para que el hover sea la version chica y discreta del click.</Comment>
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>250</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Click" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}">
+									<Language>SFX</Language>
+									<AudioFile>Blobli\UI_Click.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="454094954"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Click" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SFX_UI_Click" ID="{F94FD44A-5A63-4167-ADBD-892FE5A2D258}" ShortID="253466986">
+							<Comment>Click de menu. One-shot sin Loop, sin randomizar: la interfaz tiene que responder siempre igual.</Comment>
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UI_Click" ID="{ECC0998A-DACD-47AE-B895-D49A11223F3D}">
+									<Language>SFX</Language>
+									<AudioFile>Blobli\UI_Click.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="454094954"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UI_Click" ID="{ECC0998A-DACD-47AE-B895-D49A11223F3D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SFX_Win_Level" ID="{906660DF-F65D-43D5-8A16-6607DAD6A219}" ShortID="874632849">
+							<Comment>Nivel completado. One-shot sin Loop. Va en Bus_UI y no en Bus_SFX porque es un stinger de recompensa y no un sonido del mundo: tiene que llegar limpio aunque Blobli este adentro de la camara del Altar con el Low-pass puesto.</Comment>
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WIN_Level" ID="{4695A0AC-267E-45D2-938E-28317BA7596F}">
+									<Language>SFX</Language>
+									<AudioFile>Blobli\WIN_Level.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="302579313"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WIN_Level" ID="{4695A0AC-267E-45D2-938E-28317BA7596F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

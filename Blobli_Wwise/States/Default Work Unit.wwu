@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E6C20C4E-F307-422D-94CD-91708460A361}" SchemaVersion="119">
+	<States>
+		<WorkUnit Name="Default Work Unit" ID="{E6C20C4E-F307-422D-94CD-91708460A361}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Recinto" ID="{7BB12C85-3214-414D-B379-34A4EB45B25F}">
+					<Comment>Recinto acustico. Exterior = el claro abierto. Altar = la camara de piedra del Altar. Lo setea el juego con Set State al cruzar el umbral de la camara. El State es un offset global: no crea ni elimina instancias, solo cambia propiedades de lo que YA esta sonando. Sube el retorno de Aux_Altar y oscurece Bus_SFX con un Low-pass. Default Transition Time 0.8 s para que el cambio no sea un salto.</Comment>
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.8"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{9C1116A1-62BC-4B31-9A32-134A25A98012}"/>
+						<State Name="Exterior" ID="{D3655061-F23C-46D9-9457-F70BDF20124A}"/>
+						<State Name="Altar" ID="{7EF10EDA-3142-4C37-BA92-0DEE88F11F94}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

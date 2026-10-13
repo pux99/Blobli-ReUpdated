@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4AFA1881-E15D-41EC-BE82-53C776B65886}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{4AFA1881-E15D-41EC-BE82-53C776B65886}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Ambience" ID="{09FE8A40-4E17-4B4F-9D93-8C68C06BFA65}">
+					<Comment>Unico Event que arranca todo el paisaje sonoro. Unity lo llama una sola vez al cargar el nivel. De ahi en mas el Switch Container en Continuous y el Blend Track se reconfiguran solos con Zone y SunExposure: el codigo nunca vuelve a decidir que suena.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{FECAB8EA-E1BC-4E43-B47D-DBD918957A9C}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SW_Zone_Ambience" ID="{03EA2824-079F-4948-A9C2-AEC267EABA04}" WorkUnitID="{5CE22E0B-4105-433E-BDD7-97B562D8A230}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Ambience" ID="{C9C0D603-B4D6-482E-ABEE-607FA8E1A0DB}">
+					<Comment>Apaga el ambiente con Fade Time de 3 s en la accion Stop. El fade va en el Event y no adentro del asset: un loop infinito nunca llega a su fade-out, asi que la unica forma de apagarlo suave es el Fade Time de la accion.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{FA4E6E8F-AC93-483F-A406-5C683C0D9D5C}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SW_Zone_Ambience" ID="{03EA2824-079F-4948-A9C2-AEC267EABA04}" WorkUnitID="{5CE22E0B-4105-433E-BDD7-97B562D8A230}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Footstep" ID="{398AA259-440D-4A51-9F8E-607A4ACD5312}">
+					<Comment>Un Play por cada movimiento de Blobli en la grilla. Antes de llamarlo, Unity hace Set Switch Tile con el tipo de la celda de destino. El juego decide CUANDO, el Switch Container decide SOBRE QUE y el Random decide CUAL.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{1E3B3F80-427D-49B8-B1A4-C962150A2970}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SW_Steps_Tile" ID="{499D1E74-272F-4DE0-81D2-8FCB5F08220B}" WorkUnitID="{0D631614-8278-4D1B-92A5-EF024270E50C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Turn" ID="{FD220042-36E6-416F-B8F5-F0762B8EAC06}">
+					<Comment>El pulso del turno. Unity lo llama en cada movimiento, junto con Play_Footstep, y actualiza el Game Parameter Turns. El tic suena igual de seguido siempre (lo marca el jugador), pero se vuelve mas agudo y mas presente a medida que avanza el nivel.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{0E29C923-7CBD-4843-9E88-481FA027794D}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Turn_Pulse" ID="{53111D3A-BA53-49F2-9DBB-2C408C1C7DD9}" WorkUnitID="{BBBB9AA4-7EBF-4978-9AE6-A7CAE9204594}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Gem_Pickup" ID="{C846D205-5A13-4577-B0E8-57955ACC2A76}">
+					<Comment>Recoleccion de una gema.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{85111AAE-6223-4624-B1E3-6F37E55BD55D}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RND_Gem_Pickup" ID="{7A85E6D9-B76E-4813-B427-C964C89D2B72}" WorkUnitID="{0D631614-8278-4D1B-92A5-EF024270E50C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Shadow_Place" ID="{734F4061-427E-4111-B259-FDD98493A0D7}">
+					<Comment>Proyectar una sombra combinando gemas del inventario.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{441C2E2D-E4D4-4891-84D6-F62685DC1482}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Shadow_Place" ID="{D603DC62-9F99-43D7-A236-098BDE4174D2}" WorkUnitID="{0D631614-8278-4D1B-92A5-EF024270E50C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Key_Place" ID="{577CBFFD-D204-47D9-B9B2-5812CB9044FE}">
+					<Comment>Colocar una de las dos Key gems en el Altar.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{EF1A5D7E-87F6-44E6-905A-F8EC3F5D2CFF}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Key_Place" ID="{AA90FC82-61C4-457F-997A-1F2AD5938CB7}" WorkUnitID="{0D631614-8278-4D1B-92A5-EF024270E50C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Death" ID="{0A101EAB-EEAF-4636-90EA-6226B52DF3E5}">
+					<Comment>Blobli queda expuesto a la luz. Event de DOS acciones: Play del sonido de muerte y, con 0.2 s de Delay, Stop del ambiente con Fade Time de 1.5 s. Las acciones de un Event se ejecutan simultaneas, asi que el orden se da con el Delay de cada una. El resultado es que el mundo se apaga y el sonido de muerte queda solo en el aire.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{40E1DDE8-EDCC-471C-B1F5-8DDADCD4CBA1}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Death" ID="{F3C15D26-B829-43BE-9304-7ECEB72B664B}" WorkUnitID="{0D631614-8278-4D1B-92A5-EF024270E50C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C439F394-68A7-403D-AD42-FDEC41810177}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="0.2"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SW_Zone_Ambience" ID="{03EA2824-079F-4948-A9C2-AEC267EABA04}" WorkUnitID="{5CE22E0B-4105-433E-BDD7-97B562D8A230}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Win" ID="{E96D4CD7-BE84-46BC-9CAB-57291F23D18F}">
+					<Comment>Nivel completado: las dos Key gems estan en el Altar. Tambien de dos acciones: Play del stinger y, con 0.5 s de Delay, Stop del ambiente con Fade Time de 2.5 s, para que el paisaje se retire por debajo del jingle en lugar de cortarse.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{20D16B41-6843-4C73-822B-338FD6D36132}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Win_Level" ID="{906660DF-F65D-43D5-8A16-6607DAD6A219}" WorkUnitID="{BBBB9AA4-7EBF-4978-9AE6-A7CAE9204594}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6E6D4207-E937-482E-998E-57BD6D79166A}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SW_Zone_Ambience" ID="{03EA2824-079F-4948-A9C2-AEC267EABA04}" WorkUnitID="{5CE22E0B-4105-433E-BDD7-97B562D8A230}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_Hover" ID="{1D214B38-7CFF-41B8-A341-84B227AE0AB6}">
+					<Comment>Hover sobre un boton de menu.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{F35814B5-7BDB-4639-A780-A8D882618EE4}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_UI_Hover" ID="{E8DCC9C6-E2D0-47B0-99C9-651F9213605B}" WorkUnitID="{BBBB9AA4-7EBF-4978-9AE6-A7CAE9204594}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_UI_Click" ID="{EF5FB1CD-0CE5-48D2-95D2-711019BC760A}">
+					<Comment>Click sobre un boton de menu.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{BC51A97E-DC5A-4F3B-A5A3-79C7197E0692}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_UI_Click" ID="{F94FD44A-5A63-4167-ADBD-892FE5A2D258}" WorkUnitID="{BBBB9AA4-7EBF-4978-9AE6-A7CAE9204594}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_Recinto_Altar" ID="{4B6EAB88-AEFF-4886-A38A-373825222984}">
+					<Comment>Set State Recinto = Altar, Scope Global. Lo dispara el trigger de entrada a la camara del Altar. El State no crea ni destruye instancias: solo sube el retorno de Aux_Altar de -96 a 0 dB y le mete un Low-pass de 12 a Bus_SFX. Por eso el ambiente no se re-dispara al entrar, simplemente suena distinto.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{7BA51D7F-0F06-45C5-B33F-9050049BDC72}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Altar" ID="{7EF10EDA-3142-4C37-BA92-0DEE88F11F94}" WorkUnitID="{E6C20C4E-F307-422D-94CD-91708460A361}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Set_Recinto_Exterior" ID="{C4932615-0B85-4A14-97CD-DB1095D44481}">
+					<Comment>Set State Recinto = Exterior, Scope Global. Lo dispara el trigger de salida de la camara.</Comment>
+					<ChildrenList>
+						<Action Name="" ID="{9999BC7F-70E1-4E09-9334-9215A6473935}">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Exterior" ID="{D3655061-F23C-46D9-9457-F70BDF20124A}" WorkUnitID="{E6C20C4E-F307-422D-94CD-91708460A361}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

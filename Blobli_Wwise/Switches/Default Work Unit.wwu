@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}" SchemaVersion="119">
+	<Switches>
+		<WorkUnit Name="Default Work Unit" ID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Tile" ID="{07CFF997-43ED-44FD-8163-C39A32029ACB}">
+					<Comment>Tipo de baldosa que pisa Blobli. Lo setea el juego con Set Switch cuando el jugador entra a la celda, antes de disparar Play_Footstep. NO usa Game Parameter: es una condicion discreta del mundo, no una magnitud que varie de forma continua.</Comment>
+					<ChildrenList>
+						<Switch Name="Ground" ID="{D1E83381-B886-46CD-B6E9-392C9CB6D214}"/>
+						<Switch Name="Mushroom" ID="{0FFECAA3-DD2F-4AB0-B7E7-7BC9A8FDEE56}"/>
+						<Switch Name="Shadow" ID="{57A8F6EC-087B-4E04-BBBA-ED1468C4411E}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="Zone" ID="{81976640-24C1-40F0-8E82-091B546DD8D5}">
+					<Comment>Zona de ambiente. Se deriva de AltarDistance con Use Game Parameter: 0-35 Altar, 35-100 Field. La curva es un escalon (dos puntos planos por switch) y ningun tramo cae en None, porque un tramo en None seria silencio total.</Comment>
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Altar" ID="{5B3D64CF-1A59-421C-B4D4-BAE04C3630C7}"/>
+						<Switch Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="AltarDistance" ID="{A1B2BC36-F3C6-4364-A91B-B4F015BF7728}"/>
+						<Curve Name="" ID="{FA563FEF-F8AA-46EC-9894-C161050B696C}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>34.9</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>35</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>100</XPos>
+									<YPos>2</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+				<SwitchGroup Name="Fauna" ID="{3AE30E7F-5CB2-468A-92BC-62481F1E3766}">
+					<Comment>Si los bichos del claro estan activos o callados. Se deriva de SunExposure con Use Game Parameter: 0-65 Active, 65-100 Silent. El switch Silent NO tiene objetos asignados, asi que con el sol alto los Random de fauna no se instancian: no existen y no gastan voz. Resolverlo con un RTPC de volumen a -200 dB los dejaria vivos e inaudibles.</Comment>
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Active" ID="{E6E4D096-7FAD-451D-98F1-AE02F03DEDC1}"/>
+						<Switch Name="Silent" ID="{E7F297DE-CFFD-4352-B8C7-F89B88CA5713}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="SunExposure" ID="{7DDEE1D3-C7E7-4809-B010-6FE3537F4820}"/>
+						<Curve Name="" ID="{7F9BE38D-22AB-461B-B4BF-61F3AE852413}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>64.9</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>65</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>100</XPos>
+									<YPos>2</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</Switches>
+</WwiseDocument>

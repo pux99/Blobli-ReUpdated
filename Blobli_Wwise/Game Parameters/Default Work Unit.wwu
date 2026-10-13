@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2ADFBBFC-5FA8-4C92-B8B3-B19989225ED7}" SchemaVersion="119">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{2ADFBBFC-5FA8-4C92-B8B3-B19989225ED7}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="SunExposure" ID="{7DDEE1D3-C7E7-4809-B010-6FE3537F4820}">
+					<Comment>Cuanta luz hay sobre Blobli. 0 = sombra total (el void), 100 = sol pleno. Es la variable del sistema dinamico de clima. La consumen dos cosas: el Blend Track "Sun" de BLD_Field (crossfade de las capas de viento y del sol) y el Switch Group Fauna con Use Game Parameter (la fauna se calla cuando sube el sol).</Comment>
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="100"/>
+						<Property Name="Min" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="AltarDistance" ID="{A1B2BC36-F3C6-4364-A91B-B4F015BF7728}">
+					<Comment>Distancia en tiles entre Blobli y el Altar, normalizada 0-100. 0 = encima del Altar, 100 = en el otro extremo del nivel. La consume el Switch Group Zone con Use Game Parameter.</Comment>
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+						<Property Name="Max" Type="Real64" Value="100"/>
+						<Property Name="Min" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Turns" ID="{BA7E6CEE-B03B-4DBF-9DE9-1896DE94AEBF}">
+					<Comment>Turnos transcurridos en el nivel, normalizados 0-100. Es la variable de gameplay: el entorno solo avanza cuando el jugador se mueve. La consumen curvas RTPC sobre SFX_Turn_Pulse (Voice Pitch y Voice Volume) y sobre SFX_Void (Voice Volume).</Comment>
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="100"/>
+						<Property Name="Min" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>
