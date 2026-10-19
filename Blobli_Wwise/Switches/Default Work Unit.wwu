@@ -12,44 +12,11 @@
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="Zone" ID="{81976640-24C1-40F0-8E82-091B546DD8D5}">
-					<Comment>Zona de ambiente. Se deriva de AltarDistance con Use Game Parameter: 0-35 Altar, 35-100 Field. La curva es un escalon (dos puntos planos por switch) y ningun tramo cae en None, porque un tramo en None seria silencio total.</Comment>
-					<PropertyList>
-						<Property Name="UseGameParameter" Type="bool" Value="True"/>
-					</PropertyList>
+					<Comment>Zona de ambiente: Field (el claro abierto) o Altar (la camara de piedra). La setea el juego con un Set Switch dentro del mismo Event que cambia el State Recinto, asi la cama de ambiente y la acustica del recinto cambian siempre juntas y no pueden quedar desfasadas. Antes se derivaba de un Game Parameter de distancia, pero eso creaba dos fuentes de verdad para un mismo hecho del juego: el jugador entro al Altar.</Comment>
 					<ChildrenList>
 						<Switch Name="Altar" ID="{5B3D64CF-1A59-421C-B4D4-BAE04C3630C7}"/>
 						<Switch Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}"/>
 					</ChildrenList>
-					<SwitchOnRTPC>
-						<GameParameterRef Name="AltarDistance" ID="{A1B2BC36-F3C6-4364-A91B-B4F015BF7728}"/>
-						<Curve Name="" ID="{FA563FEF-F8AA-46EC-9894-C161050B696C}">
-							<PropertyList>
-								<Property Name="Flags" Type="int32" Value="65537"/>
-							</PropertyList>
-							<PointList>
-								<Point>
-									<XPos>0</XPos>
-									<YPos>1</YPos>
-									<Flags>5</Flags>
-								</Point>
-								<Point>
-									<XPos>34.9</XPos>
-									<YPos>1</YPos>
-									<Flags>0</Flags>
-								</Point>
-								<Point>
-									<XPos>35</XPos>
-									<YPos>2</YPos>
-									<Flags>0</Flags>
-								</Point>
-								<Point>
-									<XPos>100</XPos>
-									<YPos>2</YPos>
-									<Flags>37</Flags>
-								</Point>
-							</PointList>
-						</Curve>
-					</SwitchOnRTPC>
 				</SwitchGroup>
 				<SwitchGroup Name="Fauna" ID="{3AE30E7F-5CB2-468A-92BC-62481F1E3766}">
 					<Comment>Si los bichos del claro estan activos o callados. Se deriva de SunExposure con Use Game Parameter: 0-65 Active, 65-100 Silent. El switch Silent NO tiene objetos asignados, asi que con el sol alto los Random de fauna no se instancian: no existen y no gastan voz. Resolverlo con un RTPC de volumen a -200 dB los dejaria vivos e inaudibles.</Comment>

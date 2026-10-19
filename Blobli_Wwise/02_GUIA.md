@@ -23,6 +23,7 @@ valor por defecto**:
 | `RandomAvoidRepeating` / `Count` | Random → Limit repetition to | **activo, 1** | el "no repetir el último" ya viene puesto |
 | `Length` del Wwise Silence | Source Editor | **1 s, sin random** | un Silence recién creado es un hueco fijo de 1 s |
 | `UseGameParameter` | Switch Group | apagado | tildarlo **no alcanza**: falta el parámetro y la curva |
+| `Scope` (en una acción) | Event → Action | Game Object | **no existe** para Set State ni Set Switch; escribirla es ruido |
 | Fade-in/out de un objeto asignado a un switch | pestaña del objeto | **0** | los cambios de switch cortan seco |
 
 El caso más traicionero: **un Switch Container "sin configurar" está en Step**, así
@@ -118,7 +119,13 @@ La plantilla del "ambiente intermitente", la que más puntos da si se explica en
    sirve para cadencias regulares.
 4. **Objetos Silence** (source *Wwise Silence*) con Duration y Random Min/Max.
 5. **Weights** para que el silencio sea más probable que el evento.
-6. **Randomizers de Pitch, Volume y Low-pass** en el contenedor.
+6. **Randomizers de Pitch, Volume y Low-pass** en el contenedor — **y sólo ahí**.
+   Un randomizer en el contenedor y otro en el hijo sobre la misma propiedad **se
+   suman**: es el error fácil de cometer y difícil de oír. Si no podés decir en una
+   frase qué rango va a sonar, tenés randomizers de más.
+7. **"Limit repetition to 1" activo.** La consigna pide evitar la reiteración del
+   mismo sonido; con dos variaciones por sistema es donde más se nota. El hueco no lo
+   da el Silence sino el Delay randomizado, así que activarlo no acorta las pausas.
 
 > **Poco obvio:** acá el Random está en **Standard** con **"Limit repetition"
 > desactivado**. Con Shuffle, o con el límite activo, el silencio no podría salir dos

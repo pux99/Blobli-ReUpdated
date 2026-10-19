@@ -148,12 +148,9 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="UI_Click" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}">
+								<AudioFileSource Name="UI_Hover" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}">
 									<Language>SFX</Language>
-									<AudioFile>Blobli\UI_Click.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="454094954"/>
-									</MediaIDList>
+									<AudioFile>Blobli\UI_Hover.wav</AudioFile>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>

@@ -11,7 +11,7 @@
 						<Property Name="Diffusion" Type="Real32" Value="0.78"/>
 						<Property Name="DryLevel" Type="Real32" Value="-96"/>
 						<Property Name="ERFrontBackDelay" Type="Real32" Value="45"/>
-						<Property Name="ERLevel" Type="Real32" Value="-12"/>
+						<Property Name="ERLevel" Type="Real32" Value="-6"/>
 						<Property Name="EnableToneControls" Type="bool" Value="True"/>
 						<Property Name="Filter3Freq" Type="Real32" Value="5500"/>
 						<Property Name="Filter3Gain" Type="Real32" Value="-2"/>

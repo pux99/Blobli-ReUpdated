@@ -194,12 +194,11 @@
 					</ChildrenList>
 				</Event>
 				<Event Name="Set_Recinto_Altar" ID="{4B6EAB88-AEFF-4886-A38A-373825222984}">
-					<Comment>Set State Recinto = Altar, Scope Global. Lo dispara el trigger de entrada a la camara del Altar. El State no crea ni destruye instancias: solo sube el retorno de Aux_Altar de -96 a 0 dB y le mete un Low-pass de 12 a Bus_SFX. Por eso el ambiente no se re-dispara al entrar, simplemente suena distinto.</Comment>
+					<Comment>Dos acciones en un solo Event: Set State Recinto = Altar y Set Switch Zone = Altar. Lo dispara el trigger de entrada a la camara. El State cambia COMO suena el espacio (sube el retorno de Aux_Altar de -96 a 0 dB y le mete un Low-pass de 10 a Bus_SFX) y el Switch cambia QUE se oye (la cama pasa de BLD_Field a BLD_Altar). Van juntas a proposito: asi nunca se da el caso de oir el ambiente del Altar todavia seco. Los States en Wwise son siempre globales, por eso la accion no lleva Scope.</Comment>
 					<ChildrenList>
 						<Action Name="" ID="{7BA51D7F-0F06-45C5-B33F-9050049BDC72}">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="22"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -207,15 +206,24 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-					</ChildrenList>
+													<Action Name="" ID="{3C7A91E4-5D28-4B16-9A7F-1E6B4D20C8A1}">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="23"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Altar" ID="{5B3D64CF-1A59-421C-B4D4-BAE04C3630C7}" WorkUnitID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+</ChildrenList>
 				</Event>
 				<Event Name="Set_Recinto_Exterior" ID="{C4932615-0B85-4A14-97CD-DB1095D44481}">
-					<Comment>Set State Recinto = Exterior, Scope Global. Lo dispara el trigger de salida de la camara.</Comment>
+					<Comment>El inverso, tambien en un solo Event: Set State Recinto = Exterior y Set Switch Zone = Field. Lo dispara el trigger de salida de la camara.</Comment>
 					<ChildrenList>
 						<Action Name="" ID="{9999BC7F-70E1-4E09-9334-9215A6473935}">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="22"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -223,7 +231,17 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-					</ChildrenList>
+													<Action Name="" ID="{6F1D82B5-9E34-4C07-8D5A-2B9C7E41F3D6}">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="23"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}" WorkUnitID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+</ChildrenList>
 				</Event>
 			</ChildrenList>
 		</WorkUnit>

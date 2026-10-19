@@ -356,7 +356,7 @@
 																	</ModifierList>
 																</Property>
 																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-																<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+																<Property Name="RandomAvoidRepeating" Type="bool" Value="True"/>
 																<Property Name="Volume" Type="Real64">
 																	<ValueList>
 																		<Value>-5</Value>
@@ -382,34 +382,11 @@
 															<ChildrenList>
 																<Sound Name="SFX_Insects_01" ID="{6770982F-EA05-4CE1-9955-10316A6721DF}" ShortID="381893694">
 																	<PropertyList>
-																		<Property Name="Pitch" Type="int32">
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{3CD443A2-F6AD-4806-A189-49074E91B3F1}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="40"/>
-																							<Property Name="Min" Type="Real64" Value="-40"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
-																		</Property>
+																		<Property Name="Pitch" Type="int32"/>
 																		<Property Name="Volume" Type="Real64">
 																			<ValueList>
 																				<Value>-12</Value>
 																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{D0679B24-DAE0-4605-9D02-2FFF030E9A95}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="4"/>
-																							<Property Name="Min" Type="Real64" Value="-2"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
 																		</Property>
 																		<Property Name="Weight" Type="Real64">
 																			<ValueList>
@@ -446,33 +423,11 @@
 																			<ValueList>
 																				<Value>50</Value>
 																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{875B2C2A-6B0A-40D4-BB4F-544418AE49C0}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="50"/>
-																							<Property Name="Min" Type="Real64" Value="-50"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
 																		</Property>
 																		<Property Name="Volume" Type="Real64">
 																			<ValueList>
 																				<Value>-10</Value>
 																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{CC543EA8-D1AE-4B84-8848-034CA90938AF}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="4"/>
-																							<Property Name="Min" Type="Real64" Value="-2"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
 																		</Property>
 																		<Property Name="Weight" Type="Real64">
 																			<ValueList>
@@ -623,7 +578,7 @@
 																	</ModifierList>
 																</Property>
 																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-																<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+																<Property Name="RandomAvoidRepeating" Type="bool" Value="True"/>
 																<Property Name="Volume" Type="Real64">
 																	<ModifierList>
 																		<ModifierInfo>
@@ -655,33 +610,11 @@
 																			<ValueList>
 																				<Value>15</Value>
 																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{288FC811-B5D3-4988-9A5C-4D68CCC9A1AA}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="10"/>
-																							<Property Name="Min" Type="Real64" Value="-10"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
 																		</Property>
 																		<Property Name="Pitch" Type="int32">
 																			<ValueList>
 																				<Value>-560</Value>
 																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{099204E3-58F3-4ECE-9630-ABE528E35AD7}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="300"/>
-																							<Property Name="Min" Type="Real64" Value="-300"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
 																		</Property>
 																	</PropertyList>
 																	<ReferenceList>
@@ -718,33 +651,11 @@
 																			<ValueList>
 																				<Value>15</Value>
 																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{0D528C28-74FC-478A-ADA1-0B887F490C91}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="10"/>
-																							<Property Name="Min" Type="Real64" Value="-10"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
 																		</Property>
 																		<Property Name="Pitch" Type="int32">
 																			<ValueList>
 																				<Value>-560</Value>
 																			</ValueList>
-																			<ModifierList>
-																				<ModifierInfo>
-																					<Modifier Name="" ID="{ECB4C45D-7610-4917-A61C-B7C64064D2B0}">
-																						<PropertyList>
-																							<Property Name="Enabled" Type="bool" Value="True"/>
-																							<Property Name="Max" Type="Real64" Value="300"/>
-																							<Property Name="Min" Type="Real64" Value="-300"/>
-																						</PropertyList>
-																					</Modifier>
-																				</ModifierInfo>
-																			</ModifierList>
 																		</Property>
 																	</PropertyList>
 																	<ReferenceList>

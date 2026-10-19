@@ -95,17 +95,25 @@ Master Audio Bus
 | Game Sync | Tipo | Rango / valores | Quién lo consume | Quién lo setea |
 |---|---|---|---|---|
 | `SunExposure` | Game Parameter | 0–100, default 0 | Blend Track `Sun`; Switch Group `Fauna` | Unity, según la luz sobre la celda |
-| `AltarDistance` | Game Parameter | 0–100, default 100 | Switch Group `Zone` | Unity, distancia al Altar |
 | `Turns` | Game Parameter | 0–100, default 0 | 7 curvas RTPC (ver §6) | Unity, turnos transcurridos |
 | `Tile` | Switch Group | Ground · Mushroom · Shadow | `SW_Steps_Tile` | `Set Switch` antes de cada `Play_Footstep` |
-| `Zone` | Switch Group | Altar · Field | `SW_Zone_Ambience` | **Use Game Parameter** → `AltarDistance` (0–35 / 35–100) |
+| `Zone` | Switch Group | Altar · Field | `SW_Zone_Ambience` | `Set Switch` dentro de `Set_Recinto_*`, junto con el State |
 | `Fauna` | Switch Group | Active · Silent | `SW_Fauna` | **Use Game Parameter** → `SunExposure` (0–65 / 65–100) |
 | `Recinto` | State Group | None · Exterior · Altar | `Bus_SFX` y `Aux_Altar` | `Set State` al cruzar el umbral |
 
 **Vale la pena subrayarlo:** un Game Parameter lo pueden consumir tres cosas — un
 Switch Group con *Use Game Parameter*, un Blend Track, o una curva RTPC. **Este
-proyecto usa las tres.** Cada decisión está resuelta con el mecanismo que le
-corresponde en lugar de usar RTPC para todo.
+proyecto usa las tres**, y cada una donde corresponde:
+
+- **Blend Track** (`SunExposure` → capas de viento): la variable es continua y el
+  resultado también. Es un crossfade, no una decisión.
+- **Use Game Parameter** (`SunExposure` → `Fauna`): la variable es continua pero el
+  resultado es binario, *y el juego no tiene ningún evento que avise* "el sol subió".
+  Hay que derivarlo de la magnitud.
+- **Curva RTPC** (`Turns` → volumen, filtro y cadencia): la variable modula
+  propiedades de algo que ya está sonando.
+
+Y `Zone` **no** usa ninguna de las tres, a propósito: ver §4.
 
 ### Events (13)
 
@@ -121,7 +129,7 @@ corresponde en lugar de usar RTPC para todo.
 | `Play_Death` | Play `SFX_Death` + **Stop** ambiente (Delay 0.2 s, Fade 1.5 s) | Blobli queda expuesto |
 | `Play_Win` | Play `SFX_Win_Level` + **Stop** ambiente (Delay 0.5 s, Fade 2.5 s) | se completa el nivel |
 | `Play_UI_Hover` / `Play_UI_Click` | Play | interacción de menú |
-| `Set_Recinto_Altar` / `Set_Recinto_Exterior` | Set State, Scope Global | se cruza el umbral de la cámara |
+| `Set_Recinto_Altar` / `Set_Recinto_Exterior` | **Set State** `Recinto` + **Set Switch** `Zone` | se cruza el umbral de la cámara |
 
 ---
 
@@ -251,9 +259,32 @@ contenedor **queda escuchando** los cambios de `Zone`. Al acercarse al Altar cam
 de hijo solo, con Fade-in/Fade-out de 2 s. **En Step no pasaría nada hasta el próximo
 Play**, y no hay próximo Play.
 
-`Zone` se deriva de `AltarDistance` con **Use Game Parameter**, curva de escalones
-0–35 `Altar` / 35–100 `Field`, con mesetas planas y **ningún tramo en `None`** (un
-tramo en None sería silencio total).
+`Zone` la setea el Event, no un Game Parameter. En una versión anterior se derivaba
+de un `AltarDistance` con *Use Game Parameter*, y eso era un error de diseño: dejaba
+**dos fuentes de verdad para un mismo hecho del juego**. El hecho es uno —"Blobli
+entró a la cámara"— pero tenía dos consecuencias sonoras gobernadas por mecanismos
+independientes: la cama de ambiente por el parámetro de distancia, y la acústica por
+el `Set State`. Si el juego movía uno y no el otro, el resultado era el ambiente del
+Altar sonando todavía seco, o el claro sonando con la reverb de la cámara.
+
+La corrección es poner las dos acciones **en el mismo Event**:
+
+```
+Set_Recinto_Altar      Set State  Recinto = Altar      (COMO suena el espacio)
+                       Set Switch Zone    = Altar      (QUE se oye)
+Set_Recinto_Exterior   Set State  Recinto = Exterior
+                       Set Switch Zone    = Field
+```
+
+Un Event, dos acciones, imposible desfasarlas. Como efecto lateral desapareció un
+Game Parameter entero del proyecto: cada Game Sync que queda sirve para exactamente
+un requisito de la consigna, y ninguno sobra.
+
+> Nota de implementación: las acciones **Set State** y **Set Switch** no llevan la
+> propiedad `Scope`. En Wwise los States son siempre globales, y el Set Switch aplica
+> al Game Object sobre el que se postea el Event. Una versión anterior de este
+> proyecto escribía `Scope = Global` en el Set State; es una propiedad que para ese
+> tipo de acción no existe.
 
 **Optimización:** fuera de su switch un objeto no se instancia. En el campo las tres
 capas del Altar no existen; dentro del Altar no existe ninguna capa de clima.
@@ -299,8 +330,9 @@ Adentro, dos sistemas intermitentes con cadencias distintas:
 |---|---|---|
 | Play Mode | Continuous + **Loop Infinite** | Continuous + **Loop Infinite** |
 | Transition | **Delay** 7 s, randomizer −3/+5 | **Delay** 11 s, randomizer −5/+7 |
-| Hijos | 2 one-shots (w 30/30) + Silence (w 40) | 2 one-shots (w 25/25) + Silence (w 50) |
-| Randomizers | Pitch ±200 · Volume ±3 · LPF 0–30 | Pitch ±250 · Volume ±2.5 · LPF 0–25 |
+| Hijos | 2 one-shots (w 30/30) + Silence (w **40**) | 2 one-shots + Silence, **sin pesos editados** (50/50/50) |
+| Limit repetition | **activo, 1** | **activo, 1** |
+| Randomizers (sólo en el contenedor) | Pitch ±200 · Volume ±3 · LPF 0–30 | Pitch ±250 · Volume ±2.5 · LPF 0–25 |
 
 - **El Loop va en el CONTENEDOR.** Un hijo que loopea no termina nunca y el
   contenedor jamás dispararía el siguiente.
@@ -308,9 +340,24 @@ Adentro, dos sistemas intermitentes con cadencias distintas:
   que dos bichos nunca se pisan.
 - **El Delay va randomizado**: fijo sonaría a metrónomo.
 - Los **objetos Silence** con Duration y Random Min/Max abren los huecos largos.
-- **Random Standard con "Limit repetition" desactivado**, a propósito: con Shuffle o
-  con el límite activo el silencio no podría salir dos veces seguidas y **los weights
-  quedarían sin efecto**.
+- **"Limit repetition to 1" activo** en los dos contenedores. La consigna pide
+  explícitamente evitar la reiteración del mismo sonido, y con sólo dos variaciones
+  por sistema es justamente donde más se nota. El costo es que el Silence tampoco
+  puede salir dos veces seguidas, pero eso no achica los huecos: el hueco real lo da
+  el **Delay randomizado** del contenedor (4–12 s en insectos, 6–18 s en hongos), que
+  es independiente de qué hijo toque.
+
+- **Los randomizers viven en un solo nivel: el contenedor.** Antes estaban también en
+  cada hijo, y los dos se suman — el pitch de los hongos llegaba a oscilar once
+  semitonos y era imposible describir en una frase cómo iba a sonar una reproducción.
+  Lo que sí quedó en los hijos son los **valores base** (`Pitch −560` y `Low-pass 15`
+  en los hongos, `Volume −12 / −10` en los insectos): eso no es aleatoriedad, es la
+  voz fija de cada archivo.
+
+- **El randomizer de Low-pass (0 a +30) tiene una lectura física**, no es adorno: cada
+  bicho suena a una distancia distinta, y lo primero que se pierde con la distancia
+  son los agudos (absorción del aire). Es el mismo razonamiento del apunte de filtros,
+  aplicado a la variación en lugar de a la mezcla.
 
 ---
 
@@ -422,11 +469,12 @@ Master Audio Bus
 
 ## 8 · Soundcaster: recorrido de prueba
 
-Sesión **`SC_Blobli_TP1`**: los 13 Events como módulos, sliders de `SunExposure`,
-`AltarDistance` y `Turns`, selector de Switch `Tile` y selector de State `Recinto`.
+Sesión **`SC_Blobli_TP1`**: los 13 Events como módulos, sliders de `SunExposure` y
+`Turns`, selector de Switch `Tile` y selector de State `Recinto`.
 
-`Zone` y `Fauna` no se tocan a mano: se derivan solos. Que el switch activo cambie al
-mover el slider es, en sí, la demostración de que *Use Game Parameter* funciona.
+`Fauna` no se toca a mano: se deriva sola de `SunExposure`. Que el switch activo
+cambie al mover el slider es, en sí, la demostración de que *Use Game Parameter*
+funciona. `Zone` tampoco se toca: la mueven los Events `Set_Recinto_*`.
 
 1. **`Play_Ambience`.** Arranca en `Field` con `SunExposure 0`: void, viento quieto y
    bichos.
@@ -434,12 +482,17 @@ mover el slider es, en sí, la demostración de que *Use Game Parameter* funcion
    sin escalones, entra el sol y, al pasar 65, **la fauna desaparece**. Verificar que
    en 100 sigue sonando algo.
 3. **Volver `SunExposure` a 20.** La fauna vuelve con un fade de 3 s.
-4. **Bajar `AltarDistance` por debajo de 35.** Cruza al Altar con fade de 2 s, y **el
-   void no se reinicia**.
-5. **`Set_Recinto_Altar`.** Entra la reverb y se oscurece lo diegético.
+4. **`Set_Recinto_Altar`** (un solo módulo). Pasan las dos cosas a la vez: la cama
+   cruza a las tres capas del Altar con fade de 2 s **y** entra la reverb con el
+   Default Transition Time de 0.8 s del State Group. **El void no se reinicia**:
+   está asignado a los dos switches y tiene *Continue to play*. Que haga falta un
+   solo módulo para esto es el punto: antes eran dos acciones separadas que se podían
+   hacer en el orden equivocado.
+5. **`Play_Footstep`** estando en el Altar: la pisada vuelve con cola. Es el mismo
+   archivo, el State sólo cambió el nivel de retorno del Aux.
 6. **`Play_UI_Click`** estando en el Altar: suena limpio, sin reverb ni Low-pass. Es
    la demostración de por qué `Bus_UI` está afuera de `Bus_SFX`.
-7. **`Set_Recinto_Exterior`** y `AltarDistance` a 100.
+7. **`Set_Recinto_Exterior`.** Vuelve todo al claro, también de una sola acción.
 8. **`Play_Footstep`** repetido cambiando `Tile`: tres timbres distintos y, dentro de
    cada uno, variación sin repetición obvia.
 9. **Subir `Turns` de 0 a 100 despacio** con el ambiente sonando. El void se abre y

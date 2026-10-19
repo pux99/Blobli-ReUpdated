@@ -20,7 +20,8 @@ y de interfaz:
 | `Blobli\ACT_ShadowPlace.wav` | `SFX_Shadow_Place` |
 | `Blobli\ACT_KeyPlace.wav` | `SFX_Key_Place` |
 | `Blobli\ACT_Death.wav` | `SFX_Death` |
-| `Blobli\UI_Click.wav` | `SFX_UI_Click` **y** `SFX_UI_Hover` |
+| `Blobli\UI_Click.wav` | `SFX_UI_Click` |
+| `Blobli\UI_Hover.wav` | `SFX_UI_Hover` |
 | `Blobli\WIN_Level.wav` | `SFX_Win_Level` |
 
 Van en `Originals\SFX\Blobli\` con **exactamente** esos nombres. Al ponerlos, Wwise

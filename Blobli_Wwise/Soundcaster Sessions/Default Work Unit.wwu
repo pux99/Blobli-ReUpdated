@@ -4,7 +4,7 @@
 		<WorkUnit Name="Default Work Unit" ID="{29FEB249-3BD2-4304-AF79-A359BC06D3B5}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundcasterSession Name="SC_Blobli_TP1" ID="{08C87AC6-9543-4AD8-AD88-99307170C2A5}">
-					<Comment>Sesion de testeo del TP1. Modulos: los 13 Events. Sliders: SunExposure (clima), AltarDistance (zona) y Turns (variable de gameplay). Selector de Switch: Tile, para las tres superficies. Selector de State: Recinto, para el reverb del Altar. Zone y Fauna no se tocan a mano: se derivan solos de AltarDistance y SunExposure con Use Game Parameter, y eso mismo se puede demostrar moviendo el slider y mirando como cambia el switch activo. El recorrido de prueba completo esta en 01_INFORME_Esqueleto.md, seccion 8.</Comment>
+					<Comment>Sesion de testeo del TP1. Modulos: los 13 Events. Sliders: SunExposure (clima) y Turns (variable de gameplay). Selector de Switch: Tile, para las tres superficies. Selector de State: Recinto, para el reverb del Altar. Fauna no se toca a mano: se deriva sola de SunExposure con Use Game Parameter, y eso se demuestra moviendo el slider y mirando como cambia el switch activo. Zone la setean los Events Set_Recinto_*, junto con el State. El recorrido de prueba completo esta en 01_INFORME_Esqueleto.md, seccion 8.</Comment>
 					<ModuleList>
 						<Module>
 							<ObjectRef Name="Play_Ambience" ID="{09FE8A40-4E17-4B4F-9D93-8C68C06BFA65}" WorkUnitID="{4AFA1881-E15D-41EC-BE82-53C776B65886}"/>
@@ -60,10 +60,6 @@
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
-						<RTPCValue>
-							<GameParameterRef Name="AltarDistance" ID="{A1B2BC36-F3C6-4364-A91B-B4F015BF7728}"/>
-							<Value>100</Value>
-						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SunExposure" ID="{7DDEE1D3-C7E7-4809-B010-6FE3537F4820}"/>
 							<Value>0</Value>

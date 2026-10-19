@@ -11,14 +11,6 @@
 						<Property Name="Min" Type="Real64" Value="0"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="AltarDistance" ID="{A1B2BC36-F3C6-4364-A91B-B4F015BF7728}">
-					<Comment>Distancia en tiles entre Blobli y el Altar, normalizada 0-100. 0 = encima del Altar, 100 = en el otro extremo del nivel. La consume el Switch Group Zone con Use Game Parameter.</Comment>
-					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="100"/>
-						<Property Name="Max" Type="Real64" Value="100"/>
-						<Property Name="Min" Type="Real64" Value="0"/>
-					</PropertyList>
-				</GameParameter>
 				<GameParameter Name="Turns" ID="{BA7E6CEE-B03B-4DBF-9DE9-1896DE94AEBF}">
 					<Comment>Turnos transcurridos en el nivel, normalizados 0-100. Es la variable de gameplay: el entorno solo avanza cuando el jugador se mueve. La consumen curvas RTPC sobre SFX_Turn_Pulse (Voice Pitch y Voice Volume) y sobre SFX_Void (Voice Volume).</Comment>
 					<PropertyList>
