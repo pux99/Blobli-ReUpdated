@@ -256,6 +256,9 @@
 															<Reference>
 																<Local>
 																	<EffectSlot Name="" ID="{1FE216D6-6D8A-4E15-8E8F-9B4CA1C30617}" ShortID="970312308">
+																		<PropertyList>
+																			<Property Name="Render" Type="bool" Value="True"/>
+																		</PropertyList>
 																		<ReferenceList>
 																			<Reference Name="Effect" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
 																				<ObjectRef Name="SunShift" ID="{A98F423C-EC97-49D8-8698-445CE91F24B7}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
@@ -267,6 +270,9 @@
 															<Reference>
 																<Local>
 																	<EffectSlot Name="" ID="{9044BBA6-DF2A-4923-B0F5-CF96F3D26EF2}" ShortID="529616452">
+																		<PropertyList>
+																			<Property Name="Render" Type="bool" Value="True"/>
+																		</PropertyList>
 																		<ReferenceList>
 																			<Reference Name="Effect" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
 																				<ObjectRef Name="Sun_Time_Stretch" ID="{BC5A6B8B-469B-4FF8-8F7B-3A9DDBCEE314}" WorkUnitID="{44D6B3CC-7EAC-4413-9C56-54F3C0741B3F}"/>
@@ -356,7 +362,6 @@
 																	</ModifierList>
 																</Property>
 																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-																<Property Name="RandomAvoidRepeating" Type="bool" Value="True"/>
 																<Property Name="Volume" Type="Real64">
 																	<ValueList>
 																		<Value>-5</Value>
@@ -382,7 +387,6 @@
 															<ChildrenList>
 																<Sound Name="SFX_Insects_01" ID="{6770982F-EA05-4CE1-9955-10316A6721DF}" ShortID="381893694">
 																	<PropertyList>
-																		<Property Name="Pitch" Type="int32"/>
 																		<Property Name="Volume" Type="Real64">
 																			<ValueList>
 																				<Value>-12</Value>
@@ -492,7 +496,7 @@
 																<ObjectList Name="RTPC">
 																	<Reference>
 																		<Local>
-																			<RTPC Name="" ID="{14569D85-C753-4484-B08E-3D5757F74BD0}">
+																			<RTPC Name="" ID="{14569D85-C753-4484-B08E-3D5757F74BD0}" ShortID="177915187">
 																				<PropertyList>
 																					<Property Name="PropertyName" Type="string" Value="PlayMechanismSpecialTransitionsValue"/>
 																				</PropertyList>
@@ -578,7 +582,6 @@
 																	</ModifierList>
 																</Property>
 																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-																<Property Name="RandomAvoidRepeating" Type="bool" Value="True"/>
 																<Property Name="Volume" Type="Real64">
 																	<ModifierList>
 																		<ModifierInfo>
@@ -706,7 +709,7 @@
 																<ObjectList Name="RTPC">
 																	<Reference>
 																		<Local>
-																			<RTPC Name="" ID="{C673E714-1787-4487-B199-3185329F68FB}">
+																			<RTPC Name="" ID="{C673E714-1787-4487-B199-3185329F68FB}" ShortID="211197803">
 																				<PropertyList>
 																					<Property Name="PropertyName" Type="string" Value="PlayMechanismSpecialTransitionsValue"/>
 																				</PropertyList>
@@ -752,7 +755,7 @@
 														<ObjectList Name="RTPC">
 															<Reference>
 																<Local>
-																	<RTPC Name="" ID="{07C9AAB6-6150-49F3-BADF-EBECD58267E5}">
+																	<RTPC Name="" ID="{07C9AAB6-6150-49F3-BADF-EBECD58267E5}" ShortID="192305667">
 																		<PropertyList>
 																			<Property Name="PropertyName" Type="string" Value="Volume"/>
 																		</PropertyList>
@@ -1086,7 +1089,7 @@
 											</Reference>
 											<Reference>
 												<Local>
-													<RTPC Name="" ID="{AE164235-7658-424E-BE4A-CBB88B03E80E}">
+													<RTPC Name="" ID="{AE164235-7658-424E-BE4A-CBB88B03E80E}" ShortID="689415042">
 														<PropertyList>
 															<Property Name="PropertyName" Type="string" Value="Lowpass"/>
 														</PropertyList>

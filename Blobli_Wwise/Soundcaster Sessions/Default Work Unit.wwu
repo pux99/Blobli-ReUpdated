@@ -72,11 +72,7 @@
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="None" ID="{9C1116A1-62BC-4B31-9A32-134A25A98012}"/>
 					</CurrentStateList>
-					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Altar" ID="{5B3D64CF-1A59-421C-B4D4-BAE04C3630C7}"/>
-						<CurrentSwitchRef Name="Ground" ID="{D1E83381-B886-46CD-B6E9-392C9CB6D214}"/>
-						<CurrentSwitchRef Name="Active" ID="{E6E4D096-7FAD-451D-98F1-AE02F03DEDC1}"/>
-					</CurrentSwitchList>
+					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>

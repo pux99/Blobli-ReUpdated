@@ -151,10 +151,13 @@
 								<AudioFileSource Name="UI_Hover" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}">
 									<Language>SFX</Language>
 									<AudioFile>Blobli\UI_Hover.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="454094955"/>
+									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="UI_Click" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}" Platform="Linked"/>
+								<ActiveSource Name="UI_Hover" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="SFX_UI_Click" ID="{F94FD44A-5A63-4167-ADBD-892FE5A2D258}" ShortID="253466986">
