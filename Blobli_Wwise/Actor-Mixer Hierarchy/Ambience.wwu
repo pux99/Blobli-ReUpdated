@@ -55,6 +55,7 @@
 											<Comment>Viento quieto de la zona en sombra. Cama: Loop Infinite en el HIJO, porque un Blend Container no repite a sus hijos.</Comment>
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="OverrideEffect" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -62,22 +63,57 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="AMB_Wind_Soft" ID="{B72801BA-D591-47D0-8388-99A2DC924E40}">
+												<AudioFileSource Name="SFX_Wind_Soft" ID="{B35D1916-865F-4272-AF84-AA51864247B4}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="10000"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="4"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="3"/>
+														<Property Name="LoopBegin" Type="Real64" Value="11.5"/>
+														<Property Name="LoopEnd" Type="Real64" Value="30.5"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="41"/>
+													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>Blobli\AMB_Wind_Soft.wav</AudioFile>
+													<AudioFile>SFX_Wind_Soft.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="84865902"/>
+														<MediaID ID="776511923"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<Reference>
+														<Local>
+															<EffectSlot Name="" ID="{99C9C2E2-BAB2-4F4C-A026-F4FB3C880021}" ShortID="631210933">
+																<ReferenceList>
+																	<Reference Name="Effect">
+																		<Custom>
+																			<Effect Name="Time Stretch (Custom)" ID="{DD868617-2FDA-4C66-9D9F-8DE861569A74}" ShortID="243831853" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+																				<PropertyList>
+																					<Property Name="TimeStretch" Type="Real32" Value="25"/>
+																				</PropertyList>
+																			</Effect>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
-												<ActiveSource Name="AMB_Wind_Soft" ID="{B72801BA-D591-47D0-8388-99A2DC924E40}" Platform="Linked"/>
+												<ActiveSource Name="SFX_Wind_Soft" ID="{B35D1916-865F-4272-AF84-AA51864247B4}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_Wind_Med" ID="{5345A838-9480-4BB7-88A0-AE7428EF3EEE}" ShortID="255174868">
 											<Comment>Viento medio: el sol empieza a dar sobre el claro y el aire se mueve mas. Cama en Loop Infinite.</Comment>
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -85,16 +121,25 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="AMB_Wind_Med" ID="{1D19687E-548F-4D31-B67B-88CFD27009FB}">
+												<AudioFileSource Name="SFX_Wind_Med" ID="{AB889A3F-14E6-4830-B7E8-41D2C05D89CF}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="10000"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="4"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="3"/>
+														<Property Name="LoopBegin" Type="Real64" Value="11.5"/>
+														<Property Name="LoopEnd" Type="Real64" Value="30.5"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="41"/>
+													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>Blobli\AMB_Wind_Med.wav</AudioFile>
+													<AudioFile>SFX_Wind_Med.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="946770982"/>
+														<MediaID ID="97933193"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="AMB_Wind_Med" ID="{1D19687E-548F-4D31-B67B-88CFD27009FB}" Platform="Linked"/>
+												<ActiveSource Name="SFX_Wind_Med" ID="{AB889A3F-14E6-4830-B7E8-41D2C05D89CF}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 										<BlendContainer Name="BLD_Sun_High" ID="{05609DF4-FC3B-4AEA-86FF-EB2727C4692C}" ShortID="1046273015">
@@ -724,10 +769,15 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="SFX_Altar_Voices" ID="{863BB1D5-BAFD-4311-AACE-A2C29D7BD2B7}" ShortID="486468638">
-											<Comment>El coro / las voces del Altar. Cama en Loop Infinite.</Comment>
+										<Sound Name="SFX_Altar_Aura" ID="{863BB1D5-BAFD-4311-AACE-A2C29D7BD2B7}" ShortID="486468638">
+											<Comment>El aura del Altar. Cama en Loop Infinite.</Comment>
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -735,22 +785,43 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="ALTAR_Voices" ID="{9D049087-23EC-4564-9567-22A535DCBB2B}">
+												<AudioFileSource Name="SFX_Altar_Aura" ID="{AFC8DC3B-1EC1-4FBC-98EB-B9CD36A77D8F}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1084.082"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.46157675958761"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.237025903572015"/>
+														<Property Name="LoopBegin" Type="Real64" Value="3.7050891242573"/>
+														<Property Name="LoopEnd" Type="Real64" Value="6.76147577558069"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.44510932105869"/>
+														<Property Name="TrimEnd" Type="Real64" Value="7.67215424719948"/>
+													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>Blobli\ALTAR_Voices.wav</AudioFile>
+													<AudioFile>SFX_Altar_Aura.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="147620351"/>
+														<MediaID ID="813121255"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="ALTAR_Voices" ID="{9D049087-23EC-4564-9567-22A535DCBB2B}" Platform="Linked"/>
+												<ActiveSource Name="SFX_Altar_Aura" ID="{AFC8DC3B-1EC1-4FBC-98EB-B9CD36A77D8F}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_Altar_Static" ID="{68401A9B-C2EE-4F2A-8D94-6B855D855FEC}" ShortID="576038869">
 											<Comment>Estatica. Cama en Loop Infinite.</Comment>
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>60</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideEffect" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-600</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -758,22 +829,58 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="ALTAR_Static" ID="{05CD1CCA-96A6-4E4D-A10F-FC9C55C3A77E}">
+												<AudioFileSource Name="SFX_Altar_Static" ID="{D7B8D7EA-DF56-4D52-BA63-1B024D1B7DD6}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="504.898"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.129567346938775"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0277644314868803"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0.899762963773705"/>
+														<Property Name="LoopEnd" Type="Real64" Value="2.2"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.145386682193441"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.47830942548613"/>
+													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>Blobli\ALTAR_Static.wav</AudioFile>
+													<AudioFile>SFX_Altar_Static.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="271758708"/>
+														<MediaID ID="725583787"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Effects">
+													<Reference>
+														<Local>
+															<EffectSlot Name="" ID="{E2DC6B21-25D5-4E63-A207-EEE6BB8A3C4C}" ShortID="1070563886">
+																<ReferenceList>
+																	<Reference Name="Effect">
+																		<Custom>
+																			<Effect Name="Time Stretch (Custom)" ID="{DB022B9F-9A10-4468-AD44-BF4B334B84F6}" ShortID="339017356" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+																				<PropertyList>
+																					<Property Name="TimeStretch" Type="Real32" Value="125"/>
+																				</PropertyList>
+																			</Effect>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</EffectSlot>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
 											<ActiveSourceList>
-												<ActiveSource Name="ALTAR_Static" ID="{05CD1CCA-96A6-4E4D-A10F-FC9C55C3A77E}" Platform="Linked"/>
+												<ActiveSource Name="SFX_Altar_Static" ID="{D7B8D7EA-DF56-4D52-BA63-1B024D1B7DD6}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="SFX_Altar_Aura" ID="{717591DE-1ED1-4E69-8C7F-682EEA9C2023}" ShortID="553387893">
-											<Comment>El aura del Altar. Cama en Loop Infinite.</Comment>
+										<Sound Name="SFX_Altar_Voices" ID="{717591DE-1ED1-4E69-8C7F-682EEA9C2023}" ShortID="553387893">
+											<Comment>El coro / las voces del Altar. Cama en Loop Infinite.</Comment>
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-15</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -781,16 +888,26 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="ALTAR_Aura" ID="{7BF504B0-74D1-42C7-9CC2-4892D7DBEE08}">
+												<AudioFileSource Name="SFX_Altar_Voices" ID="{37CB5161-4780-4FB7-B3E1-5EC7E4EF76DA}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1607.424"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.344"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.229"/>
+														<Property Name="LoopBegin" Type="Real64" Value="2.01089"/>
+														<Property Name="LoopEnd" Type="Real64" Value="4.76154"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.73976"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.81387"/>
+													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>Blobli\ALTAR_Aura.wav</AudioFile>
+													<AudioFile>SFX_Altar_Voices.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="979287941"/>
+														<MediaID ID="228692303"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="ALTAR_Aura" ID="{7BF504B0-74D1-42C7-9CC2-4892D7DBEE08}" Platform="Linked"/>
+												<ActiveSource Name="SFX_Altar_Voices" ID="{37CB5161-4780-4FB7-B3E1-5EC7E4EF76DA}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -806,11 +923,20 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="AMB_Void" ID="{3DBBE856-DFBC-429C-93BA-708E83DD6BB5}">
+										<AudioFileSource Name="SFX_Void" ID="{B93C1AD3-24AE-48B4-9DA4-6916FB6BAB46}">
+											<PropertyList>
+												<Property Name="CrossfadeDuration" Type="Real64" Value="4500"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="4.6709529113924"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.90833769222722"/>
+												<Property Name="LoopBegin" Type="Real64" Value="12"/>
+												<Property Name="LoopEnd" Type="Real64" Value="35"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="39.9190952646238"/>
+											</PropertyList>
 											<Language>SFX</Language>
-											<AudioFile>Blobli\AMB_Void.wav</AudioFile>
+											<AudioFile>SFX_Void.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="245773270"/>
+												<MediaID ID="267547051"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
@@ -835,12 +961,12 @@
 																		<PointList>
 																			<Point>
 																				<XPos>0</XPos>
-																				<YPos>-6</YPos>
+																				<YPos>-10</YPos>
 																				<Flags>5</Flags>
 																			</Point>
 																			<Point>
 																				<XPos>100</XPos>
-																				<YPos>0</YPos>
+																				<YPos>-4</YPos>
 																				<Flags>37</Flags>
 																			</Point>
 																		</PointList>
@@ -854,7 +980,7 @@
 										</ObjectList>
 									</ObjectLists>
 									<ActiveSourceList>
-										<ActiveSource Name="AMB_Void" ID="{3DBBE856-DFBC-429C-93BA-708E83DD6BB5}" Platform="Linked"/>
+										<ActiveSource Name="SFX_Void" ID="{B93C1AD3-24AE-48B4-9DA4-6916FB6BAB46}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
