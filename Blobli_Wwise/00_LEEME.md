@@ -10,26 +10,57 @@ Los 43 `.wwu` están validados contra el XSD oficial de Wwise
 
 ## 1 · Estado actual
 
-**21 de 31 sources resueltas.** Lo que falta son los sonidos de acciones del jugador
-y de interfaz:
+**31 de 32 sources resueltas.** Zeki subió los diez sonidos que faltaban. Queda uno:
 
 | Falta | Objeto que lo espera |
 |---|---|
-| `Blobli\GP_Turn.wav` | `SFX_Turn_Pulse` ← **el más urgente** |
-| `Blobli\GEM_Pickup_01..04.wav` | `RND_Gem_Pickup` |
-| `Blobli\ACT_ShadowPlace.wav` | `SFX_Shadow_Place` |
-| `Blobli\ACT_KeyPlace.wav` | `SFX_Key_Place` |
-| `Blobli\ACT_Death.wav` | `SFX_Death` |
-| `Blobli\UI_Click.wav` | `SFX_UI_Click` |
 | `Blobli\UI_Hover.wav` | `SFX_UI_Hover` |
-| `Blobli\WIN_Level.wav` | `SFX_Win_Level` |
 
-Van en `Originals\SFX\Blobli\` con **exactamente** esos nombres. Al ponerlos, Wwise
-los levanta solo: no hay que tocar nada en la jerarquía.
+Va en `Originals\SFX\Blobli\` con **exactamente** ese nombre. Hasta que esté, ese
+único objeto queda mudo; todo lo demás suena.
 
-> `GP_Turn.wav` es prioritario porque `SFX_Turn_Pulse` tiene dos curvas RTPC
-> configuradas y funcionando, pero **hoy están mudas** porque el objeto no tiene
-> audio.
+> Cuando aparezca hay que **medirle el nivel** y ponerle su `Voice Volume`, como se
+> hizo con los otros nueve: el objetivo es dejarlo cerca de −24 LUFS máximo, igual
+> que `SFX_UI_Click`.
+
+### Nivelación de los one-shots
+
+Los diez archivos nuevos llegaron con un rango de **17 dB** entre el más bajo y el
+más alto. Se nivelaron con `Voice Volume` en cada Sound —sin tocar los WAV— midiendo
+**LUFS momentáneo máximo** en ventana de 400 ms, que es la métrica que corresponde a
+un sonido corto (la integrada subestima los one-shots):
+
+| Objeto | Medido | Volume | Resultado |
+|---|---|---|---|
+| `SFX_Key_Place` | −9.0 | −13.0 | −22.0 |
+| `SFX_Gem_Pickup_02` | −12.0 | −9.0 | −21.0 |
+| `SFX_Shadow_Place` | −12.1 | −10.0 | −22.1 |
+| `SFX_Gem_Pickup_04` | −12.2 | −8.8 | −21.0 |
+| `SFX_Gem_Pickup_03` | −14.5 | −6.5 | −21.0 |
+| `SFX_Gem_Pickup_01` | −17.0 | −4.0 | −21.0 |
+| `SFX_Win_Level` | −19.1 | −1.0 | −20.1 |
+| `SFX_UI_Click` | −19.3 | −4.5 | −23.8 |
+| `SFX_Turn_Pulse` | −24.6 | −1.5 | −26.1 |
+| `SFX_Death` | −26.0 | — | −26.0 |
+
+Las pisadas quedan en −28.3 efectivo: son el piso de la mezcla, porque suenan todo
+el tiempo. Los cuatro `GEM_Pickup` quedan **todos en −21.0**: dentro de un Random
+Container las variaciones tienen que estar al mismo nivel, si no la randomización
+se percibe como un error de volumen y no como variedad.
+
+**Sólo se atenúa, nunca se levanta.** Así ninguna voz puede clipear.
+
+### Colas muertas recortadas
+
+Cuatro archivos traían silencio largo al final. Se recortó con `TrimEnd` +
+`Fade-out` en el Source Editor, que no modifica el archivo original:
+
+| Objeto | Audio real | Archivo | TrimEnd |
+|---|---|---|---|
+| `SFX_UI_Click` | 0.65 s | 4.25 s | 0.75 s |
+| `SFX_Turn_Pulse` | 0.46 s | 1.10 s | 0.55 s |
+| `SFX_Key_Place` | 2.06 s | 5.03 s | 2.20 s |
+| `SFX_Win_Level` | 2.27 s | 4.00 s | 2.40 s |
 
 Las camas del ambiente y las nueve pisadas ya están puestas y funcionando.
 
@@ -52,7 +83,7 @@ Los ajustes no son iguales para los tres, porque los materiales no lo son:
 
 | Grupo | Pasa-altos | Recorte | Fade-out | Resultado |
 |---|---|---|---|---|
-| Ground | **60 Hz, 1er orden** | −24 dB | 6 ms | ~32 ms |
+| Ground | **60 Hz, 1er orden** | −45 dB | 6 ms | ~57 ms |
 | Mushroom | 150 Hz, 2º orden | −32 dB | 25 ms | ~293 ms |
 | Shadow | 150 Hz, 2º orden | −32 dB | 25 ms | ~235 ms |
 

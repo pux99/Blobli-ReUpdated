@@ -24,7 +24,7 @@
 					</ReferenceList>
 					<ChildrenList>
 						<SwitchContainer Name="SW_Zone_Ambience" ID="{03EA2824-079F-4948-A9C2-AEC267EABA04}" ShortID="444645847">
-							<Comment>Raiz de todo el ambiente. Un unico Event, Play_Ambience, lo arranca al cargar el nivel. Play Mode CONTINUOUS: el Event se llama una sola vez y el contenedor queda escuchando el Switch Group Zone, que a su vez se deriva de AltarDistance. Cuando Blobli se acerca al Altar el contenedor cambia de hijo solo, con Fade-in/Fade-out de 2 s, sin que el juego tenga que volver a llamar al Event. En Step no pasaria nada hasta el proximo Play. Ademas, fuera de su switch un objeto no se instancia: en el campo no existen las capas del Altar y en el Altar no existe el clima.</Comment>
+							<Comment>Raiz de todo el ambiente. Un unico Event, Play_Ambience, lo arranca al cargar el nivel. Play Mode CONTINUOUS: el Event se llama una sola vez y el contenedor queda escuchando el Switch Group Zone, que setean los Events Set_Recinto_* junto con el State. Cuando Blobli entra al Altar el contenedor cambia de hijo solo, con Fade-in/Fade-out de 2 s, sin que el juego tenga que volver a llamar al Event. En Step no pasaria nada hasta el proximo Play. Ademas, fuera de su switch un objeto no se instancia: en el campo no existen las capas del Altar y en el Altar no existe el clima.</Comment>
 							<PropertyList>
 								<Property Name="SwitchBehavior" Type="int16" Value="1"/>
 							</PropertyList>
@@ -74,7 +74,7 @@
 														<Property Name="TrimEnd" Type="Real64" Value="41"/>
 													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>SFX_Wind_Soft.wav</AudioFile>
+													<AudioFile>Blobli\SFX_Wind_Soft.wav</AudioFile>
 													<MediaIDList>
 														<MediaID ID="776511923"/>
 													</MediaIDList>
@@ -132,7 +132,7 @@
 														<Property Name="TrimEnd" Type="Real64" Value="41"/>
 													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>SFX_Wind_Med.wav</AudioFile>
+													<AudioFile>Blobli\SFX_Wind_Med.wav</AudioFile>
 													<MediaIDList>
 														<MediaID ID="97933193"/>
 													</MediaIDList>
@@ -907,7 +907,7 @@
 														<Property Name="TrimEnd" Type="Real64" Value="7.67215424719948"/>
 													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>SFX_Altar_Aura.wav</AudioFile>
+													<AudioFile>Blobli\SFX_Altar_Aura.wav</AudioFile>
 													<MediaIDList>
 														<MediaID ID="813121255"/>
 													</MediaIDList>
@@ -951,7 +951,7 @@
 														<Property Name="TrimEnd" Type="Real64" Value="2.47830942548613"/>
 													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>SFX_Altar_Static.wav</AudioFile>
+													<AudioFile>Blobli\SFX_Altar_Static.wav</AudioFile>
 													<MediaIDList>
 														<MediaID ID="725583787"/>
 													</MediaIDList>
@@ -1010,7 +1010,7 @@
 														<Property Name="TrimEnd" Type="Real64" Value="5.81387"/>
 													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>SFX_Altar_Voices.wav</AudioFile>
+													<AudioFile>Blobli\SFX_Altar_Voices.wav</AudioFile>
 													<MediaIDList>
 														<MediaID ID="228692303"/>
 													</MediaIDList>
@@ -1044,7 +1044,7 @@
 												<Property Name="TrimEnd" Type="Real64" Value="39.9190952646238"/>
 											</PropertyList>
 											<Language>SFX</Language>
-											<AudioFile>SFX_Void.wav</AudioFile>
+											<AudioFile>Blobli\SFX_Void.wav</AudioFile>
 											<MediaIDList>
 												<MediaID ID="267547051"/>
 											</MediaIDList>

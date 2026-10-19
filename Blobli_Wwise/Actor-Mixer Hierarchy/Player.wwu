@@ -370,6 +370,9 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="SFX_Gem_Pickup_01" ID="{570B8AF7-FA2B-49A6-B86A-EE09C41F907B}" ShortID="631461140">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-4.0"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
@@ -389,6 +392,9 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_02" ID="{D074ADEE-F6A4-44BB-AD28-59EC45A1611A}" ShortID="437983188">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-9.0"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
@@ -408,6 +414,9 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_03" ID="{0BB5B144-9567-41BF-8A1C-0831DB2CB05E}" ShortID="1049468598">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-6.5"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
@@ -427,6 +436,9 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_04" ID="{21FCDA67-B1B6-458F-8442-9A430F743945}" ShortID="571744460">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-8.8"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
@@ -449,6 +461,9 @@
 								</RandomSequenceContainer>
 								<Sound Name="SFX_Shadow_Place" ID="{D603DC62-9F99-43D7-A236-098BDE4174D2}" ShortID="367498730">
 									<Comment>Proyectar una sombra combinando gemas. One-shot sin Loop. Es la accion central de la mecanica, asi que va limpia y sin randomizar: el jugador tiene que reconocerla siempre igual como confirmacion de que la jugada salio.</Comment>
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-10"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
@@ -476,6 +491,9 @@
 								</Sound>
 								<Sound Name="SFX_Key_Place" ID="{AA90FC82-61C4-457F-997A-1F2AD5938CB7}" ShortID="594881259">
 									<Comment>Colocar una Key gem en el Altar. One-shot sin Loop, tambien sin randomizar: marca un hito del nivel y conviene que suene identico las dos veces.</Comment>
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-13.0"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
@@ -483,6 +501,10 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="ACT_KeyPlace" ID="{49FCFFCC-BE19-4C22-9B30-44F3C3218CD5}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.2"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Blobli\ACT_KeyPlace.wav</AudioFile>
 											<MediaIDList>

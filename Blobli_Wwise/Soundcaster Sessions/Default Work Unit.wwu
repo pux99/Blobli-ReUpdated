@@ -70,9 +70,13 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="None" ID="{9C1116A1-62BC-4B31-9A32-134A25A98012}"/>
+						<CurrentStateRef Name="Exterior" ID="{D3655061-F23C-46D9-9457-F70BDF20124A}"/>
 					</CurrentStateList>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}"/>
+						<CurrentSwitchRef Name="Ground" ID="{D1E83381-B886-46CD-B6E9-392C9CB6D214}"/>
+						<CurrentSwitchRef Name="Active" ID="{E6E4D096-7FAD-451D-98F1-AE02F03DEDC1}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>

@@ -161,7 +161,7 @@ fueran el mismo:
 
 | Grupo | Pasa-altos | Recorte | Fade-out | Duración |
 |---|---|---|---|---|
-| Ground | **60 Hz, 1er orden (6 dB/oct)** | −24 dB | 6 ms | 271 → **~32 ms** |
+| Ground | **60 Hz, 1er orden (6 dB/oct)** | −45 dB | 6 ms | 271 → **~57 ms** |
 | Mushroom | 150 Hz, 2º orden (12 dB/oct) | −32 dB | 25 ms | 527–569 → **~293 ms** |
 | Shadow | 150 Hz, 2º orden (12 dB/oct) | −32 dB | 25 ms | 457–649 → **~235 ms** |
 
@@ -188,6 +188,37 @@ También se bajó el fade-in de 2 ms a 0.3 ms: en un sonido percusivo cuyo ataqu
 en los primeros milisegundos, un fade-in de 2 ms **atenúa justamente el transitorio**.
 Con el recorte el archivo ya arranca 24 dB por debajo del pico, así que 0.3 ms alcanza
 para garantizar el cruce por cero.
+
+### Por qué Ground dura 57 ms y no 290 como las otras dos
+
+Se evaluó igualar la duración de las tres superficies con un **Time Stretch**. Se
+descartó, por cuatro razones:
+
+1. **El factor es imposible.** Pasar de 30 ms a 290 ms es un estiramiento de **9.7×**.
+   El Time Stretch de Wwise es un algoritmo de vocoder de fase: se comporta bien hasta
+   1.5–2×, y de ahí en adelante un transitorio se convierte en un zumbido metálico.
+   No sonaría a pisada.
+2. **Es el plugin más caro de Wwise**, el mismo que en `SFX_Sun_Sizzle` hubo que
+   marcar como *Render* para sacarlo del runtime. Ponerlo en un sonido que se dispara
+   en cada movimiento de la grilla es ir exactamente en la dirección contraria.
+3. **La diferencia de duración es la información.** Un piso duro da un click corto;
+   un hongo da un sonido blando y largo. Igualar las duraciones borra justo la pista
+   que le dice al jugador qué está pisando — es el mismo error que igualar los
+   timbres.
+4. **El material no da para estirar.** Midiendo la envolvente del original en
+   ventanas de 20 ms: el paso decae de −11 dB a −41 dB en los primeros 60 ms, y de
+   ahí hasta los 240 ms el nivel queda **plano dentro de ±0.1 dB y con cero cruces
+   por cero**. Eso no es una cola: es un valor de continua que dejó la conversión de
+   los archivos. No hay decaimiento que recuperar.
+
+Lo que sí había para recuperar era el tramo entre −24 dB y −45 dB, que el recorte
+original estaba tirando. Bajando el umbral a −45 dB, Ground pasa de ~32 ms a **~57 ms**
+—casi el doble— con decaimiento real y sin un solo artefacto. El dato que lo confirma:
+la energía contenida en el último 30 % del archivo baja de **2.0 % a 0.0 %**, o sea que
+el archivo deja de terminar cortado de golpe y pasa a apagarse solo. LUFS y pico
+quedan iguales (−25.75 y −3.1/−3.7 dBFS).
+
+Sigue siendo cinco veces más corto que un paso sobre hongo, y así tiene que ser.
 
 ### Emparejar por sonoridad, no por RMS
 
@@ -510,24 +541,49 @@ audio adaptativo.
 
 ## 9 · Problemas abiertos
 
-**① Los dos efectos de `SFX_Sun_Sizzle`.** Ese objeto tiene un **Wwise Pitch
-Shifter** y un **Wwise Time Stretch** como inserts en tiempo real. Son los dos
-plugins más caros de Wwise (procesamiento espectral) corriendo sobre una cama que
-loopea sin parar, y **ningún RTPC los modula**: sus parámetros son fijos.
+**① Los dos efectos de `SFX_Sun_Sizzle` — RESUELTO.** Ese objeto tiene un **Wwise
+Pitch Shifter** y un **Wwise Time Stretch** como inserts. Son los dos plugins más
+caros de Wwise (procesamiento espectral) corriendo sobre una cama que loopea sin
+parar, y ningún RTPC los modula: sus parámetros son fijos.
 
-La corrección es tildar **Render** en los dos effect slots: Wwise hornea el efecto en
-la conversión, suena exactamente igual y pasa a costar **cero CPU** en runtime. Está
-disponible justamente porque no hay RTPC sobre ellos. Como mejora adicional, `SunShift`
-es un ShareSet de fábrica referenciado desde `Factory Effects.wwu` y convendría
-duplicarlo al Work Unit de Effects del proyecto. Queda pendiente de confirmar con el
-autor del efecto.
+Se tildó **Render** en los dos effect slots. Wwise hornea el efecto en la conversión:
+suena exactamente igual y pasa a costar **cero CPU** en runtime. Se puede hacer
+justamente porque no hay ningún RTPC sobre ellos — con un RTPC vivo la opción no está
+disponible, porque el efecto tendría que recalcularse en tiempo real.
 
-**② Faltan 10 sources** (acciones del jugador e interfaz). `SFX_Turn_Pulse` en
-particular tiene sus dos curvas RTPC bien configuradas pero sin audio.
+Queda una mejora menor: `SunShift` es un ShareSet de fábrica referenciado desde
+`Factory Effects.wwu`, y convendría duplicarlo al Work Unit de Effects del proyecto
+para que el `.zip` no dependa de un ShareSet que vive fuera.
 
-**③ Seis WAV quedaron en `Originals/SFX/` en vez de `Originals/SFX/Blobli/`.**
-Funcionan, pero rompen la convención de carpeta del resto del set.
+**② Falta un source: `UI_Hover.wav`.** Los otros diez llegaron. Cuando aparezca hay
+que medirle el nivel y darle su `Voice Volume`, igual que a los demás.
 
-**④ Con más tiempo:** un `SEQ_` (Sequence Container) para la apertura del Altar
+**③ `ACT_KeyPlace.wav` llegó con la cabecera RIFF corrupta.** Los campos de tamaño
+de `RIFF` y de `data` venían en `0xFFFFFFFF` en vez del valor real — es la firma de
+un archivo escrito por ffmpeg hacia un pipe, donde el codificador no puede volver
+atrás a parchear los tamaños (el `LIST/INFO` del archivo dice `Lavf62.3.100`). Muchos
+reproductores lo toleran leyendo hasta fin de archivo, pero es un archivo inválido.
+Se reescribieron los dos campos; **ni un byte de audio fue modificado**. Conviene
+re-exportarlo a disco en vez de a un pipe.
+
+**④ `ACT_Death.wav` tiene un factor de cresta de 26 dB** (pico −0.1 dBFS, LUFS máximo
+−26.0): es un pico muy agudo sobre un cuerpo muy callado. Por eso quedó como el
+sonido más bajo de la nivelación y **no se puede subir con el fader** — ya está a
+fondo de escala. Si en la práctica suena débil, el arreglo es re-editar el archivo
+(comprimirlo o rehacerlo con más cuerpo), no moverle el volumen.
+
+**⑤ Formatos mezclados.** Las pisadas son mono 44.1 kHz; los diez archivos nuevos son
+todos estéreo, y `ACT_KeyPlace` y `ACT_ShadowPlace` además son de 48 kHz. Wwise
+resamplea en la conversión así que funciona, pero para efectos puntuales el estéreo
+cuesta el doble de memoria sin aportar nada en un juego de grilla 2D. Si sobra
+tiempo, pasarlos a mono 44.1.
+
+**⑥ Seis WAV fuera de carpeta — RESUELTO.** `SFX_Altar_Aura`, `SFX_Altar_Static`,
+`SFX_Altar_Voices`, `SFX_Void`, `SFX_Wind_Med` y `SFX_Wind_Soft` estaban en
+`Originals/SFX/` en vez de `Originals/SFX/Blobli/`. Se movieron con `git mv` y se
+actualizaron las seis rutas `<AudioFile>` del `.wwu`. Las 32 fuentes del proyecto
+cuelgan ahora de una sola carpeta.
+
+**⑦ Con más tiempo:** un `SEQ_` (Sequence Container) para la apertura del Altar
 cuando entran las dos Key gems, una acción **Seek** con punto de inicio random si
 alguna cama llegara a instanciarse más de una vez, y la generación del SoundBank.
