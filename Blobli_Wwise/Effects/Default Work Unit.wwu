@@ -12,7 +12,6 @@
 						<Property Name="DryLevel" Type="Real32" Value="-96"/>
 						<Property Name="ERFrontBackDelay" Type="Real32" Value="45"/>
 						<Property Name="ERLevel" Type="Real32" Value="-11"/>
-						<Property Name="EnableEarlyReflections" Type="bool" Value="True"/>
 						<Property Name="EnableToneControls" Type="bool" Value="True"/>
 						<Property Name="Filter3Freq" Type="Real32" Value="5500"/>
 						<Property Name="Filter3Gain" Type="Real32" Value="-7"/>
@@ -21,6 +20,14 @@
 						<Property Name="ReverbLevel" Type="Real32" Value="-2"/>
 						<Property Name="RoomSize" Type="Real32" Value="90"/>
 						<Property Name="StereoWidth" Type="Real32" Value="150"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="Sun_Time_Stretch" ID="{BC5A6B8B-469B-4FF8-8F7B-3A9DDBCEE314}" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+					<PropertyList>
+						<Property Name="OutputGain" Type="Real32" Value="0.5"/>
+						<Property Name="PitchShift" Type="Real32" Value="500"/>
+						<Property Name="PitchShiftRandom" Type="Real32" Value="1100"/>
+						<Property Name="TimeStretch" Type="Real32" Value="25"/>
 					</PropertyList>
 				</Effect>
 			</ChildrenList>
