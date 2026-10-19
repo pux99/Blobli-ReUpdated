@@ -72,3 +72,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# ---- Wwise ----
+# Caches y preferencias por usuario: se regeneran solos y chocan entre integrantes
+*.validationcache
+*.wsettings
+Blobli_Wwise/.cache/
+Blobli_Wwise/GeneratedSoundBanks/
+Blobli_Wwise/.wwiseLogs/
+# Originals.txt lo reescribe Wwise en cada guardado
+Blobli_Wwise/Originals.txt

@@ -31,7 +31,7 @@
 										<StateRef Name="Altar" ID="{7EF10EDA-3142-4C37-BA92-0DEE88F11F94}"/>
 										<CustomState Name="Custom State" ID="{DD834148-FCB2-4EEF-8BB3-BBCB368DC562}">
 											<PropertyList>
-												<Property Name="Lowpass" Type="int16" Value="12"/>
+												<Property Name="Lowpass" Type="int16" Value="10"/>
 												<Property Name="Volume" Type="Real64" Value="-1"/>
 											</PropertyList>
 										</CustomState>

@@ -25,6 +25,9 @@
 					<ChildrenList>
 						<SwitchContainer Name="SW_Steps_Tile" ID="{499D1E74-272F-4DE0-81D2-8FCB5F08220B}" ShortID="113616848">
 							<Comment>Pisadas por tipo de baldosa. Play Mode STEP: cada Play_Footstep reproduce UNA pisada y avanza el puntero. El ritmo lo marca el juego (un paso por movimiento en la grilla), no el contenedor. En Continuous un solo Play caminaria para siempre. Como el juego hace Set Switch Tile ANTES del Play, el cambio de superficie ya se oye en la pisada siguiente: no hace falta Continuous.</Comment>
+							<PropertyList>
+								<Property Name="Volume" Type="Real64" Value="-2.5"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="DefaultSwitchOrState">
 									<ObjectRef Name="Ground" ID="{D1E83381-B886-46CD-B6E9-392C9CB6D214}" WorkUnitID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}"/>
@@ -41,27 +44,14 @@
 									<Comment>Piso normal. Random Shuffle en Step. Shuffle recorre las tres variaciones antes de repetir ninguna; "Limit repetition to" queda en 1 porque con solo 3 hijos subirlo a 2 dejaria un unico candidato y la eleccion pasaria a ser deterministica. Los randomizers de Pitch y Volume van en el CONTENEDOR para que se hereden a los tres hijos. Shuffle decide QUE suena, los randomizers deciden COMO suena: juntos son lo que rompe el machine gun effect con solo 3 assets.</Comment>
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{8B5B54E5-54B8-4338-9084-8CB97AC1A85C}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="150"/>
-															<Property Name="Min" Type="Real64" Value="-150"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{FDF6EEDA-2328-40E9-AA17-12228AD8153A}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="2"/>
-															<Property Name="Min" Type="Real64" Value="-2"/>
+															<Property Name="Max" Type="Real64" Value="1"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
@@ -136,40 +126,15 @@
 								<RandomSequenceContainer Name="RND_Step_Mushroom" ID="{E0F23D09-3319-4993-8915-B738DAE1E1B3}" ShortID="738223954">
 									<Comment>Hongo: superficie blanda y humeda. Mismo esquema que Ground pero con el rango de Pitch un poco mas ancho (el material esponjoso responde distinto en cada pisada) y un randomizer de Low-pass de 0 a 15 para que ninguna pisada tenga exactamente el mismo brillo.</Comment>
 									<PropertyList>
-										<Property Name="Lowpass" Type="int16">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{C8274C8A-4EFE-456F-B22C-158BB05092A2}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="15"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{DBC4143E-F85C-42D2-94C9-91D292A860F1}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="180"/>
-															<Property Name="Min" Type="Real64" Value="-180"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{0B080C23-4DAD-4C66-8435-D86857B5C955}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="2"/>
-															<Property Name="Min" Type="Real64" Value="-2"/>
+															<Property Name="Max" Type="Real64" Value="1"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
@@ -244,36 +209,15 @@
 								<RandomSequenceContainer Name="RND_Step_Shadow" ID="{A9DA2B61-6329-4895-9334-3569D912883A}" ShortID="458465739">
 									<Comment>Sombra: la baldosa segura. Ademas de los randomizers lleva un Low-pass FIJO de 25 y -1.5 dB: pisar dentro de la sombra suena mas apagado y mas lejano que pisar a la luz. Es una decision estetica y a la vez de lectura de juego, porque el jugador aprende a reconocer por el sonido si esta a salvo. Son dos propiedades distintas: el valor fijo tine el timbre, el randomizer evita la repeticion.</Comment>
 									<PropertyList>
-										<Property Name="Lowpass" Type="int16">
-											<ValueList>
-												<Value>25</Value>
-											</ValueList>
-										</Property>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{ABADF76C-7404-49EA-8FFB-B05221750AD8}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="150"/>
-															<Property Name="Min" Type="Real64" Value="-150"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
 										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-1.5</Value>
-											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{6EB696BE-FDB9-492D-B4F0-2FAB8890575B}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="2"/>
-															<Property Name="Min" Type="Real64" Value="-2"/>
+															<Property Name="Max" Type="Real64" Value="1"/>
+															<Property Name="Min" Type="Real64" Value="-1"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
