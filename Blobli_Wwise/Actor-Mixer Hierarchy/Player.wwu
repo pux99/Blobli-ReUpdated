@@ -26,7 +26,11 @@
 						<SwitchContainer Name="SW_Steps_Tile" ID="{499D1E74-272F-4DE0-81D2-8FCB5F08220B}" ShortID="113616848">
 							<Comment>Pisadas por tipo de baldosa. Play Mode STEP: cada Play_Footstep reproduce UNA pisada y avanza el puntero. El ritmo lo marca el juego (un paso por movimiento en la grilla), no el contenedor. En Continuous un solo Play caminaria para siempre. Como el juego hace Set Switch Tile ANTES del Play, el cambio de superficie ya se oye en la pisada siguiente: no hace falta Continuous.</Comment>
 							<PropertyList>
-								<Property Name="Volume" Type="Real64" Value="-2.5"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2.5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="DefaultSwitchOrState">
@@ -452,6 +456,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="ACT_ShadowPlace" ID="{CBA6028F-FDAF-431B-AD54-A270588ED6F3}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.92989992252066"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.407956095041322"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.995892820247935"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.9257927427686"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Blobli\ACT_ShadowPlace.wav</AudioFile>
 											<MediaIDList>
