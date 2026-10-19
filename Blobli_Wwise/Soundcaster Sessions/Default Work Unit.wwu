@@ -66,7 +66,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SunExposure" ID="{7DDEE1D3-C7E7-4809-B010-6FE3537F4820}"/>
-							<Value>65</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Turns" ID="{BA7E6CEE-B03B-4DBF-9DE9-1896DE94AEBF}"/>
@@ -77,9 +77,9 @@
 						<CurrentStateRef Name="None" ID="{9C1116A1-62BC-4B31-9A32-134A25A98012}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Altar" ID="{5B3D64CF-1A59-421C-B4D4-BAE04C3630C7}"/>
+						<CurrentSwitchRef Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}"/>
 						<CurrentSwitchRef Name="Ground" ID="{D1E83381-B886-46CD-B6E9-392C9CB6D214}"/>
-						<CurrentSwitchRef Name="Silent" ID="{E7F297DE-CFFD-4352-B8C7-F89B88CA5713}"/>
+						<CurrentSwitchRef Name="Active" ID="{E6E4D096-7FAD-451D-98F1-AE02F03DEDC1}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
