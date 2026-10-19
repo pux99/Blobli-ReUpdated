@@ -215,6 +215,9 @@
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{6EB696BE-FDB9-492D-B4F0-2FAB8890575B}">
@@ -371,7 +374,11 @@
 									<ChildrenList>
 										<Sound Name="SFX_Gem_Pickup_01" ID="{570B8AF7-FA2B-49A6-B86A-EE09C41F907B}" ShortID="631461140">
 											<PropertyList>
-												<Property Name="Volume" Type="Real64" Value="-4.0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-4</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -380,6 +387,9 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="GEM_Pickup_01" ID="{629417AE-4775-4A81-A4A4-F588764347D8}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Blobli\GEM_Pickup_01.wav</AudioFile>
 													<MediaIDList>
@@ -393,7 +403,11 @@
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_02" ID="{D074ADEE-F6A4-44BB-AD28-59EC45A1611A}" ShortID="437983188">
 											<PropertyList>
-												<Property Name="Volume" Type="Real64" Value="-9.0"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-9</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -415,7 +429,11 @@
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_03" ID="{0BB5B144-9567-41BF-8A1C-0831DB2CB05E}" ShortID="1049468598">
 											<PropertyList>
-												<Property Name="Volume" Type="Real64" Value="-6.5"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6.5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -437,7 +455,11 @@
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_04" ID="{21FCDA67-B1B6-458F-8442-9A430F743945}" ShortID="571744460">
 											<PropertyList>
-												<Property Name="Volume" Type="Real64" Value="-8.8"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-8.8</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -462,7 +484,12 @@
 								<Sound Name="SFX_Shadow_Place" ID="{D603DC62-9F99-43D7-A236-098BDE4174D2}" ShortID="367498730">
 									<Comment>Proyectar una sombra combinando gemas. One-shot sin Loop. Es la accion central de la mecanica, asi que va limpia y sin randomizar: el jugador tiene que reconocerla siempre igual como confirmacion de que la jugada salio.</Comment>
 									<PropertyList>
-										<Property Name="Volume" Type="Real64" Value="-10"/>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
@@ -485,6 +512,27 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{0C5D0EB2-57B3-46F1-BE50-6C144DF701DE}" ShortID="148819288">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Time Stretch (Custom)" ID="{B324459B-3080-43F7-B698-53E65B3321F2}" ShortID="172829111" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
+																		<PropertyList>
+																			<Property Name="TimeStretch" Type="Real32" Value="25"/>
+																		</PropertyList>
+																	</Effect>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="ACT_ShadowPlace" ID="{CBA6028F-FDAF-431B-AD54-A270588ED6F3}" Platform="Linked"/>
 									</ActiveSourceList>
@@ -492,7 +540,11 @@
 								<Sound Name="SFX_Key_Place" ID="{AA90FC82-61C4-457F-997A-1F2AD5938CB7}" ShortID="594881259">
 									<Comment>Colocar una Key gem en el Altar. One-shot sin Loop, tambien sin randomizar: marca un hito del nivel y conviene que suene identico las dos veces.</Comment>
 									<PropertyList>
-										<Property Name="Volume" Type="Real64" Value="-13.0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
@@ -503,6 +555,9 @@
 										<AudioFileSource Name="ACT_KeyPlace" ID="{49FCFFCC-BE19-4C22-9B30-44F3C3218CD5}">
 											<PropertyList>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0.75204401611047"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.75204401611047"/>
 												<Property Name="TrimEnd" Type="Real64" Value="2.2"/>
 											</PropertyList>
 											<Language>SFX</Language>

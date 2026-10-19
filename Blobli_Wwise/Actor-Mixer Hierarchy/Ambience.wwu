@@ -13,6 +13,11 @@
 								<Value>-10</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="OutputBus">
@@ -872,6 +877,11 @@
 									<Comment>La camara del Altar. Blend agrupador en Continuous y SIN Blend Track: aca no hay ninguna variable que cruce capas, las tres suenan siempre juntas. Las tres van con Loop Infinite en el hijo. Lo que hace que el Altar suene a recinto NO esta en este contenedor: eso lo resuelve el State Recinto sobre los buses. Este objeto solo decide QUE se oye en la zona; el State decide COMO suena el espacio.</Comment>
 									<PropertyList>
 										<Property Name="BlendBehavior" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
