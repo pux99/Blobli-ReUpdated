@@ -134,13 +134,9 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="SFX_UI_Hover" ID="{E8DCC9C6-E2D0-47B0-99C9-651F9213605B}" ShortID="43626990">
-							<Comment>Hover de menu. Apunta al MISMO archivo que SFX_UI_Click: son dos Sound SFX sobre una sola source, asi que no se duplica nada en disco ni en memoria. La diferencia la hacen las propiedades: +250 cents de Pitch y -7 dB, para que el hover sea la version chica y discreta del click.</Comment>
+							<Comment>Hover de menu. One-shot sin Loop, sin randomizar, igual que el click. Source propia (UI_Hover.wav), nivelada con Voice Volume a -24 LUFS maximo, apenas por debajo de SFX_UI_Click: el hover pasa mucho mas seguido y no tiene que tapar al click.</Comment>
 							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-7</Value>
-									</ValueList>
-								</Property>
+								<Property Name="Volume" Type="Real64" Value="-5.5"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="OutputBus">
@@ -149,6 +145,10 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="UI_Hover" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.05"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.45"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Blobli\UI_Hover.wav</AudioFile>
 									<MediaIDList>

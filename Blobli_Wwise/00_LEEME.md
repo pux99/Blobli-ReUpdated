@@ -10,22 +10,12 @@ Los 43 `.wwu` están validados contra el XSD oficial de Wwise
 
 ## 1 · Estado actual
 
-**31 de 32 sources resueltas.** Zeki subió los diez sonidos que faltaban. Queda uno:
-
-| Falta | Objeto que lo espera |
-|---|---|
-| `Blobli\UI_Hover.wav` | `SFX_UI_Hover` |
-
-Va en `Originals\SFX\Blobli\` con **exactamente** ese nombre. Hasta que esté, ese
-único objeto queda mudo; todo lo demás suena.
-
-> Cuando aparezca hay que **medirle el nivel** y ponerle su `Voice Volume`, como se
-> hizo con los otros nueve: el objetivo es dejarlo cerca de −24 LUFS máximo, igual
-> que `SFX_UI_Click`.
+**32 de 32 sources resueltas.** Zeki subió los once sonidos que faltaban; el último
+fue `UI_Hover.wav`, que ya está nivelado y recortado como el resto.
 
 ### Nivelación de los one-shots
 
-Los diez archivos nuevos llegaron con un rango de **17 dB** entre el más bajo y el
+Los once archivos nuevos llegaron con un rango de **17 dB** entre el más bajo y el
 más alto. Se nivelaron con `Voice Volume` en cada Sound —sin tocar los WAV— midiendo
 **LUFS momentáneo máximo** en ventana de 400 ms, que es la métrica que corresponde a
 un sonido corto (la integrada subestima los one-shots):
@@ -40,6 +30,7 @@ un sonido corto (la integrada subestima los one-shots):
 | `SFX_Gem_Pickup_01` | −17.0 | −4.0 | −21.0 |
 | `SFX_Win_Level` | −19.1 | −1.0 | −20.1 |
 | `SFX_UI_Click` | −19.3 | −4.5 | −23.8 |
+| `SFX_UI_Hover` | −18.7 | −5.5 | −24.2 |
 | `SFX_Turn_Pulse` | −24.6 | −1.5 | −26.1 |
 | `SFX_Death` | −26.0 | — | −26.0 |
 
@@ -52,12 +43,13 @@ se percibe como un error de volumen y no como variedad.
 
 ### Colas muertas recortadas
 
-Cuatro archivos traían silencio largo al final. Se recortó con `TrimEnd` +
+Cinco archivos traían silencio largo al final. Se recortó con `TrimEnd` +
 `Fade-out` en el Source Editor, que no modifica el archivo original:
 
 | Objeto | Audio real | Archivo | TrimEnd |
 |---|---|---|---|
 | `SFX_UI_Click` | 0.65 s | 4.25 s | 0.75 s |
+| `SFX_UI_Hover` | 0.37 s | 1.39 s | 0.45 s |
 | `SFX_Turn_Pulse` | 0.46 s | 1.10 s | 0.55 s |
 | `SFX_Key_Place` | 2.06 s | 5.03 s | 2.20 s |
 | `SFX_Win_Level` | 2.27 s | 4.00 s | 2.40 s |
@@ -113,7 +105,7 @@ silencio.
 
 | | Qué |
 |---|---|
-| ① | Los 10 WAV que faltan |
+| ① | ~~Los 10 WAV que faltan~~ — resuelto, también `UI_Hover.wav` |
 | ② | Tildar **Render** en los dos effect slots de `SFX_Sun_Sizzle` (ver `01_INFORME.md`, sección 9) |
 | ③ | Mover a `Originals\SFX\Blobli\` los 6 WAV que quedaron sueltos en `Originals\SFX\` — cosmético |
 | ④ | Generar un SoundBank para integrar con Unity — fuera del alcance del TP |

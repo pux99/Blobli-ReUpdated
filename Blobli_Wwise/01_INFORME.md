@@ -73,7 +73,7 @@ Ambience.wwu
 Interface.wwu
 └── AMX_UI                         → Bus_UI  (sin State, sin send)
     ├── SFX_Turn_Pulse             RTPC Turns → Pitch y Volume
-    ├── SFX_UI_Hover               misma source que Click · +250 cents · −7 dB
+    ├── SFX_UI_Hover               source propia · −5.5 dB · TrimEnd 0.45 s
     ├── SFX_UI_Click
     └── SFX_Win_Level
 ```
@@ -555,8 +555,8 @@ Queda una mejora menor: `SunShift` es un ShareSet de fábrica referenciado desde
 `Factory Effects.wwu`, y convendría duplicarlo al Work Unit de Effects del proyecto
 para que el `.zip` no dependa de un ShareSet que vive fuera.
 
-**② Falta un source: `UI_Hover.wav`.** Los otros diez llegaron. Cuando aparezca hay
-que medirle el nivel y darle su `Voice Volume`, igual que a los demás.
+**② ~~Falta un source: `UI_Hover.wav`.~~** Resuelto: llegó, se niveló a −24.2 LUFS
+máximo con `Voice Volume` −5.5 y se recortó la cola con `TrimEnd` 0.45 s.
 
 **③ `ACT_KeyPlace.wav` llegó con la cabecera RIFF corrupta.** Los campos de tamaño
 de `RIFF` y de `data` venían en `0xFFFFFFFF` en vez del valor real — es la firma de
