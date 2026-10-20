@@ -11,13 +11,10 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="Bus_SFX" ID="{E5A4CC82-BDB3-4102-8A36-1822B0E5D416}">
-							<Comment>Todo lo que ocurre DENTRO del mundo: Blobli y el paisaje. Es el unico bus al que el State Recinto le aplica un Low-pass, porque la piedra de la camara del Altar bloquea los agudos y deja pasar los graves. Un solo State sobre el bus hace el trabajo de tocarle el filtro a cada objeto por separado.</Comment>
 							<ChildrenList>
 								<Bus Name="Bus_Player" ID="{C448015F-1BA6-4339-90E4-99ECE8C48126}">
-									<Comment>Blobli: pisadas, gemas, sombras, llaves, muerte. Separado del ambiente para poder balancear personaje contra paisaje con un solo fader.</Comment>
 								</Bus>
 								<Bus Name="Bus_AMB" ID="{0A3AFBBD-105A-4F43-AAB1-69D28736A5C9}">
-									<Comment>Paisaje sonoro: el void, el viento, el sol, la fauna y el Altar.</Comment>
 								</Bus>
 							</ChildrenList>
 							<StateInfo>
@@ -40,10 +37,9 @@
 							</StateInfo>
 						</Bus>
 						<Bus Name="Bus_UI" ID="{EA2E2CAF-1751-48E4-A2F1-9E7C0BA29845}">
-							<Comment>Lo NO diegetico: hover, click, el jingle de victoria y el pulso de turno. A proposito NO cuelga de Bus_SFX y no tiene State ni send a Aux_Altar: esos sonidos no ocurren adentro del mundo, son informacion para el jugador. Si se oscurecieran y se llenaran de reverb al entrar al Altar, el jugador perderia feedback justo en el momento mas importante del nivel.</Comment>
 						</Bus>
 						<AuxBus Name="Aux_Altar" ID="{9193A0B3-886C-458C-B959-9265F1534F9A}">
-							<Comment>Camino humedo del recinto. AMX_Player y AMX_Ambience le mandan un User-Defined Auxiliary Send fijo; el State Recinto decide si el retorno se oye (Altar, offset 0 dB) o no (Exterior y None, offset -96 dB). Asi la reverb nunca se re-instancia al cambiar de zona: una sola instancia del efecto sube y baja de nivel con el Default Transition Time del State Group.</Comment>
+							<Comment>Camino humedo del Altar. El State Recinto sube el retorno de -96 a 0 dB. DryLevel -96 porque aca solo vuelve la senal mojada: la seca llega por Bus_SFX.</Comment>
 							<StateInfo>
 								<StateGroupList>
 									<StateGroupInfo>
