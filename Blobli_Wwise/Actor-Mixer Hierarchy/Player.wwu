@@ -601,9 +601,10 @@
 								</Sound>
 								<Sound Name="SFX_Key_Place" ID="{AA90FC82-61C4-457F-997A-1F2AD5938CB7}" ShortID="594881259">
 									<PropertyList>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-13</Value>
+												<Value>-20</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -615,11 +616,11 @@
 									<ChildrenList>
 										<AudioFileSource Name="ACT_KeyPlace" ID="{49FCFFCC-BE19-4C22-9B30-44F3C3218CD5}">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0538906725723065"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.005"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.4"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.786152036725854"/>
-												<Property Name="TrimEnd" Type="Real64" Value="1.16298164476961"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.86"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.7"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Blobli\ACT_KeyPlace.wav</AudioFile>
@@ -628,6 +629,31 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{B390DF8E-9C26-40AF-AFA1-4A7D92D3BA32}" ShortID="1068385667">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Parametric EQ (Custom)" ID="{0CFF9195-EC5C-458A-A54E-55957BEB4CBB}" ShortID="649638543" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																		<PropertyList>
+																			<Property Name="FrequencyBand2" Type="Real32" Value="3500"/>
+																			<Property Name="GainBand2" Type="Real32" Value="-3"/>
+																			<Property Name="OnOffBand1" Type="bool" Value="False"/>
+																			<Property Name="OnOffBand3" Type="bool" Value="False"/>
+																			<Property Name="QFactorBand2" Type="Real32" Value="1.5"/>
+																		</PropertyList>
+																	</Effect>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
 									<ActiveSourceList>
 										<ActiveSource Name="ACT_KeyPlace" ID="{49FCFFCC-BE19-4C22-9B30-44F3C3218CD5}" Platform="Linked"/>
 									</ActiveSourceList>
