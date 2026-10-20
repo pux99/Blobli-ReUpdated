@@ -121,9 +121,19 @@
 						</Sound>
 						<Sound Name="SFX_Win_Level" ID="{906660DF-F65D-43D5-8A16-6607DAD6A219}" ShortID="874632849">
 							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-400</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-1</Value>
+										<Value>-7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -136,9 +146,9 @@
 								<AudioFileSource Name="WIN_Level" ID="{4695A0AC-267E-45D2-938E-28317BA7596F}">
 									<PropertyList>
 										<Property Name="FadeInDuration" Type="Real64" Value="0.192043895747599"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.458161865569273"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.313993174061434"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.26694101508916"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Blobli\WIN_Level.wav</AudioFile>
