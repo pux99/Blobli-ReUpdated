@@ -57,7 +57,7 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="SunExposure" ID="{7DDEE1D3-C7E7-4809-B010-6FE3537F4820}"/>
-							<Value>54</Value>
+							<Value>65</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Turns" ID="{BA7E6CEE-B03B-4DBF-9DE9-1896DE94AEBF}"/>
@@ -69,8 +69,8 @@
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}"/>
-						<CurrentSwitchRef Name="Mushroom" ID="{0FFECAA3-DD2F-4AB0-B7E7-7BC9A8FDEE56}"/>
-						<CurrentSwitchRef Name="Active" ID="{E6E4D096-7FAD-451D-98F1-AE02F03DEDC1}"/>
+						<CurrentSwitchRef Name="Ground" ID="{D1E83381-B886-46CD-B6E9-392C9CB6D214}"/>
+						<CurrentSwitchRef Name="Silent" ID="{E7F297DE-CFFD-4352-B8C7-F89B88CA5713}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
