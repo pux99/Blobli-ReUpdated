@@ -4,7 +4,6 @@
 		<WorkUnit Name="Default Work Unit" ID="{44D6B3CC-7EAC-4413-9C56-54F3C0741B3F}" PersistMode="Standalone">
 			<ChildrenList>
 				<Effect Name="Reverb_Altar" ID="{A072661A-606A-4EAE-99AE-194367A4A6BF}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-					<Comment>ShareSet de reverb de la camara del Altar: piedra, grande, cola larga y oscura. DryLevel -96 porque vive en un Auxiliary Bus y solo tiene que devolver la senal humeda; la seca sigue su camino por Bus_SFX. Es un ShareSet y no un insert para que una sola instancia del efecto procese a todos los emisores.</Comment>
 					<PropertyList>
 						<Property Name="DecayTime" Type="Real32" Value="2.2"/>
 						<Property Name="Density" Type="Real32" Value="92"/>

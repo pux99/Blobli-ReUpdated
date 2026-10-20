@@ -4,7 +4,6 @@
 		<WorkUnit Name="Default Work Unit" ID="{DC15555D-4B62-4C19-BFAB-DD126BF3F523}" PersistMode="Standalone">
 			<ChildrenList>
 				<SwitchGroup Name="Tile" ID="{07CFF997-43ED-44FD-8163-C39A32029ACB}">
-					<Comment>Tipo de baldosa que pisa Blobli. Lo setea el juego con Set Switch cuando el jugador entra a la celda, antes de disparar Play_Footstep. NO usa Game Parameter: es una condicion discreta del mundo, no una magnitud que varie de forma continua.</Comment>
 					<ChildrenList>
 						<Switch Name="Ground" ID="{D1E83381-B886-46CD-B6E9-392C9CB6D214}"/>
 						<Switch Name="Mushroom" ID="{0FFECAA3-DD2F-4AB0-B7E7-7BC9A8FDEE56}"/>
@@ -12,14 +11,12 @@
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="Zone" ID="{81976640-24C1-40F0-8E82-091B546DD8D5}">
-					<Comment>Zona de ambiente: Field (el claro abierto) o Altar (la camara de piedra). La setea el juego con un Set Switch dentro del mismo Event que cambia el State Recinto, asi la cama de ambiente y la acustica del recinto cambian siempre juntas y no pueden quedar desfasadas. Antes se derivaba de un Game Parameter de distancia, pero eso creaba dos fuentes de verdad para un mismo hecho del juego: el jugador entro al Altar.</Comment>
 					<ChildrenList>
 						<Switch Name="Altar" ID="{5B3D64CF-1A59-421C-B4D4-BAE04C3630C7}"/>
 						<Switch Name="Field" ID="{839310B9-E81F-4EBD-A5E2-0671509D63C9}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="Fauna" ID="{3AE30E7F-5CB2-468A-92BC-62481F1E3766}">
-					<Comment>Si los bichos del claro estan activos o callados. Se deriva de SunExposure con Use Game Parameter: 0-65 Active, 65-100 Silent. El switch Silent NO tiene objetos asignados, asi que con el sol alto los Random de fauna no se instancian: no existen y no gastan voz. Resolverlo con un RTPC de volumen a -200 dB los dejaria vivos e inaudibles.</Comment>
 					<PropertyList>
 						<Property Name="UseGameParameter" Type="bool" Value="True"/>
 					</PropertyList>

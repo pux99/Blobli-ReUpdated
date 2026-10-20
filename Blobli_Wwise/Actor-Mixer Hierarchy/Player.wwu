@@ -4,7 +4,6 @@
 		<WorkUnit Name="Player" ID="{0D631614-8278-4D1B-92A5-EF024270E50C}" PersistMode="Standalone">
 			<ChildrenList>
 				<ActorMixer Name="AMX_Player" ID="{51EE3759-D977-4CA4-9315-2334B78C6714}" ShortID="472986842">
-					<Comment>Todo lo que emite Blobli. Es un Actor-Mixer y no un contenedor porque no toma ninguna decision de reproduccion: solo agrupa, rutea a Bus_Player y concentra el User-Defined Auxiliary Send a Aux_Altar, para que el recinto afecte al personaje sin tener que tocar objeto por objeto.</Comment>
 					<PropertyList>
 						<Property Name="OverrideOutput" Type="bool" Value="True"/>
 						<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
@@ -24,7 +23,7 @@
 					</ReferenceList>
 					<ChildrenList>
 						<SwitchContainer Name="SW_Steps_Tile" ID="{499D1E74-272F-4DE0-81D2-8FCB5F08220B}" ShortID="113616848">
-							<Comment>Pisadas por tipo de baldosa. Play Mode STEP: cada Play_Footstep reproduce UNA pisada y avanza el puntero. El ritmo lo marca el juego (un paso por movimiento en la grilla), no el contenedor. En Continuous un solo Play caminaria para siempre. Como el juego hace Set Switch Tile ANTES del Play, el cambio de superficie ya se oye en la pisada siguiente: no hace falta Continuous.</Comment>
+							<Comment>Play Mode Step: un Play reproduce UNA pisada. El juego hace Set Switch Tile antes de disparar el Event.</Comment>
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -45,7 +44,6 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="RND_Step_Ground" ID="{B38A61CA-EA4B-4822-9186-AD7419FD12D0}" ShortID="562750834">
-									<Comment>Piso normal. Random Shuffle en Step. Shuffle recorre las tres variaciones antes de repetir ninguna; "Limit repetition to" queda en 1 porque con solo 3 hijos subirlo a 2 dejaria un unico candidato y la eleccion pasaria a ser deterministica. Los randomizers de Pitch y Volume van en el CONTENEDOR para que se hereden a los tres hijos. Shuffle decide QUE suena, los randomizers deciden COMO suena: juntos son lo que rompe el machine gun effect con solo 3 assets.</Comment>
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
@@ -128,7 +126,6 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="RND_Step_Mushroom" ID="{E0F23D09-3319-4993-8915-B738DAE1E1B3}" ShortID="738223954">
-									<Comment>Hongo: superficie blanda y humeda. Mismo esquema que Ground pero con el rango de Pitch un poco mas ancho (el material esponjoso responde distinto en cada pisada) y un randomizer de Low-pass de 0 a 15 para que ninguna pisada tenga exactamente el mismo brillo.</Comment>
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
@@ -211,7 +208,6 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="RND_Step_Shadow" ID="{A9DA2B61-6329-4895-9334-3569D912883A}" ShortID="458465739">
-									<Comment>Sombra: la baldosa segura. Ademas de los randomizers lleva un Low-pass FIJO de 25 y -1.5 dB: pisar dentro de la sombra suena mas apagado y mas lejano que pisar a la luz. Es una decision estetica y a la vez de lectura de juego, porque el jugador aprende a reconocer por el sonido si esta a salvo. Son dos propiedades distintas: el valor fijo tine el timbre, el randomizer evita la repeticion.</Comment>
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
@@ -332,10 +328,8 @@
 							</GroupingInfo>
 						</SwitchContainer>
 						<Folder Name="Actions" ID="{4A5E1EBF-4FB1-4F66-A63C-D971743A5335}" ShortID="317834357">
-							<Comment>Virtual Folder: solo organiza la vista. No es un contenedor, no afecta el ruteo ni las propiedades (sus hijos siguen heredando de AMX_Player). Agrupa las acciones puntuales de Blobli que no son pisadas.</Comment>
 							<ChildrenList>
 								<RandomSequenceContainer Name="RND_Gem_Pickup" ID="{7A85E6D9-B76E-4813-B427-C964C89D2B72}" ShortID="630658423">
-									<Comment>Recoleccion de gemas. Random Shuffle en Step con 4 variaciones y "Limit repetition to 2": con 4 hijos quedan 2 candidatos, asi que sigue habiendo azar real. Pitch +-200 cents y Volume +-1.5 dB en el contenedor. Es el sonido que mas se repite en una partida (hay gemas por todo el mapa), asi que es donde mas se nota el machine gun effect si no se randomiza.</Comment>
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Pitch" Type="int32">
@@ -503,7 +497,6 @@
 									</ChildrenList>
 								</RandomSequenceContainer>
 								<Sound Name="SFX_Shadow_Place" ID="{D603DC62-9F99-43D7-A236-098BDE4174D2}" ShortID="367498730">
-									<Comment>Proyectar una sombra combinando gemas. One-shot sin Loop. Es la accion central de la mecanica, asi que va limpia y sin randomizar: el jugador tiene que reconocerla siempre igual como confirmacion de que la jugada salio.</Comment>
 									<PropertyList>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
@@ -559,7 +552,6 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="SFX_Key_Place" ID="{AA90FC82-61C4-457F-997A-1F2AD5938CB7}" ShortID="594881259">
-									<Comment>Colocar una Key gem en el Altar. One-shot sin Loop, tambien sin randomizar: marca un hito del nivel y conviene que suene identico las dos veces.</Comment>
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
@@ -593,7 +585,6 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="SFX_Death" ID="{F3C15D26-B829-43BE-9304-7ECEB72B664B}" ShortID="15303789">
-									<Comment>Blobli queda expuesto a la luz. One-shot sin Loop. El Event Play_Death ademas corta el ambiente con un Stop con Fade Time, asi que este sonido queda solo en el aire.</Comment>
 									<ReferenceList>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1EA65224-1AAF-4FFB-8BF4-EB5C837966BA}"/>
