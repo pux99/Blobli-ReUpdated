@@ -46,20 +46,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_Turn" ID="{FD220042-36E6-416F-B8F5-F0762B8EAC06}">
-					<ChildrenList>
-						<Action Name="" ID="{0E29C923-7CBD-4843-9E88-481FA027794D}">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="SFX_Turn_Pulse" ID="{53111D3A-BA53-49F2-9DBB-2C408C1C7DD9}" WorkUnitID="{BBBB9AA4-7EBF-4978-9AE6-A7CAE9204594}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_Gem_Pickup" ID="{C846D205-5A13-4577-B0E8-57955ACC2A76}">
 					<ChildrenList>
 						<Action Name="" ID="{85111AAE-6223-4624-B1E3-6F37E55BD55D}">
