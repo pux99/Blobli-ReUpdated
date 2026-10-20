@@ -333,6 +333,9 @@
 									<PropertyList>
 										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>500</Value>
+											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{A327ED4F-CAB9-4DA2-A64B-5BE5FCA5DA11}">
@@ -368,9 +371,19 @@
 									<ChildrenList>
 										<Sound Name="SFX_Gem_Pickup_01" ID="{570B8AF7-FA2B-49A6-B86A-EE09C41F907B}" ShortID="631461140">
 											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>50</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>350</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-4</Value>
+														<Value>-8</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -400,6 +413,16 @@
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_02" ID="{D074ADEE-F6A4-44BB-AD28-59EC45A1611A}" ShortID="437983188">
 											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>61</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>320</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
 														<Value>-9</Value>
@@ -431,9 +454,19 @@
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_03" ID="{0BB5B144-9567-41BF-8A1C-0831DB2CB05E}" ShortID="1049468598">
 											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>41</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-6.5</Value>
+														<Value>-3.5</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -464,9 +497,19 @@
 										</Sound>
 										<Sound Name="SFX_Gem_Pickup_04" ID="{21FCDA67-B1B6-458F-8442-9A430F743945}" ShortID="571744460">
 											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>54</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>400</Value>
+													</ValueList>
+												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-8.8</Value>
+														<Value>-17</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
