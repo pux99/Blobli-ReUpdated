@@ -388,7 +388,10 @@
 											<ChildrenList>
 												<AudioFileSource Name="GEM_Pickup_01" ID="{629417AE-4775-4A81-A4A4-F588764347D8}">
 													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0379921863578536"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0883061628858219"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
 													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Blobli\GEM_Pickup_01.wav</AudioFile>
@@ -416,6 +419,11 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="GEM_Pickup_02" ID="{3CCCFC89-F76E-4A4F-8BA2-EE23E3321A44}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.128532235939643"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Blobli\GEM_Pickup_02.wav</AudioFile>
 													<MediaIDList>
@@ -442,6 +450,13 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="GEM_Pickup_03" ID="{34173300-31BD-417C-8B5A-0A5D90032141}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0392687774698357"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.108881610257272"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.194558942918731"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.663408639175835"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Blobli\GEM_Pickup_03.wav</AudioFile>
 													<MediaIDList>
@@ -468,6 +483,12 @@
 											</ReferenceList>
 											<ChildrenList>
 												<AudioFileSource Name="GEM_Pickup_04" ID="{87021686-8F01-4AE4-82C4-DD9DEB18E47F}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0637695068882606"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.131148608506045"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+													</PropertyList>
 													<Language>SFX</Language>
 													<AudioFile>Blobli\GEM_Pickup_04.wav</AudioFile>
 													<MediaIDList>
@@ -499,11 +520,11 @@
 									<ChildrenList>
 										<AudioFileSource Name="ACT_ShadowPlace" ID="{CBA6028F-FDAF-431B-AD54-A270588ED6F3}">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.92989992252066"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.407956095041322"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.426438739647984"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.455155580935637"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.995892820247935"/>
-												<Property Name="TrimEnd" Type="Real64" Value="1.9257927427686"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.01634593080214"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.82510050619406"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Blobli\ACT_ShadowPlace.wav</AudioFile>
@@ -554,11 +575,11 @@
 									<ChildrenList>
 										<AudioFileSource Name="ACT_KeyPlace" ID="{49FCFFCC-BE19-4C22-9B30-44F3C3218CD5}">
 											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0538906725723065"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
-												<Property Name="LoopBegin" Type="Real64" Value="0.75204401611047"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.75204401611047"/>
-												<Property Name="TrimEnd" Type="Real64" Value="2.2"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.786152036725854"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.16298164476961"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Blobli\ACT_KeyPlace.wav</AudioFile>
@@ -580,6 +601,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="ACT_Death" ID="{70FFE628-DC13-4C7A-81EB-74E7970DD209}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0263374485596708"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.115884773662552"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.330973936899863"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Blobli\ACT_Death.wav</AudioFile>
 											<MediaIDList>

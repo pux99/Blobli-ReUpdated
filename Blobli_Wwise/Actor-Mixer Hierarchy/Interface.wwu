@@ -17,7 +17,6 @@
 						<Sound Name="SFX_Turn_Pulse" ID="{53111D3A-BA53-49F2-9DBB-2C408C1C7DD9}" ShortID="455603253">
 							<Comment>El pulso del turno. En este juego el entorno solo avanza cuando el jugador se mueve, asi que el tiempo es discreto: cada movimiento es un tic. Por eso es un one-shot SIN Loop disparado por el Event Play_Turn, y no un contenedor en Continuous con Trigger Rate: el ritmo lo marca el juego, no el contenedor. Lo que cambia con la variable de gameplay no es la cadencia sino el CARACTER del sonido. Dos curvas RTPC contra Turns, las dos sobre este objeto: Voice Pitch de 0 a +500 cents (mas agudo = mas urgencia) y Voice Volume de -9 a 0 dB (mas presente). Acordate de que el Voice Pitch de Wwise es velocidad de reproduccion: cambia altura Y duracion, asi que sobre el final del nivel el tic tambien se acorta, lo que refuerza la sensacion de apuro. Ademas un randomizer chico de Pitch (+-40 cents) para que dos turnos seguidos no suenen calcados.</Comment>
 							<PropertyList>
-								<Property Name="Volume" Type="Real64" Value="-1.5"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -30,6 +29,11 @@
 											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1.5</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -136,7 +140,11 @@
 						<Sound Name="SFX_UI_Hover" ID="{E8DCC9C6-E2D0-47B0-99C9-651F9213605B}" ShortID="43626990">
 							<Comment>Hover de menu. One-shot sin Loop, sin randomizar, igual que el click. Source propia (UI_Hover.wav), nivelada con Voice Volume a -24 LUFS maximo, apenas por debajo de SFX_UI_Click: el hover pasa mucho mas seguido y no tiene que tapar al click.</Comment>
 							<PropertyList>
-								<Property Name="Volume" Type="Real64" Value="-5.5"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5.5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="OutputBus">
@@ -146,8 +154,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="UI_Hover" ID="{8372DEA9-C750-42DF-89E8-55D6175B8C41}">
 									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.05"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.45"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0874782919078488"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.05"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.25"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Blobli\UI_Hover.wav</AudioFile>
@@ -163,7 +173,11 @@
 						<Sound Name="SFX_UI_Click" ID="{F94FD44A-5A63-4167-ADBD-892FE5A2D258}" ShortID="253466986">
 							<Comment>Click de menu. One-shot sin Loop, sin randomizar: la interfaz tiene que responder siempre igual.</Comment>
 							<PropertyList>
-								<Property Name="Volume" Type="Real64" Value="-4.5"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4.5</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="OutputBus">
@@ -173,8 +187,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="UI_Click" ID="{ECC0998A-DACD-47AE-B895-D49A11223F3D}">
 									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.05"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.75"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.165801198441261"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.180734086853134"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.424563838610102"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Blobli\UI_Click.wav</AudioFile>
@@ -190,7 +206,11 @@
 						<Sound Name="SFX_Win_Level" ID="{906660DF-F65D-43D5-8A16-6607DAD6A219}" ShortID="874632849">
 							<Comment>Nivel completado. One-shot sin Loop. Va en Bus_UI y no en Bus_SFX porque es un stinger de recompensa y no un sonido del mundo: tiene que llegar limpio aunque Blobli este adentro de la camara del Altar con el Low-pass puesto.</Comment>
 							<PropertyList>
-								<Property Name="Volume" Type="Real64" Value="-1.0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="OutputBus">
@@ -200,8 +220,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="WIN_Level" ID="{4695A0AC-267E-45D2-938E-28317BA7596F}">
 									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.1"/>
-										<Property Name="TrimEnd" Type="Real64" Value="2.4"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.192043895747599"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.458161865569273"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.26694101508916"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Blobli\WIN_Level.wav</AudioFile>
